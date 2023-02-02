@@ -28,10 +28,9 @@
   "devDependencies": {
     "prettier": "2.8.3"
   },
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint",
-      "prettier"
+  "eslintConfig": {
+    "extends": [
+      "./eslintrc.json"
     ]
   }
 }
