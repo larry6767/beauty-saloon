@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -27,9 +28,9 @@
   "devDependencies": {
     "prettier": "2.8.3"
   },
-   "lint-staged": {
+  "lint-staged": {
     "**/*.{ts,tsx}": [
-     "eslint",
+      "eslint",
       "prettier"
     ]
   }
