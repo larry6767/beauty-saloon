@@ -1,9 +1,23 @@
+'use client'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Test @emotion/react @emotion/styled
+import styled from '@emotion/styled'
+
+const StyledComponent = styled.h1`
+  color: pink;
+`
+const TestComponent = () => {
+  return (
+    <>
+      <StyledComponent>Test Component</StyledComponent>
+    </>
+  )
+}
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -32,6 +46,7 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
+        <TestComponent />
         <Image
           className={styles.logo}
           src="/next.svg"
