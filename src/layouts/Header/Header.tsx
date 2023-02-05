@@ -26,10 +26,7 @@ import {
   ContactsList,
   LanguageBlock,
   MenuIcon,
-  TikTokIcon,
-  WhatsAppIcon,
-  InstagramIcon,
-  TelegramIcon,
+  LogoIcon,
 } from './styles'
 
 export const Header = () => {
@@ -44,6 +41,13 @@ export const Header = () => {
     'Галерея',
     'Контакты',
     'Франшиза',
+  ]
+
+  const logoIcons = [
+    { image: tiktokLogo, url: '#', alt: 'TikTok' },
+    { image: whatsappLogo, url: '#', alt: 'WhatsApp' },
+    { image: instagramLogo, url: '#', alt: 'Instagram' },
+    { image: telegramLogo, url: '#', alt: 'Telegram' },
   ]
 
   const bottomLinks = [
@@ -84,23 +88,11 @@ export const Header = () => {
         </MenuIcon>
         <ContactsList>
           <IconList>
-            <TikTokIcon href="#">
-              <Image src={tiktokLogo} width={22} height={22} alt="TikTok" />
-            </TikTokIcon>
-            <WhatsAppIcon href="#">
-              <Image src={whatsappLogo} width={22} height={22} alt="WhatsApp" />
-            </WhatsAppIcon>
-            <InstagramIcon href="#">
-              <Image
-                src={instagramLogo}
-                width={22}
-                height={22}
-                alt="Instagram"
-              />
-            </InstagramIcon>
-            <TelegramIcon href="#">
-              <Image src={telegramLogo} width={22} height={22} alt="Telegram" />
-            </TelegramIcon>
+            {logoIcons.map((icon) => (
+              <LogoIcon key={icon.alt} href={icon.url}>
+                <Image src={icon.image} width={22} height={22} alt={icon.alt} />
+              </LogoIcon>
+            ))}
           </IconList>
           <ContactBlock>
             <Number>+4200 000 00 00</Number>

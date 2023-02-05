@@ -146,25 +146,7 @@ export const IconList = styled.div`
     padding: 15x;
   }
 `
-export const TikTokIcon = styled.a`
-  filter: opacity(50%);
-  &:hover {
-    filter: opacity(1);
-  }
-`
-export const WhatsAppIcon = styled.a`
-  filter: opacity(50%);
-  &:hover {
-    filter: opacity(1);
-  }
-`
-export const InstagramIcon = styled.a`
-  filter: opacity(50%);
-  &:hover {
-    filter: opacity(1);
-  }
-`
-export const TelegramIcon = styled.a`
+export const LogoIcon = styled.a`
   filter: opacity(50%);
   &:hover {
     filter: opacity(1);
