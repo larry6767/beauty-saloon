@@ -18,6 +18,11 @@ const TestComponent = () => {
     </>
   )
 }
+// Modal
+import { StoreContext } from 'storeon/react'
+import { store } from '@/pages/api/store'
+import { TestButton, Modal, TestContent } from '@/pages/api/UpperLayer/Modal'
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -46,7 +51,12 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
+        {/* Modal Test */}
         <TestComponent />
+        <StoreContext.Provider value={store}>
+          <TestButton>TEST</TestButton>
+          <Modal renderEmpty={<TestContent />}></Modal>
+        </StoreContext.Provider>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -75,6 +85,61 @@ export default function Home() {
           </p>
         </a>
 
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
+        </a>
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
+        </a>
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
+        </a>
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
+        </a>
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className={inter.className}>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
+        </a>
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
