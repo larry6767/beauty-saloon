@@ -1,9 +1,4 @@
-'use client'
-import { BaseLayoutComponent } from '@/pages/api/BaseLayout/BaseLayout'
-import './globals.css'
-//
-import { store } from '@/pages/api/store'
-import { StoreContext } from 'storeon/react'
+import { globalStyles } from 'src/theme'
 
 export default function RootLayout({
   children,
@@ -17,11 +12,8 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <StoreContext.Provider value={store}>
-        <BaseLayoutComponent>{children}</BaseLayoutComponent>
-      </StoreContext.Provider>
-
-      {/* <body></body> */}
+        {globalStyles}
+      <body>{children}</body>
     </html>
   )
 }

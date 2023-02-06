@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import { Link } from 'src/components/generic'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ import { TestButton, Modal, TestContent } from '@/pages/api/UpperLayer/Modal'
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Link>Some Link</Link>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
