@@ -8,9 +8,29 @@ const inter = Inter({ subsets: ['latin'] })
 
 // Test @emotion/react @emotion/styled
 import styled from '@emotion/styled'
+// Test breakpoints
+import { mediaQueries } from './breakpoints'
 
 const StyledComponent = styled.h1`
   color: pink;
+  ${mediaQueries.mobileS} {
+    color: purple;
+  }
+  ${mediaQueries.mobileM} {
+    color: green;
+  }
+  ${mediaQueries.mobileL} {
+    color: grey;
+  }
+  ${mediaQueries.tablet} {
+    color: brown;
+  }
+  ${mediaQueries.laptop} {
+    color: blue;
+  }
+  ${mediaQueries.desktop} {
+    color: black;
+  }
 `
 const TestComponent = () => {
   return (

@@ -1,3 +1,4 @@
+'use client'
 import { globalStyles } from 'src/theme'
 
 export default function RootLayout({
