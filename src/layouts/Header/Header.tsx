@@ -6,8 +6,8 @@ import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
 import * as telegramLogo from 'assets/headerIcons/telegramLogo.svg'
 import * as menuIcon from 'assets/headerIcons/menuIcon.svg'
 import Image from 'next/image'
+import { Link } from '@/components/generic'
 import {
-  BottomLink,
   BottomLinkItems,
   BottomLinkList,
   BottomListContainer,
@@ -15,15 +15,12 @@ import {
   HeaderContainer,
   IconList,
   CentralBlock,
-  LogoImage,
   LogoIconContainer,
-  TopLink,
   TopLinkItems,
   TopLinkList,
   TopListContainer,
-  Number,
-  Text,
   ContactsList,
+  Number,
   LanguageBlock,
   MenuIcon,
   LogoIcon,
@@ -69,9 +66,14 @@ export const Header = () => {
         <TopLinkList>
           {topLinks.map((item) => (
             <TopLinkItems key={item}>
-              <TopLink key={item} href="#">
+              <Link
+                key={item}
+                href="#"
+                fontSize="14px"
+                padding={`0px 8px 0px 8px`}
+              >
                 {item}
-              </TopLink>
+              </Link>
             </TopLinkItems>
           ))}
         </TopLinkList>
@@ -79,9 +81,9 @@ export const Header = () => {
 
       <CentralBlock>
         <LogoIconContainer>
-          <LogoImage href="#">
+          <Link href="#">
             <Image src={logo} alt="logo" />
-          </LogoImage>
+          </Link>
         </LogoIconContainer>
         <MenuIcon>
           <Image src={menuIcon} width={60} height={60} alt="Menu" />
@@ -95,8 +97,15 @@ export const Header = () => {
             ))}
           </IconList>
           <ContactBlock>
-            <Number>+4200 000 00 00</Number>
-            <Text>заказать звонок</Text>
+            <Number href="tel:+420000000000">+420 000 000 000</Number>
+            <Link
+              color="black"
+              fontSize="9px"
+              transform="uppercase"
+              withoutNextLinkWrapper
+            >
+              заказать звонок
+            </Link>
           </ContactBlock>
         </ContactsList>
         <LanguageBlock>EN | RU | CZ</LanguageBlock>
@@ -106,9 +115,16 @@ export const Header = () => {
         <BottomLinkList>
           {bottomLinks.map((item) => (
             <BottomLinkItems key={item}>
-              <BottomLink key={item} href="#">
+              <Link
+                key={item}
+                href="#"
+                fontSize="12px"
+                weight="bold"
+                transform="uppercase"
+                padding={`12px 5px 0px 5px`}
+              >
                 {item}
-              </BottomLink>
+              </Link>
             </BottomLinkItems>
           ))}
         </BottomLinkList>
