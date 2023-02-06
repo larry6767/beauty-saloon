@@ -2,7 +2,7 @@ import React from 'react'
 import { BaseLayout } from './style'
 //
 import { useStoreon } from 'storeon/react'
-import { State, Events } from '../store'
+import { State, Events } from '@/store/store'
 
 export const BaseLayoutComponent = ({
   children,

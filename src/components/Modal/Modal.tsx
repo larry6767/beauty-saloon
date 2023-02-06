@@ -1,12 +1,11 @@
-'use client'
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+// ;ccc
+
 import React from 'react'
-
-// Storeon
-import { useStoreon } from 'storeon/react'
-import { State, Events } from '../../store'
-
 // Styles
 import {
+  TopBorder,
   BottomBorder,
   ModalBackdrop,
   ModalView,
@@ -16,39 +15,60 @@ import {
 } from './style'
 
 // Types
+import { FC } from 'react'
+import { ModalProps } from './types'
 
-type Props = {
-  children?: React.ReactNode
-  renderEmpty?: React.ReactNode
-}
+export const Modal: FC<ModalProps> = ({
+  children,
+  renderEmpty = <h3>Loading...</h3>,
+  // Storeon
+  state,
+  event,
+  data,
+  modal,
+  // General Styles
 
-export function Modal({ children, renderEmpty = <h3>Loading...</h3> }: Props) {
-  const { dispatch, modal } = useStoreon<State, Events>('modal')
-
+  // Menu Styles
+  isMenu = false,
+}) => {
   return (
-    <ModalBackdrop isVisible={modal} onClick={() => dispatch('toggle', !modal)}>
-      <ModalWrapper onClick={(e) => e.stopPropagation()}>
+    <ModalBackdrop
+      isVisible={modal}
+      menu={isMenu}
+      onClick={() => state(event, data)}
+    >
+      <ModalWrapper menu={isMenu} onClick={(e) => e.stopPropagation()}>
+        <TopBorder menu={isMenu} />
         <FlexButton>
-          <ModalCloseButton
-            onClick={() => {
-              dispatch('toggle', !modal)
-            }}
-          >
+          <ModalCloseButton onClick={() => state(event, data)}>
             X
           </ModalCloseButton>
         </FlexButton>
 
-        <ModalView isVisible={modal}>{renderEmpty || children}</ModalView>
-        <BottomBorder />
+        <ModalView menu={isMenu} isVisible={modal}>
+          {renderEmpty || children}
+        </ModalView>
+        <BottomBorder menu={isMenu} />
       </ModalWrapper>
     </ModalBackdrop>
   )
 }
 
 // Tests
-export const TestButton = ({ children }: { children: string }) => {
-  const { dispatch, modal } = useStoreon<State, Events>('modal')
+import { StoreonDispatch } from 'storeon'
+import { Events } from '../../store/store'
 
+export const TestButton = ({
+  children,
+  dispatch,
+  event,
+  data,
+}: {
+  children: string
+  dispatch: StoreonDispatch<Events> | (() => void)
+  event: 'menu' | 'toggle'
+  data: boolean
+}) => {
   return (
     <button
       style={{
@@ -64,10 +84,10 @@ export const TestButton = ({ children }: { children: string }) => {
         zIndex: 1,
       }}
       onClick={() => {
-        dispatch('toggle', modal)
+        dispatch(event, data)
       }}
     >
-      {modal === false ? children : String(modal).toUpperCase()}
+      {!data ? children : `${children.replace(/OFF/, '')} ON`.toUpperCase()}
     </button>
   )
 }
