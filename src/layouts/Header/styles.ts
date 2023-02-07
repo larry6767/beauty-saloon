@@ -20,7 +20,7 @@ export const HeaderContainer = styled.div`
 
 export const TopListContainer = styled.div`
   width: 100%;
-  background-color: #343a40;
+  background-color: ${theme.colors.tertiary};
   display: none;
 
   ${media.tablet} {
@@ -143,7 +143,6 @@ export const IconList = styled.div`
     width: 175px;
     height: 98px;
     justify-content: space-between;
-    padding: 15x;
   }
 `
 
@@ -180,7 +179,7 @@ export const Number = styled.a`
 `
 
 export const LanguageBlock = styled.p`
-  font-size: 14px;
+  font-size: ${theme.fontSize.numbers};
   display: flex;
   margin-bottom: 0;
 

@@ -27,6 +27,7 @@ import {
   MenuIcon,
   LogoIcon,
 } from './styles'
+import { theme } from '@/theme/theme'
 
 export const Header = () => {
   const topLinks = [
@@ -71,7 +72,7 @@ export const Header = () => {
               <Link
                 key={item}
                 href="#"
-                fontSize="14px"
+                fontSize={`${theme.fontSize.numbers}`}
                 padding={`0px 8px 0px 8px`}
               >
                 {item}
@@ -102,7 +103,7 @@ export const Header = () => {
             <Number href="tel:+420000000000">+420 000 000 000</Number>
             <Link
               color="black"
-              fontSize="9px"
+              fontSize={`${theme.fontSize.smallFont}`}
               transform="uppercase"
               withoutNextLinkWrapper
             >
@@ -120,7 +121,7 @@ export const Header = () => {
               <Link
                 key={item}
                 href="#"
-                fontSize="12px"
+                fontSize={`${theme.fontSize.bigFont}`}
                 weight="bold"
                 transform="uppercase"
                 padding={`12px 5px 0px 5px`}
