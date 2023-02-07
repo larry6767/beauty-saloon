@@ -1,3 +1,4 @@
+import { theme } from '@/theme/theme'
 import styled from '@emotion/styled'
 import { media } from '../../theme/breakpoints'
 
@@ -7,7 +8,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  background-color: #faf1ff;
+  background-color: ${theme.colors.primary};
 
   ${media.tablet} {
     height: 310px;
@@ -46,7 +47,7 @@ export const TopLinkList = styled.ul`
   a {
     cursor: pointer;
     &:hover {
-      color: #bcbcbc;
+      color: ${theme.colors.hover};
     }
   }
   ${media.tablet} {
@@ -162,7 +163,7 @@ export const ContactBlock = styled.div`
   justify-content: center;
   button {
     &:hover {
-      color: #e68dba;
+      color: ${theme.colors.secondary};
     }
   }
   ${media.tablet} {
@@ -174,7 +175,7 @@ export const Number = styled.a`
   text-decoration: none;
   color: inherit;
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${theme.fontSize.numbers};
   margin-bottom: 0;
 `
 
@@ -194,7 +195,7 @@ export const BottomListContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #e68dba;
+  background-color: ${theme.colors.secondary};
 
   ${media.tablet} {
     display: flex;
@@ -218,7 +219,7 @@ export const BottomLinkList = styled.ul`
   a {
     cursor: pointer;
     &:hover {
-      color: #343a40;
+      color: ${theme.colors.tertiary};
     }
   }
   ${media.laptopL} {
