@@ -1,3 +1,4 @@
+import { theme } from '@/theme/theme'
 import styled from '@emotion/styled'
 
 //types
@@ -8,7 +9,8 @@ export const StyledLink = styled.a<StyledLinkProps>`
   line-height: 1.5;
   text-decoration: none;
   color: white;
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : '12px')};
+  font-size: ${({ fontSize }) =>
+    fontSize ? fontSize : theme.fontSize.bigFont};
 
   ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
   ${({ padding }) => (!padding ? null : `padding: ${padding}`)};
