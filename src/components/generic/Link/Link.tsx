@@ -40,7 +40,7 @@ export const Link: FC<LinkProps> = ({
       {children}
     </StyledLink>
   ) : (
-    <NextLink href={href} passHref shallow={shallow}>
+    <NextLink href={href} passHref shallow={shallow} legacyBehavior>
       <StyledLink {...commonProps} {...rest}>
         {children}
       </StyledLink>

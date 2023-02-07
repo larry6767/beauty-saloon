@@ -25,7 +25,15 @@ export type StyledLinkProps = {
     | 'bold'
     | 'bolder'
     | 'lighter'
-    | 'number'
+    | 100
+    | 200
+    | 300
+    | 400
+    | 500
+    | 600
+    | 700
+    | 800
+    | 900
     | 'initial'
     | 'inherit'
 }
