@@ -1,20 +1,22 @@
-'use client'
+import { Montserrat } from '@next/font/google'
+// local libs
 import { globalStyles } from 'src/theme'
 import Head from './head'
+
+const montserrat = Montserrat({
+  weight: ['400', '700'],
+  style: ['normal'],
+  subsets: ['cyrillic'],
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html>
-      <Head>
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
+    <html className={montserrat.className}>
+      <Head />
       {globalStyles}
       <body>{children}</body>
     </html>

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import * as logo from 'assets/headerIcons/logo.png'
 import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
