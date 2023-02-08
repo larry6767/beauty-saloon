@@ -8,7 +8,7 @@ import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
 import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
 import { Link } from '@/components/generic'
 import {
-  ContactsList,
+  // ContactsList,
   ContactBlock,
   TelephoneIcon,
   IconList,
@@ -16,7 +16,7 @@ import {
   LanguageBlock,
   LogoIcon,
   FooterContainer,
-  FooterBlock,
+  FooterWrapper,
   ContactBlockContainer,
 } from './styles'
 import { theme } from '@/theme/theme'
@@ -30,39 +30,32 @@ export const Footer = () => {
 
   return (
     <FooterContainer>
-      <FooterBlock>
-        <ContactsList>
-          <ContactBlockContainer>
-            <TelephoneIcon>
-              <Image
-                src={telephoneIcon}
-                width={18}
-                height={18}
-                alt="Telephone"
-              />
-            </TelephoneIcon>
-            <ContactBlock>
-              <Number href="tel:+420000000000">+420 000 000 000</Number>
-              <Link
-                fontSize={`${theme.fontSize.smallFont}`}
-                transform="uppercase"
-                padding={`0px`}
-                withoutNextLinkWrapper
-              >
-                заказать звонок
-              </Link>
-            </ContactBlock>
-          </ContactBlockContainer>
-          <IconList>
-            {logoIcons.map((icon) => (
-              <LogoIcon key={icon.alt} href={icon.url}>
-                <Image src={icon.image} width={18} height={18} alt={icon.alt} />
-              </LogoIcon>
-            ))}
-          </IconList>
-        </ContactsList>
+      <FooterWrapper>
+        <ContactBlockContainer>
+          <TelephoneIcon>
+            <Image src={telephoneIcon} width={18} height={18} alt="Telephone" />
+          </TelephoneIcon>
+          <ContactBlock>
+            <Number href="tel:+420000000000">+420 000 000 000</Number>
+            <Link
+              fontSize={`${theme.fontSize.smallFont}`}
+              transform="uppercase"
+              padding={`0px`}
+              withoutNextLinkWrapper
+            >
+              заказать звонок
+            </Link>
+          </ContactBlock>
+        </ContactBlockContainer>
+        <IconList>
+          {logoIcons.map((icon) => (
+            <LogoIcon key={icon.alt} href={icon.url}>
+              <Image src={icon.image} width={18} height={18} alt={icon.alt} />
+            </LogoIcon>
+          ))}
+        </IconList>
         <LanguageBlock>EN | RU | CZ</LanguageBlock>
-      </FooterBlock>
+      </FooterWrapper>
     </FooterContainer>
   )
 }

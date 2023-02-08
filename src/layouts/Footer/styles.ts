@@ -17,52 +17,36 @@ export const FooterContainer = styled.div`
   }
 `
 
-export const FooterBlock = styled.div`
+export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 
   ${media.tablet} {
-    justify-content: space-between;
     width: 740px;
+    justify-content: space-between;
+    flex-direction: row;
   }
   ${media.laptopL} {
     width: 1110px;
-    flex-direction: row;
-  }
-`
-
-export const ContactsList = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-
-  ${media.tablet} {
-    width: 740px;
-    height: 60px;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
-  }
-  ${media.laptopL} {
-    width: 440px;
-    justify-content: space-between;
   }
 `
 
 export const ContactBlockContainer = styled.div`
-  height: 30px;
   display: flex;
   align-items: stretch;
-  padding-top: 30px;
+  padding-top: 10px;
 
   ${media.tablet} {
+    height: 30px;
+    width: 285px;
     align-items: center;
-    padding-top: 0;
+    padding-top: 20px;
   }
   ${media.laptopL} {
-    height: 100px;
+    height: 90px;
+    padding-top: 10px;
   }
 `
 
@@ -105,7 +89,6 @@ export const TelephoneIcon = styled.div`
 export const Number = styled.a`
   text-decoration: none;
   color: ${theme.colors.textPrimary};
-  font-weight: 400;
   font-size: ${theme.fontSize.numbers};
   margin-bottom: 0;
   transition: color 0.4s ease-in-out;
@@ -124,12 +107,11 @@ export const IconList = styled.div`
   ${media.tablet} {
     width: 170px;
     height: 80px;
-    align-items: flex-start;
-    padding: 20px 0;
+    align-items: center;
+    padding-top: 10px;
   }
   ${media.laptopL} {
     align-items: center;
-    padding-top: 30px;
   }
 `
 
@@ -142,11 +124,17 @@ export const LogoIcon = styled.a`
 `
 
 export const LanguageBlock = styled.p`
-  height: 10px;
+  height: 15px;
   font-size: ${theme.fontSize.numbers};
   color: ${theme.colors.textPrimary};
 
   ${media.tablet} {
-    padding: 0 20px;
+    width: 285px;
+    height: 25px;
+    text-align: end;
+    align-items: center;
+    padding: 5px 10px;
+  }
+  ${media.laptopL} {
   }
 `

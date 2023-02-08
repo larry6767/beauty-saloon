@@ -1,4 +1,7 @@
+import { Footer } from '@/layouts/Footer'
 import { Header } from '@/layouts/Header'
+import { PageContent } from '@/layouts/PageContent'
+import { RootWrapper } from '@/layouts/RootWrapper'
 import { Montserrat } from '@next/font/google'
 // local libs
 import { globalStyles } from 'src/theme'
@@ -21,10 +24,11 @@ export default function RootLayout({
       <Head />
       {globalStyles}
       <body>
-        <main>
+        <RootWrapper>
           <Header />
-        </main>
-        {children}
+          <PageContent>{children}</PageContent>
+          <Footer />
+        </RootWrapper>
       </body>
     </html>
   )
