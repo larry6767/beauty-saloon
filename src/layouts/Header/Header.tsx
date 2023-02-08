@@ -27,8 +27,12 @@ import {
   MenuIcon,
   LogoIcon,
 } from './styles'
-
+// Localization
+import { useTranslation } from 'react-i18next'
+import '../../utils/i18next'
+import { changeLanguage } from '../../utils/i18next'
 export const Header = () => {
+  const { t } = useTranslation()
   const topLinks = [
     'Мастер на дом',
     'О нас',
@@ -110,7 +114,20 @@ export const Header = () => {
             </Link>
           </ContactBlock>
         </ContactsList>
-        <LanguageBlock>EN | RU | CZ</LanguageBlock>
+
+        <LanguageBlock>
+          <button onClick={() => changeLanguage('en')}>
+            {t('localization.en')}
+          </button>
+          |
+          <button onClick={() => changeLanguage('ru')}>
+            {t('localization.ru')}
+          </button>
+          |
+          <button onClick={() => changeLanguage('cz')}>
+            {t('localization.cz')}
+          </button>
+        </LanguageBlock>
       </CentralBlock>
 
       <BottomListContainer>
