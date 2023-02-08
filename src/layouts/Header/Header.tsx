@@ -28,11 +28,9 @@ import {
   LogoIcon,
 } from './styles'
 // Localization
-import { useTranslation } from 'react-i18next'
 import '../../utils/i18next'
-import { changeLanguage } from '../../utils/i18next'
+import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
 export const Header = () => {
-  const { t } = useTranslation()
   const topLinks = [
     'Мастер на дом',
     'О нас',
@@ -116,17 +114,7 @@ export const Header = () => {
         </ContactsList>
 
         <LanguageBlock>
-          <button onClick={() => changeLanguage('en')}>
-            {t('localization.en')}
-          </button>
-          |
-          <button onClick={() => changeLanguage('ru')}>
-            {t('localization.ru')}
-          </button>
-          |
-          <button onClick={() => changeLanguage('cz')}>
-            {t('localization.cz')}
-          </button>
+          <LocalizationButton></LocalizationButton>
         </LanguageBlock>
       </CentralBlock>
 

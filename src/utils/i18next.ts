@@ -18,7 +18,7 @@ i18n
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
   })
-export const changeLanguage = (lang: 'ru' | 'en' | 'cz') => {
+export const changeLanguage = (lang: 'ru' | 'en' | 'cz' | string) => {
   i18n.changeLanguage(lang)
 }
 export default i18n
