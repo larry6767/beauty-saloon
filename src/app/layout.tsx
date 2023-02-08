@@ -1,4 +1,15 @@
-import './globals.css'
+import { Header } from '@/layouts/Header'
+import { Montserrat } from '@next/font/google'
+// local libs
+import { globalStyles } from 'src/theme'
+
+import Head from './head'
+
+const montserrat = Montserrat({
+  weight: ['400', '700'],
+  style: ['normal'],
+  subsets: ['cyrillic'],
+})
 
 export default function RootLayout({
   children,
@@ -6,13 +17,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+    <html className={montserrat.className}>
+      <Head />
+      {globalStyles}
+      <body>
+        <main>
+          <Header />
+        </main>
+        {children}
+      </body>
     </html>
   )
 }
