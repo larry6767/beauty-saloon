@@ -114,7 +114,7 @@ export const Header = () => {
         </ContactsList>
 
         <LanguageBlock>
-          <LocalizationButton></LocalizationButton>
+          <LocalizationButton color={'black'} />
         </LanguageBlock>
       </CentralBlock>
 

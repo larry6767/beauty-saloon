@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import '../../../utils/i18next'
 import { changeLanguage } from '../../../utils/i18next'
 
-export const LocalizationButton = () => {
+export const LocalizationButton = ({ color }: { color: string }) => {
   const { t, i18n } = useTranslation()
   const locales = i18n.options.supportedLngs
 
@@ -17,7 +17,7 @@ export const LocalizationButton = () => {
             <>
               <Link
                 key={i}
-                color={'black'}
+                color={`${color}`}
                 onClick={() => changeLanguage(locale)}
               >
                 {t(`localization.${locale}`)}
