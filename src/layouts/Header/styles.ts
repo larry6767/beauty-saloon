@@ -1,4 +1,6 @@
+import { theme } from '@/theme/theme'
 import styled from '@emotion/styled'
+import { media } from '../../theme/breakpoints'
 
 export const HeaderContainer = styled.div`
   height: 180px;
@@ -6,12 +8,12 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  background-color: #faf1ff;
+  background-color: ${theme.colors.primary};
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     height: 310px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     height: 210px;
   }
 `
@@ -21,13 +23,13 @@ export const TopListContainer = styled.div`
   background-color: #343a40;
   display: none;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 62px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     width: 100%;
     height: 31px;
     align-items: center;
@@ -45,13 +47,13 @@ export const TopLinkList = styled.ul`
   a {
     cursor: pointer;
     &:hover {
-      color: #bcbcbc;
+      color: ${theme.colors.hover};
     }
   }
-  @media (min-width: 768px) {
+  ${media.tablet} {
     width: 750px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     width: 1110px;
   }
 `
@@ -60,10 +62,10 @@ export const TopLinkItems = styled.li`
   text-align: center;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     height: 30px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     padding: 0;
     height: 21px;
   }
@@ -76,13 +78,13 @@ export const CentralBlock = styled.div`
   flex-direction: column-reverse;
   flex-wrap: wrap;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     justify-content: space-between;
     width: 680px;
     flex-direction: row;
     flex-wrap: nowrap;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     width: 1110px;
     justify-content: space-around;
   }
@@ -96,7 +98,7 @@ export const MenuIcon = styled.div`
   &:hover {
     filter: contrast(200%);
   }
-  @media (min-width: 768px) {
+  ${media.tablet} {
     display: none;
   }
 `
@@ -108,7 +110,7 @@ export const LogoIconContainer = styled.div`
   justify-content: space-around;
   align-items: flex-start;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     width: 100px;
     height: 52px;
     justify-content: space-between;
@@ -122,10 +124,10 @@ export const ContactsList = styled.div`
   justify-content: space-between;
   flex-direction: row;
 
-  @media (min-width: 768px) {
-    width: 350px;
+  ${media.tablet} {
+    width: 370px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     width: 450px;
   }
 `
@@ -137,7 +139,7 @@ export const IconList = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     width: 175px;
     height: 98px;
     justify-content: space-between;
@@ -161,11 +163,11 @@ export const ContactBlock = styled.div`
   justify-content: center;
   button {
     &:hover {
-      color: #e68dba;
+      color: ${theme.colors.secondary};
     }
   }
-  @media (min-width: 768px) {
-    width: 120px;
+  ${media.tablet} {
+    width: 140px;
   }
 `
 
@@ -173,7 +175,7 @@ export const Number = styled.a`
   text-decoration: none;
   color: inherit;
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${theme.fontSize.numbers};
   margin-bottom: 0;
 `
 
@@ -182,7 +184,7 @@ export const LanguageBlock = styled.p`
   display: flex;
   margin-bottom: 0;
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     margin-bottom: 7px;
     margin-top: 0;
   }
@@ -193,13 +195,13 @@ export const BottomListContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #e68dba;
+  background-color: ${theme.colors.secondary};
 
-  @media (min-width: 768px) {
+  ${media.tablet} {
     display: flex;
     height: 95px;
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     height: 50px;
   }
 `
@@ -217,10 +219,10 @@ export const BottomLinkList = styled.ul`
   a {
     cursor: pointer;
     &:hover {
-      color: #343a40;
+      color: ${theme.colors.tertiary};
     }
   }
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     align-items: flex-start;
     width: 1110px;
   }
@@ -230,7 +232,7 @@ export const BottomLinkItems = styled.li`
   height: 47px;
   text-align: center;
 
-  @media (min-width: 1440px) {
+  ${media.laptopL} {
     height: 21px;
   }
 `
