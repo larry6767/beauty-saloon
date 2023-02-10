@@ -1,6 +1,11 @@
+import { Footer } from '@/layouts/Footer'
+import { Header } from '@/layouts/Header'
+import { PageContent } from '@/layouts/PageContent'
+import { RootWrapper } from '@/layouts/RootWrapper'
 import { Montserrat } from '@next/font/google'
 // local libs
 import { globalStyles } from 'src/theme'
+
 import Head from './head'
 
 const montserrat = Montserrat({
@@ -18,7 +23,13 @@ export default function RootLayout({
     <html className={montserrat.className}>
       <Head />
       {globalStyles}
-      <body>{children}</body>
+      <body>
+        <RootWrapper>
+          <Header />
+          <PageContent>{children}</PageContent>
+          <Footer />
+        </RootWrapper>
+      </body>
     </html>
   )
 }
