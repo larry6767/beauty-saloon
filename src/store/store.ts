@@ -1,25 +1,76 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-// ;C
+import { storeonLogger } from 'storeon/devtools'
+import { createStoreon } from 'storeon'
+import {
+  UpperLayerActions,
+  UpperLayerInternalActions,
+  UpperLayerModule,
+} from './upperLayer.module'
 
-import { createStoreon, StoreonModule } from 'storeon'
+const upperLayerModule: UpperLayerModule = (store) => {
+  const baseLayoutId = 'baseLayout'
 
-export interface State {
-  modal: boolean
-  menu: boolean
+  store.on(UpperLayerInternalActions.init, () => ({
+    upperLayer: {
+      isOpen: false,
+      kind: null,
+      content: null,
+      scrollY: window.pageYOffset,
+    },
+  }))
+
+  store.on(UpperLayerInternalActions.doShitWithLayout, (state) => {
+    if (!state) return
+
+    const { isOpen, scrollY } = state.upperLayer
+    const mainContent = document.querySelector<HTMLDivElement>(
+      `#${baseLayoutId}`,
+    )
+
+    if (!mainContent) return
+
+    if (isOpen) {
+      mainContent.style.position = 'fixed'
+      mainContent.style.top = `-${scrollY}px`
+      mainContent.style.minWidth = '100%'
+    } else {
+      mainContent.style.position = 'unset'
+      window.scrollTo(0, scrollY)
+    }
+  })
+
+  store.on(UpperLayerInternalActions.set, (state, data) => ({
+    upperLayer: {
+      ...data,
+    },
+  }))
+
+  store.on(UpperLayerActions.open, (state, data) => {
+    store.dispatch(UpperLayerInternalActions.set, {
+      isOpen: true,
+      scrollY: window.pageYOffset,
+      ...data,
+    })
+
+    store.dispatch(UpperLayerInternalActions.doShitWithLayout)
+  })
+
+  store.on(UpperLayerActions.close, (state) => {
+    if (!state) return
+    const { isOpen, scrollY } = state.upperLayer
+    if (!isOpen) return
+
+    store.dispatch(UpperLayerInternalActions.set, {
+      isOpen: false,
+      kind: null,
+      content: null,
+      scrollY: scrollY,
+    })
+
+    store.dispatch(UpperLayerInternalActions.doShitWithLayout)
+  })
 }
 
-export interface Events {
-  toggle: boolean
-  menu: boolean
-}
-
-const modalModule: StoreonModule<State, Events> = (store) => {
-  store.on('@init', () => ({ modal: false, menu: false }))
-
-  store.on('toggle', ({ modal, menu }) => ({ modal: !modal, menu }))
-  store.on('menu', ({ modal, menu }) => ({ modal, menu: !menu }))
-}
-
-export const store = createStoreon<State, Events>([modalModule])
+export const store = createStoreon([
+  upperLayerModule,
+  process.env.NODE_ENV !== 'production' && storeonLogger,
+])

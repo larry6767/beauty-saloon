@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
-import { StyledModalProps } from './types'
+import { StyledModalViewProps } from './types'
 
-export const ModalBackdrop = styled.div<StyledModalProps>`
-  display: ${({ isVisible }) => (!isVisible ? 'none' : 'flex')};
+export const ModalBackdrop = styled.div<StyledModalViewProps>`
+  display: flex;
   //
-  justify-content: ${({ menu }) => (!menu ? 'center' : 'left')};
+  justify-content: ${({ isDrawer }) => (!isDrawer ? 'center' : 'left')};
   align-items: center;
   //
   width: 100vw;
@@ -13,7 +13,7 @@ export const ModalBackdrop = styled.div<StyledModalProps>`
   top: 0;
   left: 0;
   z-index: 100;
-  padding: ${({ menu }) => (!menu ? '40px' : '0')};
+  padding: ${({ isDrawer }) => (!isDrawer ? '40px' : '0')};
   //
 
   //
@@ -27,9 +27,8 @@ export const ModalBackdrop = styled.div<StyledModalProps>`
   //
   cursor: pointer;
 `
-export const ModalView = styled.div<StyledModalProps>`
-  //
-  display: ${({ isVisible }) => (!isVisible ? 'none' : 'block')};
+export const ModalViewContent = styled.div<StyledModalViewProps>`
+  display: block;
   position: relative;
   left: 0;
   //
@@ -47,8 +46,8 @@ export const ModalView = styled.div<StyledModalProps>`
   cursor: default;
 
   // Menu Styles
-  ${({ menu }) =>
-    !menu
+  ${({ isDrawer }) =>
+    !isDrawer
       ? null
       : `
  border-radius: 0px;
@@ -74,20 +73,20 @@ export const FlexButton = styled.span`
   float: right;
 `
 
-export const ModalWrapper = styled.div<StyledModalProps>`
+export const ModalWrapper = styled.div<StyledModalViewProps>`
   position: absolute;
   top: 40px;
   left: auto;
 
   min-width: 120px;
   max-width: 400px;
-  min-height: 400px;
+  min-height: 0px;
   max-height: 100%;
 
   // Menu Styles
 
-  ${({ menu }) =>
-    !menu
+  ${({ isDrawer }) =>
+    !isDrawer
       ? null
       : `
   top: 0;
@@ -109,16 +108,17 @@ export const ModalWrapper = styled.div<StyledModalProps>`
 
    min-width: 120px;
    max-width: 180px;
+   min-height: 100%
 
  
  
   `}
 `
-export const TopBorder = styled.span<StyledModalProps>`
-  display: ${({ menu }) => (!menu ? null : 'block')};
+export const TopBorder = styled.span<StyledModalViewProps>`
+  display: ${({ isDrawer }) => (!isDrawer ? null : 'block')};
   height: 40px;
 `
-export const BottomBorder = styled.span<StyledModalProps>`
-  display: ${({ menu }) => (!menu ? 'block' : 'none')};
+export const BottomBorder = styled.span<StyledModalViewProps>`
+  display: ${({ isDrawer }) => (!isDrawer ? 'block' : 'none')};
   height: 40px;
 `

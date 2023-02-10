@@ -20,10 +20,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={montserrat.className}>
+    <html className={`${montserrat.className} scrollAuto`}>
       <Head />
       {globalStyles}
-      <body>
+      <body className="scrollAuto">
         <RootWrapper>
           <Header />
           <PageContent>{children}</PageContent>

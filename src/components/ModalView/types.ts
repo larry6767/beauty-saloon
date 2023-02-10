@@ -1,21 +1,13 @@
 import { CSSIndent } from 'src/types'
-// Storeon
-import { StoreonDispatch } from 'storeon'
-import { Events } from '../../store/store'
 
-export type ModalProps = {
+export type ModalViewProps = {
   children?: React.ReactNode
   renderEmpty?: React.ReactNode
   //
-  state: StoreonDispatch<Events> | (() => void)
-  event: 'toggle'
-  data: boolean
-  modal: boolean
-  //
-  isMenu: boolean
+  drawer: boolean
 }
-export type StyledModalProps = {
-  menu?: boolean
+export type StyledModalViewProps = {
+  isDrawer: boolean
   isVisible?: boolean
   display?: string
   padding?: CSSIndent
