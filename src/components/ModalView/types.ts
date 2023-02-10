@@ -8,7 +8,7 @@ export type ModalViewProps = {
 }
 export type StyledModalViewProps = {
   isDrawer: boolean
-  isVisible?: boolean
+  loading?: boolean
   display?: string
   padding?: CSSIndent
   color?: string

@@ -21,11 +21,17 @@ export const ModalBackdrop = styled.div<StyledModalViewProps>`
   //
   overflow-y: scroll;
   overflow-x: hidden;
-  &::-webkit-scrollbar {
-    /* width: 20px; */
-  }
   //
   cursor: pointer;
+  ${({ isDrawer }) =>
+    !isDrawer
+      ? null
+      : `
+  
+    &::-webkit-scrollbar {
+    width: 20px;
+  }
+  `};
 `
 export const ModalViewContent = styled.div<StyledModalViewProps>`
   display: block;
@@ -45,16 +51,16 @@ export const ModalViewContent = styled.div<StyledModalViewProps>`
   //
   cursor: default;
 
-  // Menu Styles
+  // Drawer Styles
   ${({ isDrawer }) =>
     !isDrawer
       ? null
       : `
  border-radius: 0px;
-  `}
+  `}// renderEmpty
 `
 
-export const ModalCloseButton = styled.button`
+export const ModalCloseButton = styled.button<StyledModalViewProps>`
   display: block;
   position: relative;
   top: 0px;
@@ -66,11 +72,37 @@ export const ModalCloseButton = styled.button`
   border-color: rgba(0, 0, 0, 0);
   color: white;
 
+  background-image: url('/public/img/svg/cross.svg');
+
   cursor: pointer;
+  // Drawer Styles
+  ${({ isDrawer }) =>
+    !isDrawer
+      ? null
+      : `
+  top: 0px;
+  left: 130px;
+  `}
+
+  // Drawer Loading Styles
+  ${({ loading }) =>
+    !loading
+      ? null
+      : `
+    top: 0px;
+    left: 85px;
+  `}
 `
 
-export const FlexButton = styled.span`
+export const FlexButton = styled.span<StyledModalViewProps>`
   float: right;
+  ${({ isDrawer }) =>
+    !isDrawer
+      ? null
+      : `
+   float: none;
+   
+  `}
 `
 
 export const ModalWrapper = styled.div<StyledModalViewProps>`
@@ -83,7 +115,7 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
   min-height: 0px;
   max-height: 100%;
 
-  // Menu Styles
+  // Drawer Styles
 
   ${({ isDrawer }) =>
     !isDrawer
@@ -92,7 +124,19 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
   top: 0;
 
   background-color: white;
-
+    
+    &::-webkit-scrollbar-thumb {
+    background-color: #d1d1d2;
+    border-radius: 10px;
+ border: 3px solid black; 
+}
+   overflow-y: auto; 
+   overflow-x: hidden;
+&::-webkit-scrollbar { 
+    width: 10px;
+    height: 0;
+    
+}
   animation-duration: 0.5s;
   animation-name: slidein;
 
@@ -108,15 +152,22 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
 
    min-width: 120px;
    max-width: 180px;
-   min-height: 100%
+   min-height: 100%;
+  `}
 
- 
- 
+  // Drawer Loading Styles
+
+  ${({ loading }) =>
+    !loading
+      ? null
+      : `
+    overflow-y: visible;
+    overflow-x: visible;
   `}
 `
 export const TopBorder = styled.span<StyledModalViewProps>`
   display: ${({ isDrawer }) => (!isDrawer ? null : 'block')};
-  height: 40px;
+  height: 15px;
 `
 export const BottomBorder = styled.span<StyledModalViewProps>`
   display: ${({ isDrawer }) => (!isDrawer ? 'block' : 'none')};

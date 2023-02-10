@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 // Styles
 import {
   TopBorder,
@@ -10,6 +11,8 @@ import {
   FlexButton,
 } from './style'
 
+import * as whiteCross from 'public/img/svg/white-cross.svg'
+import * as drawerCross from 'public/img/svg/drawer-cross.svg'
 // Types
 import { FC } from 'react'
 import { ModalViewProps } from './types'
@@ -42,15 +45,27 @@ export const ModalView: FC<ModalViewProps> = ({
       isDrawer={drawer}
       onClick={() => dispatch(UpperLayerActions.close)}
     >
-      <ModalWrapper isDrawer={drawer} onClick={(e) => e.stopPropagation()}>
+      <ModalWrapper
+        loading={!children ? true : false}
+        isDrawer={drawer}
+        onClick={(e) => e.stopPropagation()}
+      >
         <TopBorder isDrawer={drawer} />
-        <FlexButton>
-          <ModalCloseButton onClick={() => dispatch(UpperLayerActions.close)}>
-            X
+        <FlexButton isDrawer={drawer}>
+          <ModalCloseButton
+            loading={!children ? true : false}
+            isDrawer={drawer}
+            onClick={() => dispatch(UpperLayerActions.close)}
+          >
+            {!drawer ? (
+              <Image src={whiteCross} width={18} height={18} alt="close" />
+            ) : (
+              <Image src={drawerCross} width={18} height={18} alt="close" />
+            )}
           </ModalCloseButton>
         </FlexButton>
 
-        <ModalViewContent isDrawer={drawer}>
+        <ModalViewContent loading={!children ? true : false} isDrawer={drawer}>
           {children || renderEmpty}
         </ModalViewContent>
         <BottomBorder isDrawer={drawer} />
