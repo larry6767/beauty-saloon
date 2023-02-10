@@ -11,8 +11,8 @@ import {
   FlexButton,
 } from './style'
 
-import * as whiteCross from 'public/img/svg/white-cross.svg'
-import * as drawerCross from 'public/img/svg/drawer-cross.svg'
+import * as whiteCross from 'assets/icons/white-cross.svg'
+import * as drawerCross from 'assets/icons/drawer-cross.svg'
 // Types
 import { FC } from 'react'
 import { ModalViewProps } from './types'

@@ -85,13 +85,14 @@ export const ModalCloseButton = styled.button<StyledModalViewProps>`
   `}
 
   // Drawer Loading Styles
-  ${({ loading }) =>
-    !loading
-      ? null
-      : `
+
+   ${({ loading, isDrawer }) =>
+    isDrawer && loading
+      ? `
     top: 0px;
     left: 85px;
-  `}
+    `
+      : null}
 `
 
 export const FlexButton = styled.span<StyledModalViewProps>`
