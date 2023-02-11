@@ -88,6 +88,9 @@ export const CentralBlock = styled.div`
     width: 1110px;
     justify-content: space-around;
   }
+
+  // Overflow changes
+  position: relative;
 `
 
 export const MenuIcon = styled.div`

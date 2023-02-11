@@ -5,6 +5,7 @@ import emotionNormalize from 'emotion-normalize'
 
 export const globalStyles = (
   <Global
+    key={'globalStyles'}
     styles={css`
       ${emotionNormalize}
 

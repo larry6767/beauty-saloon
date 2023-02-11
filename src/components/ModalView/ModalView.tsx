@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 // Styles
 import {
@@ -19,7 +19,7 @@ import { ModalViewProps } from './types'
 
 // Storeon
 import { useStoreon } from 'storeon/react'
-import { UpperLayerActions } from '@/store/upperLayer.module'
+import { UpperLayerActions, UpperLayerState } from '@/store/upperLayer.module'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
@@ -27,18 +27,23 @@ export const ModalView: FC<ModalViewProps> = ({
   // Menu Styles
   drawer,
 }) => {
+  // Storeon
   const { dispatch } = useStoreon('upperLayerModule')
+  const {
+    upperLayer: { isOpen },
+  }: UpperLayerState = useStoreon('upperLayer')
 
   // Escape close
-
-  const escHandler = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      dispatch(UpperLayerActions.close)
-      document.removeEventListener('keydown', escHandler)
+  useEffect(() => {
+    if (!isOpen) return
+    const escHandler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        dispatch(UpperLayerActions.close)
+        document.removeEventListener('keydown', escHandler)
+      }
     }
-    return
-  }
-  document.addEventListener('keydown', escHandler)
+    document.addEventListener('keydown', escHandler)
+  }, [isOpen])
 
   return (
     <ModalBackdrop
@@ -46,14 +51,14 @@ export const ModalView: FC<ModalViewProps> = ({
       onClick={() => dispatch(UpperLayerActions.close)}
     >
       <ModalWrapper
-        loading={!children ? true : false}
+        loading={!children ? 1 : 0}
         isDrawer={drawer}
         onClick={(e) => e.stopPropagation()}
       >
         <TopBorder isDrawer={drawer} />
         <FlexButton isDrawer={drawer}>
           <ModalCloseButton
-            loading={!children ? true : false}
+            loading={!children ? 1 : 0}
             isDrawer={drawer}
             onClick={() => dispatch(UpperLayerActions.close)}
           >
@@ -65,7 +70,7 @@ export const ModalView: FC<ModalViewProps> = ({
           </ModalCloseButton>
         </FlexButton>
 
-        <ModalViewContent loading={!children ? true : false} isDrawer={drawer}>
+        <ModalViewContent loading={!children ? 1 : 0} isDrawer={drawer}>
           {children || renderEmpty}
         </ModalViewContent>
         <BottomBorder isDrawer={drawer} />

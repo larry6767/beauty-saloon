@@ -1,4 +1,3 @@
-import { storeonLogger } from 'storeon/devtools'
 import { createStoreon } from 'storeon'
 import {
   UpperLayerActions,
@@ -70,7 +69,4 @@ const upperLayerModule: UpperLayerModule = (store) => {
   })
 }
 
-export const store = createStoreon([
-  upperLayerModule,
-  process.env.NODE_ENV !== 'production' && storeonLogger,
-])
+export const store = createStoreon([upperLayerModule])

@@ -2,7 +2,7 @@
 import React from 'react'
 // Styles
 import { css, Global } from '@emotion/react'
-import { Container } from './styles'
+import { Container, Overflow } from './styles'
 
 // Storeon
 import { StoreContext } from 'storeon/react'
@@ -19,7 +19,9 @@ export const RootWrapper = ({ children }: { children: React.ReactNode }) => {
         `}
       />
       <StoreContext.Provider value={store}>
-        <Container id="baseLayout">{children}</Container>
+        <Overflow id="baseLayout">
+          <Container>{children}</Container>
+        </Overflow>
       </StoreContext.Provider>
     </>
   )

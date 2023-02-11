@@ -23,15 +23,6 @@ export const ModalBackdrop = styled.div<StyledModalViewProps>`
   overflow-x: hidden;
   //
   cursor: pointer;
-  ${({ isDrawer }) =>
-    !isDrawer
-      ? null
-      : `
-  
-    &::-webkit-scrollbar {
-    width: 20px;
-  }
-  `};
 `
 export const ModalViewContent = styled.div<StyledModalViewProps>`
   display: block;
@@ -57,14 +48,16 @@ export const ModalViewContent = styled.div<StyledModalViewProps>`
       ? null
       : `
  border-radius: 0px;
-  `}// renderEmpty
+  `}
 `
 
 export const ModalCloseButton = styled.button<StyledModalViewProps>`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 0px;
-  left: 15px;
+  left: 20px;
   width: 20px;
   height: 20px;
   font-weight: 900;
@@ -72,16 +65,16 @@ export const ModalCloseButton = styled.button<StyledModalViewProps>`
   border-color: rgba(0, 0, 0, 0);
   color: white;
 
-  background-image: url('/public/img/svg/cross.svg');
-
   cursor: pointer;
   // Drawer Styles
   ${({ isDrawer }) =>
     !isDrawer
       ? null
       : `
+ 
   top: 0px;
-  left: 130px;
+  left: 10px;
+  z-index: 1;
   `}
 
   // Drawer Loading Styles
@@ -89,8 +82,9 @@ export const ModalCloseButton = styled.button<StyledModalViewProps>`
    ${({ loading, isDrawer }) =>
     isDrawer && loading
       ? `
+      
     top: 0px;
-    left: 85px;
+    left: 10px;
     `
       : null}
 `
@@ -101,7 +95,10 @@ export const FlexButton = styled.span<StyledModalViewProps>`
     !isDrawer
       ? null
       : `
-   float: none;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    margin: 20px;
    
   `}
 `
@@ -116,6 +113,8 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
   min-height: 0px;
   max-height: 100%;
 
+  margin: 0 30px 0 30px;
+
   // Drawer Styles
 
   ${({ isDrawer }) =>
@@ -125,22 +124,15 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
   top: 0;
 
   background-color: white;
+
+  min-width: 120px;
+  max-width: 180px;
+  min-height: 100%;
+
+  margin: 0 30px 0 0;
     
-    &::-webkit-scrollbar-thumb {
-    background-color: #d1d1d2;
-    border-radius: 10px;
- border: 3px solid black; 
-}
-   overflow-y: auto; 
-   overflow-x: hidden;
-&::-webkit-scrollbar { 
-    width: 10px;
-    height: 0;
-    
-}
   animation-duration: 0.5s;
   animation-name: slidein;
-
   @keyframes slidein {
     from {
       left: -400px;
@@ -150,10 +142,6 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
       left: 0px;
     }
   }
-
-   min-width: 120px;
-   max-width: 180px;
-   min-height: 100%;
   `}
 
   // Drawer Loading Styles
