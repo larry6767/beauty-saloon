@@ -1,31 +1,34 @@
 import styled from '@emotion/styled'
 
 //types
-import { ButtonContainerProps, ButtonSizes, ButtonVariants} from './types'
+import { ButtonContainerProps } from './types'
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
+  text-align: center;
+  vertical-align: middle;
   justify-content: center;
   align-items: center;
-
-  height: ${({ size }) =>
-    size === ButtonSizes.s ? '40px' : size === ButtonSizes.m ? '48px' : 'auto'};
-
-  color: ${({ theme, variant }) =>
-    variant === ButtonVariants.primary};
-
-  font-weight: 700;
-
-  ${({ width }) => (!width ? null : `width: ${width}`)};
-  ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
+  font-weight: 200;
+  font-size: 1em;
+  background: #464646;
+  border: 2px;
+  border-radius: 4px;
+  padding: 10px 22px;
+  color: #fff;
+  outline: 0;
+  transition: 0.3s;
+  line-height: normal;
+  white-space: nowrap;
 
   cursor: pointer;
-
-
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
+  &:hover {
+    background-color: #1e1e1e;
+  }
 `
