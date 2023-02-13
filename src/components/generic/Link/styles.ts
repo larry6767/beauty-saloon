@@ -6,12 +6,15 @@ import type { StyledLinkProps } from './types'
 
 export const StyledLink = styled.a<StyledLinkProps>`
   display: inline-block;
+
   line-height: 1.5;
-  text-decoration: none;
+  text-decoration: ${({ textDecoration }) =>
+    !textDecoration ? 'none' : textDecoration};
   color: white;
   font-size: ${({ fontSize }) =>
     fontSize ? fontSize : theme.fontSize.bigFont};
 
+  ${({ width }) => (!width ? null : `width: ${width}`)};
   ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
   ${({ padding }) => (!padding ? null : `padding: ${padding}`)};
   ${({ weight }) => (!weight ? null : `font-weight: ${weight}`)};
@@ -32,6 +35,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
   cursor: pointer;
 
   &:hover {
-    color: black;
+    ${({ hoverColor }) =>
+      !hoverColor ? `color: black` : `color: ${hoverColor}`};
   }
 `

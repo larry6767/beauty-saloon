@@ -9,10 +9,13 @@ import type { LinkProps } from './types'
 export const Link: FC<LinkProps> = ({
   href = '/',
   shallow,
+  width,
   margin,
   padding,
   color,
+  hoverColor,
   lineHeight,
+  textDecoration,
   fontSize,
   transform,
   weight,
@@ -21,10 +24,13 @@ export const Link: FC<LinkProps> = ({
   ...rest
 }) => {
   const commonProps = {
+    width,
     margin,
     padding,
     color,
+    hoverColor,
     lineHeight,
+    textDecoration,
     fontSize,
     transform,
     weight,

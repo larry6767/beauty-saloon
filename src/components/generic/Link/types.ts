@@ -8,10 +8,13 @@ export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
 
 export type StyledLinkProps = {
   withoutNextLinkWrapper?: boolean
+  width?: string
   margin?: CSSIndent
   padding?: CSSIndent
   color?: string
+  hoverColor?: string
   lineHeight?: `${number}px`
+  textDecoration?: string
   fontSize?: `${number}px`
   transform?:
     | 'none'
