@@ -56,7 +56,7 @@ export const Footer = () => {
           ))}
         </IconList>
         <LanguageBlock>
-          <LocalizationButton color={'white'} />
+          <LocalizationButton color={'white'} hoverColor={'white'} />
         </LanguageBlock>
       </FooterWrapper>
     </FooterContainer>

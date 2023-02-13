@@ -14,11 +14,13 @@ i18n
       order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
       caches: ['cookie'],
     },
+
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
   })
-export const changeLanguage = (lang: 'ru' | 'en' | 'cz' | string) => {
+
+export const changeLanguage = (lang: string) => {
   i18n.changeLanguage(lang)
 }
 export default i18n
