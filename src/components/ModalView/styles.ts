@@ -34,6 +34,7 @@ export const ModalViewContent = styled.div<StyledModalViewProps>`
   max-width: inherit;
   max-height: 100%;
   //
+
   padding: 10px;
   //
   background-color: white;
@@ -47,7 +48,9 @@ export const ModalViewContent = styled.div<StyledModalViewProps>`
     !isDrawer
       ? null
       : `
+ padding: 0;
  border-radius: 0px;
+ 
   `}
 `
 
@@ -73,7 +76,7 @@ export const ModalCloseButton = styled.button<StyledModalViewProps>`
       : `
  
   top: 0px;
-  left: 10px;
+  left: 0px;
   z-index: 1;
   `}
 
@@ -84,7 +87,7 @@ export const ModalCloseButton = styled.button<StyledModalViewProps>`
       ? `
       
     top: 0px;
-    left: 10px;
+    left: 0px;
     `
       : null}
 `
@@ -95,11 +98,18 @@ export const FlexButton = styled.span<StyledModalViewProps>`
     !isDrawer
       ? null
       : `
+    float: none;
+    // display: flex;
+    // width: 100%;
+    // justify-content: right;
+    // margin: 20px 0px 20px 20px;
+    
+    padding: 25px 29px 25px 34px;
     display: flex;
-    width: 100%;
-    justify-content: right;
-    margin: 20px;
-   
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+    cursor: default;
   `}
 `
 
@@ -125,8 +135,9 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
 
   background-color: white;
 
+  width: 300px;
   min-width: 120px;
-  max-width: 180px;
+  max-width: 100%;
   min-height: 100%;
 
   margin: 0 30px 0 0;
@@ -156,7 +167,7 @@ export const ModalWrapper = styled.div<StyledModalViewProps>`
 `
 export const TopBorder = styled.span<StyledModalViewProps>`
   display: ${({ isDrawer }) => (!isDrawer ? null : 'block')};
-  height: 15px;
+  height: 0px;
 `
 export const BottomBorder = styled.span<StyledModalViewProps>`
   display: ${({ isDrawer }) => (!isDrawer ? 'block' : 'none')};

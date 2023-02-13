@@ -9,7 +9,7 @@ import {
   ModalCloseButton,
   ModalWrapper,
   FlexButton,
-} from './style'
+} from './styles'
 
 import * as whiteCross from 'assets/icons/white-cross.svg'
 import * as drawerCross from 'assets/icons/drawer-cross.svg'
@@ -23,7 +23,7 @@ import { UpperLayerActions, UpperLayerState } from '@/store/upperLayer.module'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
-  renderEmpty = <h3>Loading...</h3>,
+  renderEmpty = <h3 style={{ margin: '10px' }}>Loading...</h3>,
   // Menu Styles
   drawer,
 }) => {
