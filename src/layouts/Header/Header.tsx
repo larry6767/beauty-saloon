@@ -30,6 +30,7 @@ import {
 // Localization
 import '../../utils/i18next'
 import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
+import { theme } from '@/theme/theme'
 export const Header = () => {
   const topLinks = [
     'Мастер на дом',
@@ -114,7 +115,10 @@ export const Header = () => {
         </ContactsList>
 
         <LanguageBlock>
-          <LocalizationButton color={'black'} hoverColor={'black'} />
+          <LocalizationButton
+            color={'black'}
+            hoverColor={theme.colors.secondary}
+          />
         </LanguageBlock>
       </CentralBlock>
 
