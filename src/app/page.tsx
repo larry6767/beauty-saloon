@@ -1,3 +1,9 @@
+import { Button } from '../components/generic/Button'
+
 export default function Home() {
-  return <div></div>
+  return (
+    <>
+      <Button text={'example'} />
+    </>
+  )
 }
