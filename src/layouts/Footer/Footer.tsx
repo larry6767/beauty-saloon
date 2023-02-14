@@ -6,7 +6,7 @@ import * as telephoneIcon from 'assets/footerIcons/telephone.svg'
 import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
 import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
 import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
-import { Link } from '@/components/generic'
+import { Link } from '@/components/generic/Link'
 import {
   // ContactsList,
   ContactBlock,

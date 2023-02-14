@@ -8,7 +8,6 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  background-color: ${theme.colors.primary};
 
   ${media.tablet} {
     height: 310px;
@@ -175,7 +174,7 @@ export const Number = styled.a`
   text-decoration: none;
   color: inherit;
   font-weight: 700;
-  font-size: ${theme.fontSize.numbers};
+  font-size: ${theme.fontSize.bigFont};
   margin-bottom: 0;
 `
 

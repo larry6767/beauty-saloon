@@ -10,7 +10,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
   text-decoration: none;
   color: white;
   font-size: ${({ fontSize }) =>
-    fontSize ? fontSize : theme.fontSize.bigFont};
+    fontSize ? fontSize : theme.fontSize.mediumFont};
 
   ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
   ${({ padding }) => (!padding ? null : `padding: ${padding}`)};
