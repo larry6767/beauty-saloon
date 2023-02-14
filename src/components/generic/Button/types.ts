@@ -19,7 +19,7 @@ type FloatProps = {
 }
 
 export type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
-  text?: string
+  text: string
   size?: keyof typeof ButtonSizes
   variant?: keyof typeof ButtonVariants
   icon?: JSX.Element

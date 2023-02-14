@@ -10,7 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   size = 'm',
   variant = 'primary',
   disabled = false,
-  //icon,
+  // icon,
   float,
   margin,
   width,
