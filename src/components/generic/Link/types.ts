@@ -11,6 +11,7 @@ export type StyledLinkProps = {
   margin?: CSSIndent
   padding?: CSSIndent
   color?: string
+  hoverColor?: string
   lineHeight?: `${number}px`
   fontSize?: `${number}px`
   transform?:
