@@ -14,7 +14,7 @@ export const PageContent = ({ children }: { children: React.ReactNode }) => {
       <PageContentContainer>
         {/* Start Test Modal View */}
 
-        <UpperLayer></UpperLayer>
+        <UpperLayer />
         <SomeComponent></SomeComponent>
 
         <TestContent></TestContent>

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_images",
+  "info": {
+    "singularName": "service-image",
+    "pluralName": "service-images",
+    "displayName": "Service Image",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}
