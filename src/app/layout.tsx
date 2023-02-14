@@ -1,3 +1,4 @@
+import { Advantages } from '@/layouts/Advantages/Advantages'
 import { Footer } from '@/layouts/Footer'
 import { Header } from '@/layouts/Header'
 import { PageContent } from '@/layouts/PageContent'
@@ -28,7 +29,10 @@ export default function RootLayout({
         <body>
           <RootWrapper>
             <Header />
-            <PageContent>{children}</PageContent>
+            <PageContent>
+              <Advantages />
+              {children}
+            </PageContent>
             <Footer />
           </RootWrapper>
         </body>
