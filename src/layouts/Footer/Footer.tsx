@@ -20,6 +20,7 @@ import {
   ContactBlockContainer,
 } from './styles'
 import { theme } from '@/theme/theme'
+import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
 
 export const Footer = () => {
   const logoIcons = [
@@ -54,7 +55,12 @@ export const Footer = () => {
             </LogoIcon>
           ))}
         </IconList>
-        <LanguageBlock>EN | RU | CZ</LanguageBlock>
+        <LanguageBlock>
+          <LocalizationButton
+            color={'white'}
+            hoverColor={theme.colors.secondary}
+          />
+        </LanguageBlock>
       </FooterWrapper>
     </FooterContainer>
   )
