@@ -6,6 +6,7 @@ import { theme } from './theme'
 
 export const globalStyles = (
   <Global
+    key={'globalStyles'}
     styles={css`
       ${emotionNormalize}
 

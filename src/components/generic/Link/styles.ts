@@ -32,6 +32,6 @@ export const StyledLink = styled.a<StyledLinkProps>`
   cursor: pointer;
 
   &:hover {
-    color: black;
+    ${({ hoverColor }) => (!hoverColor ? 'black' : `color: ${hoverColor}`)};
   }
 `

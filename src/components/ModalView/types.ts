@@ -1,17 +1,17 @@
 import { CSSIndent } from 'src/types'
 
-export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
-  StyledLinkProps & {
-    href?: string
-    shallow?: boolean
-  }
-
-export type StyledLinkProps = {
-  withoutNextLinkWrapper?: boolean
-  margin?: CSSIndent
+export type ModalViewProps = {
+  children?: React.ReactNode
+  renderEmpty?: React.ReactNode
+  //
+  drawer: boolean
+}
+export type StyledModalViewProps = {
+  isDrawer: boolean
+  loading?: number
+  display?: string
   padding?: CSSIndent
   color?: string
-  hoverColor?: string
   lineHeight?: `${number}px`
   fontSize?: `${number}px`
   transform?:
@@ -26,15 +26,7 @@ export type StyledLinkProps = {
     | 'bold'
     | 'bolder'
     | 'lighter'
-    | 100
-    | 200
-    | 300
-    | 400
-    | 500
-    | 600
-    | 700
-    | 800
-    | 900
+    | 'number'
     | 'initial'
     | 'inherit'
 }
