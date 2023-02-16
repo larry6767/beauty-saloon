@@ -24,26 +24,47 @@ import {
 } from './styles'
 
 export const Advantages = () => {
-  const advantages = [
-    'Beauty услуги от 100₽',
-    '73 салона в 34 городах России',
-    'Гарантия на услуги 7 дней',
-    'Победители и призеры международных чемпионатов',
-    'Рекорд России 64 клиента за 60 минут',
-    'Все beauty-услуги в одном месте',
-    'Депиляция за 15 минут без боли',
-    'Работаем 24/7',
-  ]
-
-  const advantagesIcons = [
-    { image: scissorsIcon, url: '#', alt: 'Изображение ножниц' },
-    { image: calendarIcon, url: '#', alt: 'Изображение календаря' },
-    { image: medalIcon, url: '#', alt: 'Изображение медали' },
-    { image: charterIcon, url: '#', alt: 'Изображение грамоты' },
-    { image: chartIcon, url: '#', alt: 'Изображение графика' },
-    { image: heartIcon, url: '#', alt: 'Изображение сердца' },
-    { image: bikiniIcon, url: '#', alt: 'Изображение бикини' },
-    { image: clockIcon, url: '#', alt: 'Изображение часов' },
+  const advantages: Array<{
+    text: string
+    image: typeof import('*.svg')
+    alt: string
+  }> = [
+    {
+      image: scissorsIcon,
+      text: 'Beauty услуги от 100₽',
+      alt: 'Изображение ножниц',
+    },
+    {
+      image: calendarIcon,
+      text: '73 салона в 34 городах России',
+      alt: 'Изображение календаря',
+    },
+    {
+      image: medalIcon,
+      text: 'Гарантия на услуги 7 дней',
+      alt: 'Изображение медали',
+    },
+    {
+      image: charterIcon,
+      text: 'Победители и призеры международных чемпионатов',
+      alt: 'Изображение грамоты',
+    },
+    {
+      image: chartIcon,
+      text: 'Рекорд России 64 клиента за 60 минут',
+      alt: 'Изображение графика',
+    },
+    {
+      image: heartIcon,
+      text: 'Все beauty-услуги в одном месте',
+      alt: 'Изображение сердца',
+    },
+    {
+      image: bikiniIcon,
+      text: 'Депиляция за 15 минут без боли',
+      alt: 'Изображение бикини',
+    },
+    { image: clockIcon, text: 'Работаем 24/7', alt: 'Изображение часов' },
   ]
   return (
     <>
@@ -54,18 +75,15 @@ export const Advantages = () => {
           </AdvantagesHeaderWrapper>
           <AdvantagesListWrapper>
             <AdvantagesList>
-              {advantages.map((item, index) => {
+              {advantages.map((item) => {
                 return (
-                  <React.Fragment key={item}>
-                    <AdvantagesItem key={item}>
+                  <React.Fragment key={item.text}>
+                    <AdvantagesItem>
                       <AdvantagesImage>
-                        <Image
-                          src={advantagesIcons[index].image}
-                          alt={advantagesIcons[index].alt}
-                        />
+                        <Image src={item.image} alt={item.alt} />
                       </AdvantagesImage>
                       <AdvantagesTextWrapper>
-                        <AdvantagesText>{item}</AdvantagesText>
+                        <AdvantagesText>{item.text}</AdvantagesText>
                       </AdvantagesTextWrapper>
                     </AdvantagesItem>
                   </React.Fragment>

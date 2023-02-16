@@ -1,3 +1,4 @@
+import { theme } from '@/theme/theme'
 import styled from '@emotion/styled'
 export const FlexCenter = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const AdvantagesHeader = styled.h2`
     border-radius: 4px;
     width: 75px;
     height: 6px;
-    background-color: #e68dba;
+    background-color: ${theme.colors.secondary};
   }
 `
 
