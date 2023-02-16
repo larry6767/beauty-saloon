@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
-import * as playImage from '../../../../assets/aboutUsIcons/play.png'
+import playImage from '../../../../assets/aboutUsIcons/play.png'
 import {
   SectionContainer,
   TextInfoWrapper,
