@@ -13,7 +13,7 @@ const upperLayerModule: UpperLayerModule = (store) => {
       isOpen: false,
       kind: null,
       content: null,
-      scrollY: window.pageYOffset,
+      scrollY: 0,
     },
   }))
 
