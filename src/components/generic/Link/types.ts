@@ -14,7 +14,6 @@ export type StyledLinkProps = {
   color?: string
   hoverColor?: string
   lineHeight?: `${number}px`
-  textDecoration?: string
   fontSize?: `${number}px`
   transform?:
     | 'none'

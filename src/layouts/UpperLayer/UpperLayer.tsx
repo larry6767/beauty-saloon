@@ -4,7 +4,7 @@ import FocusLock from 'react-focus-lock'
 // Storeon
 import { useStoreon } from 'storeon/react'
 import { UpperLayerEnum, UpperLayerState } from '@/store/upperLayer.module'
-import { ModalView } from '@/components/ModalView/ModalView'
+import { ModalView } from '@/components/modals/ModalView/ModalView'
 
 export const UpperLayer = () => {
   const {

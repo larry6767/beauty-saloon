@@ -3,7 +3,6 @@ import { Header } from '@/layouts/Header'
 import { PageContent } from '@/layouts/PageContent'
 import { RootWrapper } from '@/layouts/RootWrapper'
 import { Montserrat } from '@next/font/google'
-// import { Suspense } from 'react'
 // local libs
 import { globalStyles } from 'src/theme'
 
@@ -21,7 +20,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // <Suspense fallback={''}>
     <html className={`${montserrat.className} scrollAuto`}>
       <Head />
       {globalStyles}
@@ -33,6 +31,5 @@ export default function RootLayout({
         </RootWrapper>
       </body>
     </html>
-    // </Suspense>
   )
 }

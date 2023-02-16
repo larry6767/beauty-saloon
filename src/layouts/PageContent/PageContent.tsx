@@ -5,8 +5,8 @@ import { PageContentContainer } from './styles'
 
 // Test Modal View
 
-import { SomeComponent } from '@/components/ModalView/test'
-import { TestContent } from '@/components/ModalView/test'
+import { SomeComponent } from '@/components/modals/ModalView/test'
+import { TestContent } from '@/components/modals/ModalView/test'
 
 export const PageContent = ({ children }: { children: React.ReactNode }) => {
   return (

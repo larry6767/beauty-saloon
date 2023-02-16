@@ -8,8 +8,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
   display: inline-block;
 
   line-height: 1.5;
-  text-decoration: ${({ textDecoration }) =>
-    !textDecoration ? 'none' : textDecoration};
+  text-decoration: none;
   color: white;
   font-size: ${({ fontSize }) =>
     fontSize ? fontSize : theme.fontSize.mediumFont};

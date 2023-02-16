@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { Suspense } from 'react'
 import { Link } from '../Link'
 import { useTranslation } from 'react-i18next'
 import '../../../utils/i18next'
@@ -14,6 +15,7 @@ export const LocalizationButton = ({
 }) => {
   const { t, i18n } = useTranslation()
   const locales = i18n.options.supportedLngs
+  window.navigator.languages
 
   if (!locales) return <h3>Locales undefined</h3>
   const filtredLocales = locales.filter((locale) =>
@@ -21,24 +23,26 @@ export const LocalizationButton = ({
   )
   return (
     <>
-      <LinkWrapper>
-        {filtredLocales.map((locale, i, arr) => {
-          return (
-            <React.Fragment key={locale}>
-              <Link
-                key={locale}
-                color={`${color}`}
-                hoverColor={`${hoverColor}`}
-                margin={'0px 2px'}
-                onClick={() => changeLanguage(locale)}
-              >
-                {t(`localization.${locale}`)}
-              </Link>
-              {arr.length === i + 1 ? null : '|'}
-            </React.Fragment>
-          )
-        })}
-      </LinkWrapper>
+      <Suspense fallback="">
+        <LinkWrapper>
+          {filtredLocales.map((locale, i, arr) => {
+            return (
+              <React.Fragment key={locale}>
+                <Link
+                  key={locale}
+                  color={`${color}`}
+                  hoverColor={`${hoverColor}`}
+                  margin={'0px 2px'}
+                  onClick={() => changeLanguage(locale)}
+                >
+                  {t(`localization.${locale}`)}
+                </Link>
+                {arr.length === i + 1 ? null : '|'}
+              </React.Fragment>
+            )
+          })}
+        </LinkWrapper>
+      </Suspense>
     </>
   )
 }
