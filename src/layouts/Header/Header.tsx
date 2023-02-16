@@ -8,7 +8,7 @@ import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
 import * as telegramLogo from 'assets/headerIcons/telegramLogo.svg'
 import * as menuIcon from 'assets/headerIcons/menuIcon.svg'
 import Image from 'next/image'
-import { Link } from '@/components/generic'
+import { Link } from '@/components/generic/Link'
 import {
   BottomLinkItems,
   BottomLinkList,

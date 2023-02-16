@@ -89,7 +89,7 @@ export const TelephoneIcon = styled.div`
 export const Number = styled.a`
   text-decoration: none;
   color: ${theme.colors.textPrimary};
-  font-size: ${theme.fontSize.numbers};
+  font-size: ${theme.fontSize.bigFont};
   margin-bottom: 0;
   transition: color 0.4s ease-in-out;
   &:hover {
@@ -125,7 +125,7 @@ export const LogoIcon = styled.a`
 
 export const LanguageBlock = styled.p`
   height: 15px;
-  font-size: ${theme.fontSize.numbers};
+  font-size: ${theme.fontSize.bigFont};
   color: ${theme.colors.textPrimary};
 
   ${media.tablet} {

@@ -12,7 +12,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
     !textDecoration ? 'none' : textDecoration};
   color: white;
   font-size: ${({ fontSize }) =>
-    fontSize ? fontSize : theme.fontSize.bigFont};
+    fontSize ? fontSize : theme.fontSize.mediumFont};
 
   ${({ width }) => (!width ? null : `width: ${width}`)};
   ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
