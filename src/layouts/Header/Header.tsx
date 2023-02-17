@@ -1,13 +1,15 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
+import { useStoreon } from 'storeon/react'
+// local libs
 import * as logo from 'assets/headerIcons/logo.png'
 import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
 import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
 import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
 import * as telegramLogo from 'assets/headerIcons/telegramLogo.svg'
 import * as menuIcon from 'assets/headerIcons/menuIcon.svg'
-import Image from 'next/image'
 import { Link } from '@/components/generic/Link'
 import {
   BottomLinkItems,
@@ -27,11 +29,14 @@ import {
   MenuIcon,
   LogoIcon,
 } from './styles'
-// Localization
 import '../../utils/i18next'
 import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
 import { theme } from '@/theme/theme'
+import { UpperLayerActions } from '@/store/upperLayer'
+import { DrawerMenuContent } from '@/components/modals/DrawerMenuContent/DrawerMenuContent'
+
 export const Header = () => {
+  const { dispatch } = useStoreon('upperLayer')
   const topLinks = [
     'Мастер на дом',
     'О нас',
@@ -90,7 +95,14 @@ export const Header = () => {
             <Image src={logo} alt="logo" />
           </Link>
         </LogoIconContainer>
-        <MenuIcon>
+        <MenuIcon
+          onClick={() =>
+            dispatch(UpperLayerActions.open, {
+              kind: 'drawer',
+              content: <DrawerMenuContent />,
+            })
+          }
+        >
           <Image src={menuIcon} width={60} height={60} alt="Menu" />
         </MenuIcon>
         <ContactsList>

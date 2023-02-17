@@ -1,5 +1,7 @@
-import { Link } from '@/components/generic/Link'
 import React from 'react'
+import Image from 'next/image'
+// local libs
+import { Link } from '@/components/generic/Link'
 import {
   DrawerWrapper,
   DrawerLinkItems,
@@ -11,11 +13,10 @@ import {
   LinkContentTelephone,
   TelephoneImgWrapper,
 } from './styles'
-//
-import Image from 'next/image'
 import * as angle from 'assets/icons/angle-right-solid.svg'
 import * as phone from 'assets/icons/telephone.svg'
 import { theme } from '@/theme/theme'
+
 export const DrawerMenuContent = () => {
   const drawerLinks = [
     'депиляция',
@@ -31,7 +32,7 @@ export const DrawerMenuContent = () => {
     'мастер на дом',
   ]
 
-  const drawerLinksTel = ['+7 (495) 724 38 51']
+  const drawerLinksTel = '+7 (495) 724 38 51'
 
   return (
     <DrawerWrapper>
@@ -56,9 +57,10 @@ export const DrawerMenuContent = () => {
             </Link>
           </DrawerLinkItems>
         ))}
-        <DrawerLinkItems key={drawerLinksTel[0]}>
+
+        <DrawerLinkItems key={drawerLinksTel}>
           <Link
-            key={drawerLinksTel[0]}
+            key={drawerLinksTel}
             href="#"
             width="100%"
             color={`${theme.colors.textSecondary}`}
@@ -71,7 +73,7 @@ export const DrawerMenuContent = () => {
                 <TelephoneImgWrapper>
                   <Image src={phone} width={18} height={18} alt="telephone" />
                 </TelephoneImgWrapper>
-                {drawerLinksTel[0]}
+                {drawerLinksTel}
               </LinkContentTelephone>
               <ImgWrapper>
                 <Image src={angle} width={10} height={10} alt="Перейти" />

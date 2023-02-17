@@ -1,6 +1,6 @@
 // Test Modal View
 import { useStoreon } from 'storeon/react'
-import { DrawerMenuContent } from '../DrawerMenuContent/DrawerMenuContent'
+import { DrawerMenuContent } from '../../../components/modals/DrawerMenuContent/DrawerMenuContent'
 
 export const TestContent = () => {
   return (
