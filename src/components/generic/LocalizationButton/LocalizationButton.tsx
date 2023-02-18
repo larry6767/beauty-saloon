@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Link } from '../Link'
 import { useTranslation } from 'react-i18next'
 import '../../../utils/i18next'
@@ -21,24 +21,26 @@ export const LocalizationButton = ({
   )
   return (
     <>
-      <LinkWrapper>
-        {filtredLocales.map((locale, i, arr) => {
-          return (
-            <React.Fragment key={locale}>
-              <Link
-                key={locale}
-                color={`${color}`}
-                hoverColor={`${hoverColor}`}
-                margin={'0px 2px'}
-                onClick={() => changeLanguage(locale)}
-              >
-                {t(`localization.${locale}`)}
-              </Link>
-              {arr.length === i + 1 ? null : '|'}
-            </React.Fragment>
-          )
-        })}
-      </LinkWrapper>
+      <Suspense fallback="">
+        <LinkWrapper>
+          {filtredLocales.map((locale, i, arr) => {
+            return (
+              <React.Fragment key={locale}>
+                <Link
+                  key={locale}
+                  color={`${color}`}
+                  hoverColor={`${hoverColor}`}
+                  margin={'0px 2px'}
+                  onClick={() => changeLanguage(locale)}
+                >
+                  {t(`localization.${locale}`)}
+                </Link>
+                {arr.length === i + 1 ? null : '|'}
+              </React.Fragment>
+            )
+          })}
+        </LinkWrapper>
+      </Suspense>
     </>
   )
 }
