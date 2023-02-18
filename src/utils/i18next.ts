@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    supportedLngs: ['ru', 'en', 'cz'],
+    supportedLngs: ['ru', 'en', 'cs'],
     fallbackLng: 'ru',
     detection: {
       order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],

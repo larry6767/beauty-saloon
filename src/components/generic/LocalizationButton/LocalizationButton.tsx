@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from '../Link'
 import { useTranslation } from 'react-i18next'
 import '../../../utils/i18next'
@@ -13,16 +14,25 @@ export const LocalizationButton = ({
   hoverColor?: string
 }) => {
   const { t, i18n } = useTranslation()
+  const [languages, setLanguages] = useState<Array<string>>()
   const locales = i18n.options.supportedLngs
 
-  if (!locales) return <h3>Locales undefined</h3>
-  const filtredLocales = locales.filter((locale) =>
-    locale !== 'cimode' ? locale : false,
-  )
+  useEffect(() => {
+    if (locales) {
+      const filtredLocales = locales.filter((locale) =>
+        locale !== 'cimode' ? locale : false,
+      )
+      setLanguages(filtredLocales)
+    }
+    // eslint-disable-next-line
+  }, [])
+
+  if (!languages) return <></>
+
   return (
     <>
       <LinkWrapper>
-        {filtredLocales.map((locale, i, arr) => {
+        {languages.map((locale, i, arr) => {
           return (
             <React.Fragment key={locale}>
               <Link

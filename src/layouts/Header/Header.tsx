@@ -31,6 +31,7 @@ import {
 import '../../utils/i18next'
 import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
 import { theme } from '@/theme/theme'
+
 export const Header = () => {
   const topLinks = [
     'Мастер на дом',
@@ -87,7 +88,7 @@ export const Header = () => {
       <CentralBlock>
         <LogoIconContainer>
           <Link href="#">
-            <Image src={logo} alt="logo" />
+            <Image src={logo} alt="logo" priority />
           </Link>
         </LogoIconContainer>
         <MenuIcon>
