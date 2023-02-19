@@ -7,6 +7,7 @@ import { PageContentContainer } from './styles'
 
 import { SomeComponent } from '@/components/ModalView/test'
 import { TestContent } from '@/components/ModalView/test'
+import { Services } from '@/components/sections/AboutUs/Services/Services'
 
 export const PageContent = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -16,7 +17,7 @@ export const PageContent = ({ children }: { children: React.ReactNode }) => {
 
         <UpperLayer />
         <SomeComponent></SomeComponent>
-
+        <Services />
         <TestContent></TestContent>
 
         {/* End Test Modal View */}
