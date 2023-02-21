@@ -5,11 +5,12 @@ import { FlexProps } from './types'
 
 export const PromotionsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  margin: 0 auto;
+  width: 100%;
+
+  margin: 0 0;
 `
 
 export const PromotionsList = styled.div`
@@ -17,6 +18,20 @@ export const PromotionsList = styled.div`
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+
+  ${media.tablet} {
+    max-width: 800px;
+    align-items: flex-start;
+  }
+
+  ${media.laptop} {
+    max-width: 800px;
+    align-items: flex-start;
+  }
+
+  ${media.laptopL} {
+    max-width: 1110px;
+  }
 `
 
 export const PromotionsItem = styled.div`
@@ -64,6 +79,12 @@ export const PromotionsRow = styled.div`
   }
 
   ${media.laptop} {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  ${media.laptopL} {
     display: flex;
     flex: 1;
     width: 100%;
@@ -114,10 +135,10 @@ export const PromotionsItemOther = styled.div`
     max-width: calc(50% - 40px);
   }
   ${media.laptop} {
-    max-width: 262px;
+    max-width: calc(50% - 40px);
   }
   ${media.laptopL} {
-    max-width: calc(50% - 40px);
+    max-width: 262px;
   }
 `
 
@@ -148,8 +169,6 @@ export const PromotionsImageFirst = styled.div`
 export const PromotionsContentWrapper = styled.div`
   position: relative;
 
-  height: 200px;
-
   padding: 20px;
 
   z-index: 1;
@@ -160,9 +179,12 @@ export const PromotionsContentWrapper = styled.div`
   }
   ${media.tablet} {
     width: 100%;
-    height: 242px;
   }
   ${media.laptop} {
+    width: 100%;
+  }
+
+  ${media.laptopL} {
     min-width: 262px;
   }
 `
@@ -170,20 +192,16 @@ export const PromotionsContentWrapper = styled.div`
 export const PromotionsContentWrapperFirst = styled.div`
   position: relative;
 
-  height: 200px;
-
   padding: 20px;
 
   z-index: 1;
   background-color: white;
   ${media.tablet} {
-    height: 242px;
     max-width: calc(50% - 20px);
   }
   ${media.laptop} {
-    height: 242px;
-    max-width: calc(50% - 40px);
-    min-width: 262px;
+    height: 100%;
+    width: 100%;
   }
 `
 export const PromotionsContentWrapperOther = styled.div`
