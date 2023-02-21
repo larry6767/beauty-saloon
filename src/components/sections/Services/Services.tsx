@@ -1,6 +1,10 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import {
+  ServicesContentWrapper,
+  ServicesHeader,
+  ServicesHeaderWrapper,
   ServicesImage,
   ServicesImageWrappeer,
   ServicesItem,
@@ -8,15 +12,15 @@ import {
   ServicesText,
   ServicesWrapper,
 } from './styles'
-import depilationImg from '../../../../../assets/servicesImg/dp.webp'
-import makeupImg from '../../../../../assets/servicesImg/makeup.webp'
-import nailsImg from '../../../../../assets/servicesImg/nails.webp'
-import browsImg from '../../../../../assets/servicesImg/brows.webp'
-import mirrorImg from '../../../../../assets/servicesImg/mirror.webp'
-import barberImg from '../../../../../assets/servicesImg/barber.webp'
-import massageImg from '../../../../../assets/servicesImg/massage.webp'
-import menImg from '../../../../../assets/servicesImg/men.webp'
-import tanImg from '../../../../../assets/servicesImg/tan.webp'
+import depilationImg from '../../../../assets/servicesImg/dp.webp'
+import makeupImg from '../../../../assets/servicesImg/makeup.webp'
+import nailsImg from '../../../../assets/servicesImg/nails.webp'
+import browsImg from '../../../../assets/servicesImg/brows.webp'
+import mirrorImg from '../../../../assets/servicesImg/mirror.webp'
+import barberImg from '../../../../assets/servicesImg/barber.webp'
+import massageImg from '../../../../assets/servicesImg/massage.webp'
+import menImg from '../../../../assets/servicesImg/men.webp'
+import tanImg from '../../../../assets/servicesImg/tan.webp'
 
 export const Services = () => {
   const services = [
@@ -84,25 +88,29 @@ export const Services = () => {
   return (
     <>
       <ServicesWrapper>
-        <ServicesList>
-          {services.map((item) => {
-            return (
-              <ServicesItem key={item.text}>
-                <ServicesImageWrappeer>
-                  <ServicesImage>
-                    <Image
-                      src={item.image.src}
-                      width={100}
-                      height={100}
-                      alt={item.image.alt}
-                    ></Image>
-                  </ServicesImage>
-                </ServicesImageWrappeer>
-                <ServicesText>{item.text}</ServicesText>
-              </ServicesItem>
-            )
-          })}
-        </ServicesList>
+        <ServicesContentWrapper>
+          <ServicesHeaderWrapper>
+            <ServicesHeader>Услуги</ServicesHeader>
+          </ServicesHeaderWrapper>
+          <ServicesList>
+            {services.map((item) => {
+              return (
+                <ServicesItem key={item.text}>
+                  <ServicesImageWrappeer>
+                    <ServicesImage>
+                      <Image
+                        src={item.image.src}
+                        style={{ width: '100%', height: '100%' }}
+                        alt={item.image.alt}
+                      ></Image>
+                    </ServicesImage>
+                  </ServicesImageWrappeer>
+                  <ServicesText>{item.text}</ServicesText>
+                </ServicesItem>
+              )
+            })}
+          </ServicesList>
+        </ServicesContentWrapper>
       </ServicesWrapper>
     </>
   )
