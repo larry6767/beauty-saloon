@@ -58,7 +58,7 @@ export const SectionWrapper = styled.div`
         no-repeat;
       cursor: pointer;
       &:hover {
-        background: url('/assets/ourTeamContent/dot-filled.svg') 50% 50% / 67%
+        background: url('/assets/ourTeamContent/dot-filled.svg') 51% 51% / 66%
           no-repeat;
       }
     }

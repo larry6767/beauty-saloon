@@ -20,7 +20,7 @@ import {
 } from './styles'
 import { useTranslation } from 'next-i18next'
 
-interface MediaDataInterface {
+export interface MediaDataInterface {
   data: {
     attributes: {
       alternativeText: string
@@ -39,7 +39,6 @@ type AboutTextData = {
       text: string
       title: string
       videoPlayerText: string
-      locale: 'ru' | 'en' | 'cz'
     }
   }
 }
