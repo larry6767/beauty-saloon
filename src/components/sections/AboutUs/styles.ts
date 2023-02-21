@@ -10,8 +10,6 @@ export const SectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 92px;
-  margin: 60px 0;
 `
 
 export const SectionWrapper = styled.div`
@@ -39,7 +37,7 @@ export const TextInfoWrapper = styled.div`
     width: 380px;
     height: 590px;
     justify-content: center;
-    padding-left: 5px;
+    padding-left: 0;
   }
   ${media.laptopL} {
     justify-content: start;
@@ -68,10 +66,10 @@ export const HeadingLine = styled.div`
 
   ${media.tablet} {
     position: absolute;
-    top: 105px;
+    top: 102px;
   }
   ${media.laptopL} {
-    top: 55px;
+    top: 52px;
   }
 `
 
