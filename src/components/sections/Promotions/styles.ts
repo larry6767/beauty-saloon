@@ -1,4 +1,5 @@
 import { media } from '@/theme/breakpoints'
+import { theme } from '@/theme/theme'
 import styled from '@emotion/styled'
 // Types
 import { FlexProps } from './types'
@@ -10,7 +11,71 @@ export const PromotionsWrapper = styled.div`
 
   width: 100%;
 
+  padding: 0 35px;
   margin: 0 0;
+
+  ${media.tablet} {
+    padding: 0;
+  }
+`
+export const PromotionsContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const PromotionsHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 20px;
+
+  ${media.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`
+export const PromotionsHeader = styled.h2`
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.066;
+
+  order: 2;
+
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-radius: 4px;
+    width: 75px;
+    height: 6px;
+    background-color: ${theme.colors.secondary};
+  }
+
+  ${media.tablet} {
+    order: 1;
+    font-size: 32px;
+    &::after {
+      top: 80px;
+    }
+  }
+`
+export const PromotionsLink = styled.div`
+  display: flex;
+  align-items: center;
+
+  order: 1;
+
+  text-transform: uppercase;
+
+  ${media.tablet} {
+    order: 2;
+    &::after {
+      top: 80px;
+    }
+  }
 `
 
 export const PromotionsList = styled.div`
@@ -20,17 +85,19 @@ export const PromotionsList = styled.div`
   justify-content: center;
 
   ${media.tablet} {
-    max-width: 800px;
     align-items: flex-start;
+
+    max-width: 700px;
   }
 
   ${media.laptop} {
-    max-width: 800px;
     align-items: flex-start;
+
+    max-width: 700px;
   }
 
   ${media.laptopL} {
-    max-width: 1110px;
+    max-width: 1075px;
   }
 `
 
@@ -41,8 +108,14 @@ export const PromotionsItem = styled.div`
 
   position: relative;
 
+  width: 100%;
   min-height: 400px;
+
   background-color: aliceblue;
+
+  ${media.tablet} {
+    width: auto;
+  }
 `
 
 export const PromotionsItemFirst = styled.div`
@@ -52,26 +125,37 @@ export const PromotionsItemFirst = styled.div`
 
   position: relative;
 
+  width: 100%;
   min-height: 400px;
 
-  margin: 20px;
-
   background-color: aliceblue;
+
+  margin: 0 0 40px 0;
 
   ${media.tablet} {
     flex: 1 1;
     justify-content: end;
     align-items: end;
+    margin: 0 0 40px 0;
   }
 
   ${media.laptop} {
     flex: 1 1;
     justify-content: end;
     align-items: end;
+    margin: 0 0 40px 0;
+  }
+  ${media.laptopL} {
+    flex: 1 1;
+    justify-content: end;
+    align-items: end;
+    margin: 0 40px 40px 0;
   }
 `
 export const PromotionsRow = styled.div`
   justify-content: space-around;
+  width: 100%;
+
   ${media.tablet} {
     display: flex;
     width: 100%;
@@ -95,31 +179,47 @@ export const PromotionsItemSecond = styled.div`
   display: flex;
   flex: 0 1;
 
-  margin: 20px;
-
   background-color: aliceblue;
+
+  margin: 0 0 40px 0;
 
   ${media.mobileS} {
   }
 
   ${media.tablet} {
     flex: 1 1;
+    margin: 0 40px 40px 0;
+  }
+
+  ${media.laptop} {
+    margin: 0 40px 40px 0;
   }
 `
 export const PromotionsItemThird = styled.div`
   display: flex;
   flex: 0 1;
   background-color: aliceblue;
-  margin: 20px;
+
+  margin: 0 0 40px 0;
 
   ${media.tablet} {
     flex: 1 1;
+    margin: 0 0 40px 0;
+  }
+
+  ${media.laptop} {
+    margin: 0 0 40px 0;
   }
 `
 export const PromotionsOtherWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 100%;
 
   ${media.tablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+
     min-width: 100%;
   }
 `
@@ -129,16 +229,35 @@ export const PromotionsItemOther = styled.div`
   flex: 1 1;
   flex-wrap: wrap;
 
-  margin: 20px;
+  margin: 0 0 40px 0;
 
   ${media.tablet} {
     max-width: calc(50% - 40px);
+    max-width: calc(50% - 20px);
+
+    margin: 0 40px 40px 0;
+    &:nth-child(2n) {
+      margin: 0 0 40px 0;
+    }
   }
   ${media.laptop} {
-    max-width: calc(50% - 40px);
+    max-width: calc(50% - 20px);
+
+    margin: 0 40px 40px 0;
+    &:nth-child(2n) {
+      margin: 0 0 40px 0;
+    }
   }
   ${media.laptopL} {
-    max-width: 262px;
+    max-width: calc(22% - 4px);
+
+    margin: 0 40px 40px 0;
+    &:nth-child(2n) {
+      margin: 0 40px 40px 0;
+    }
+    &:nth-child(4n) {
+      margin: 0 0 40px 0;
+    }
   }
 `
 
@@ -166,7 +285,7 @@ export const PromotionsImageFirst = styled.div`
   }
 `
 
-export const PromotionsContentWrapper = styled.div`
+export const PromotionsItemContentWrapper = styled.div`
   position: relative;
 
   padding: 20px;
@@ -198,6 +317,7 @@ export const PromotionsContentWrapperFirst = styled.div`
   background-color: white;
   ${media.tablet} {
     max-width: calc(50% - 20px);
+    min-width: 262px;
   }
   ${media.laptop} {
     height: 100%;
@@ -226,7 +346,7 @@ export const PromotionsContentWrapperOther = styled.div`
     height: 242px;
   }
 `
-export const PromotionsHeader = styled.h2`
+export const PromotionsItemHeader = styled.h2`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
