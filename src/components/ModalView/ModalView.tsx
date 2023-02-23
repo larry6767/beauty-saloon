@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 // Styles
 import {
@@ -19,7 +19,7 @@ import { ModalViewProps } from './types'
 
 // Storeon
 import { useStoreon } from 'storeon/react'
-import { UpperLayerActions, UpperLayerState } from '@/store/upperLayer.module'
+import { UpperLayerActions } from '@/store/upperLayer.module'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
@@ -29,21 +29,6 @@ export const ModalView: FC<ModalViewProps> = ({
 }) => {
   // Storeon
   const { dispatch } = useStoreon('upperLayerModule')
-  const {
-    upperLayer: { isOpen },
-  }: UpperLayerState = useStoreon('upperLayer')
-
-  // Escape close
-  useEffect(() => {
-    if (!isOpen) return
-    const escHandler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        dispatch(UpperLayerActions.close)
-        document.removeEventListener('keydown', escHandler)
-      }
-    }
-    document.addEventListener('keydown', escHandler)
-  }, [isOpen])
 
   return (
     <ModalBackdrop
