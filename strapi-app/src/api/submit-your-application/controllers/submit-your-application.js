@@ -1,9 +1,11 @@
-'use strict';
+'use strict'
 
 /**
  * submit-your-application controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { createCoreController } = require('@strapi/strapi').factories
 
-module.exports = createCoreController('api::submit-your-application.submit-your-application');
+module.exports = createCoreController(
+  'api::submit-your-application.submit-your-application',
+)

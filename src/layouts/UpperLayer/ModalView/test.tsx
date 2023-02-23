@@ -1,5 +1,6 @@
 // Test Modal View
 import { useStoreon } from 'storeon/react'
+import { DrawerMenuContent } from '../../../components/modals/DrawerMenuContent/DrawerMenuContent'
 
 export const TestContent = () => {
   return (
@@ -211,7 +212,7 @@ export const SomeComponent = () => {
         onClick={() => {
           dispatch('modal/open', {
             kind: 'drawer',
-            content: <TestContent />,
+            content: <DrawerMenuContent />,
           })
         }}
       >

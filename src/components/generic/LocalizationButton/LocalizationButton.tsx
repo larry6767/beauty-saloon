@@ -16,6 +16,7 @@ export const LocalizationButton = ({
   const { t, i18n } = useTranslation()
   const [languages, setLanguages] = useState<Array<string>>()
   const locales = i18n.options.supportedLngs
+  window.navigator.languages
 
   useEffect(() => {
     if (locales) {

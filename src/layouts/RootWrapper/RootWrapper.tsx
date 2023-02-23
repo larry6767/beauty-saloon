@@ -1,12 +1,12 @@
 'use client'
-import React from 'react'
-// Styles
-import { css, Global } from '@emotion/react'
-import { Container, Overflow } from './styles'
 
-// Storeon
+import React from 'react'
+import { css, Global } from '@emotion/react'
+// local libs
+import { Container, Overflow } from './styles'
 import { StoreContext } from 'storeon/react'
-import { store } from '@/store/store'
+import { store } from '@/store'
+import { baseLayoutId } from './consts'
 
 export const RootWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,7 +19,7 @@ export const RootWrapper = ({ children }: { children: React.ReactNode }) => {
         `}
       />
       <StoreContext.Provider value={store}>
-        <Overflow id="baseLayout">
+        <Overflow id={baseLayoutId}>
           <Container>{children}</Container>
         </Overflow>
       </StoreContext.Provider>

@@ -1,6 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-// Styles
+import { useStoreon } from 'storeon/react'
+// local libs
+import * as whiteCross from 'assets/icons/white-cross.svg'
+import * as drawerCross from 'assets/icons/drawer-cross.svg'
+import { UpperLayerActions } from '@/store/upperLayer'
 import {
   TopBorder,
   BottomBorder,
@@ -10,24 +14,15 @@ import {
   ModalWrapper,
   FlexButton,
 } from './styles'
-
-import * as whiteCross from 'assets/icons/white-cross.svg'
-import * as drawerCross from 'assets/icons/drawer-cross.svg'
-// Types
-import { FC } from 'react'
-import { ModalViewProps } from './types'
-
-// Storeon
-import { useStoreon } from 'storeon/react'
-import { UpperLayerActions } from '@/store/upperLayer.module'
+// types
+import type { FC } from 'react'
+import type { ModalViewProps } from './types'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
-  renderEmpty = <h3 style={{ margin: '10px' }}>Loading...</h3>,
-  // Menu Styles
+  renderEmpty = <h3 style={{ margin: '10px' }}>empty</h3>,
   drawer,
 }) => {
-  // Storeon
   const { dispatch } = useStoreon('upperLayerModule')
 
   return (
@@ -47,11 +42,12 @@ export const ModalView: FC<ModalViewProps> = ({
             isDrawer={drawer}
             onClick={() => dispatch(UpperLayerActions.close)}
           >
-            {!drawer ? (
-              <Image src={whiteCross} width={18} height={18} alt="close" />
-            ) : (
-              <Image src={drawerCross} width={18} height={18} alt="close" />
-            )}
+            <Image
+              src={!drawer ? whiteCross : drawerCross}
+              width={18}
+              height={18}
+              alt="close"
+            />
           </ModalCloseButton>
         </FlexButton>
 

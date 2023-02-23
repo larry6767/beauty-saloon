@@ -1,10 +1,11 @@
+'use client'
+
 import { createPortal } from 'react-dom'
-// Focus Lock
-import FocusLock from 'react-focus-lock'
-// Storeon
 import { useStoreon } from 'storeon/react'
-import { UpperLayerEnum, UpperLayerState } from '@/store/upperLayer.module'
-import { ModalView } from '@/components/ModalView/ModalView'
+import FocusLock from 'react-focus-lock'
+// local libs
+import { UpperLayerEnum, UpperLayerState } from '@/store/upperLayer'
+import { ModalView } from '@/layouts/UpperLayer/ModalView/ModalView'
 
 export const UpperLayer = () => {
   const {
