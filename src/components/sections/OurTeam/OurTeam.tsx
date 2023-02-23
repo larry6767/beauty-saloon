@@ -70,7 +70,7 @@ export const OurTeam = () => {
         const textData = data.data.attributes
         setTextContent({ ...textData })
       } catch (e: unknown) {
-        console.log(`Ошибка при получении текстовых данных: ${e}`)
+        console.error(`Ошибка при получении текстовых данных: ${e}`)
       }
     }
     getTextData()
@@ -87,7 +87,7 @@ export const OurTeam = () => {
           setCardTextData((prev) => [...prev, item.attributes]),
         )
       } catch (e: unknown) {
-        console.log(`Ошибка при получении данных для слайдера: ${e}`)
+        console.error(`Ошибка при получении данных для слайдера: ${e}`)
       }
     }
     getCardData()

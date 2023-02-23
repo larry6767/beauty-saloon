@@ -59,7 +59,7 @@
     "no-console": [
       "error",
       {
-        "allow": ["warn", "error", "log"]
+        "allow": ["warn", "error"]
       }
     ],
     "no-shadow": ["off"],

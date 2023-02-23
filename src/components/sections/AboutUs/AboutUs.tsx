@@ -74,7 +74,7 @@ export const AboutUs = () => {
         const textData = data.data.attributes
         setTextContent({ ...textData })
       } catch (e: unknown) {
-        console.log(`Ошибка при получении текстовых данных: ${e}`)
+        console.error(`Ошибка при получении текстовых данных: ${e}`)
       }
     }
     getTextData()
@@ -94,7 +94,7 @@ export const AboutUs = () => {
           data.data.attributes.videoPlayerIcon.data.attributes
         setVideoIcon(videoPlayIcon)
       } catch (e: unknown) {
-        console.log(`Ошибка при получении медиа данных: ${e}`)
+        console.error(`Ошибка при получении медиа данных: ${e}`)
       }
     }
     getMediaData()
