@@ -7,8 +7,8 @@ export const theme = {
     hover: '#bcbcbc',
   } as const,
   fontSize: {
-    bigFont: '12px',
     smallFont: '9px',
-    numbers: '14px',
+    mediumFont: '12px',
+    bigFont: '14px',
   } as const,
 }

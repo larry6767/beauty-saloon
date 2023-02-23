@@ -1,9 +1,5 @@
-import { Button } from '../components/generic/Button'
+import { AboutUs } from '@/components/sections/AboutUs'
 
 export default function Home() {
-  return (
-    <>
-      <Button text={'example'} />
-    </>
-  )
+  return <AboutUs />
 }

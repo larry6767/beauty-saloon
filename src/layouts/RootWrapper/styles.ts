@@ -5,3 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `
+export const Overflow = styled.div`
+  height: 100%;
+  overflow: auto;
+`

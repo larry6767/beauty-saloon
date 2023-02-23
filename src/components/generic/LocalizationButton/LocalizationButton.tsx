@@ -24,9 +24,9 @@ export const LocalizationButton = ({
       <LinkWrapper>
         {filtredLocales.map((locale, i, arr) => {
           return (
-            <>
+            <React.Fragment key={locale}>
               <Link
-                key={i}
+                key={locale}
                 color={`${color}`}
                 hoverColor={`${hoverColor}`}
                 margin={'0px 2px'}
@@ -35,7 +35,7 @@ export const LocalizationButton = ({
                 {t(`localization.${locale}`)}
               </Link>
               {arr.length === i + 1 ? null : '|'}
-            </>
+            </React.Fragment>
           )
         })}
       </LinkWrapper>
