@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_medias",
+  "info": {
+    "singularName": "about-media",
+    "pluralName": "about-medias",
+    "displayName": "AboutMedia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "videoPreviewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "videoPlayerIcon": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { theme } from '@/theme/theme'
 import { media } from '../../../theme/breakpoints'
+import { VideoBlockProps } from './types'
 
 export const SectionContainer = styled.div`
   position: relative;
@@ -41,6 +42,7 @@ export const TextInfoWrapper = styled.div`
     padding-left: 5px;
   }
   ${media.laptopL} {
+    justify-content: start;
     width: 560px;
     height: 440px;
   }
@@ -49,14 +51,11 @@ export const TextInfoWrapper = styled.div`
 export const Heading = styled.p`
   font-size: 20px;
   font-weight: 700;
-  margin: 0px 0 5px 0;
+  margin: 0 0 5px 0;
 
   ${media.tablet} {
     font-size: 32px;
-    margin: 10px 0 35px 0;
-  }
-  ${media.laptopL} {
-    margin-top: -70px;
+    margin-bottom: 35px;
   }
 `
 
@@ -69,11 +68,10 @@ export const HeadingLine = styled.div`
 
   ${media.tablet} {
     position: absolute;
-    margin-top: -330px;
-    margin-bottom: 35px;
+    top: 105px;
   }
   ${media.laptopL} {
-    margin-top: -310px;
+    top: 55px;
   }
 `
 
@@ -87,10 +85,12 @@ export const Text = styled.div`
   color: #757575;
 
   ${media.tablet} {
+    height: 168px;
     padding-right: 15px;
     width: 360px;
   }
   ${media.laptopL} {
+    height: auto;
     width: 540px;
   }
 `
@@ -143,9 +143,10 @@ export const Button = styled.button`
   }
 `
 
-export const VideoBlock = styled.div`
+export const VideoBlock = styled.div<VideoBlockProps>`
   width: 100%;
-  background-image: url(/aboutUs/about.jpg);
+  ${({ backgroundImage }) =>
+    !backgroundImage ? null : `background-image: url(${backgroundImage})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
