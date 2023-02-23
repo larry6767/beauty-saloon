@@ -92,7 +92,7 @@ export const Header = () => {
       <CentralBlock>
         <LogoIconContainer>
           <Link href="#">
-            <Image src={logo} alt="logo" />
+            <Image src={logo} alt="logo" priority />
           </Link>
         </LogoIconContainer>
         <MenuIcon
