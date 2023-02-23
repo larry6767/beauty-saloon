@@ -1,8 +1,9 @@
 'use client'
 
 import React from 'react'
+import axios from 'axios'
 import Image from 'next/image'
-import playImage from '../../../../assets/aboutUsIcons/play.png'
+import { useEffect, useState } from 'react'
 import {
   SectionContainer,
   TextInfoWrapper,
@@ -17,30 +18,119 @@ import {
   Play,
   PlayText,
 } from './styles'
+import { useTranslation } from 'next-i18next'
+
+export interface MediaDataInterface {
+  data: {
+    attributes: {
+      alternativeText: string
+      id: number
+      url: string
+    }
+  }
+}
+
+type AboutTextData = {
+  data: {
+    attributes: {
+      firstButtonText: string
+      heading: string
+      secondButtonText: string
+      text: string
+      title: string
+      videoPlayerText: string
+    }
+  }
+}
+
+type AboutMediaData = {
+  data: {
+    attributes: {
+      videoPlayerIcon: MediaDataInterface
+      videoPreviewImage: MediaDataInterface
+    }
+  }
+}
 
 export const AboutUs = () => {
+  const [textContent, setTextContent] = useState<
+    AboutTextData['data']['attributes'] | never
+  >()
+  const [videoImage, setVideoImage] = useState<
+    MediaDataInterface['data']['attributes'] | never
+  >()
+  const [videoIcon, setVideoIcon] = useState<
+    MediaDataInterface['data']['attributes'] | never
+  >()
+  const { i18n } = useTranslation()
+  const currentLang = i18n.language
+
+  useEffect(() => {
+    const getTextData = async () => {
+      try {
+        const { data } = await axios.get<AboutTextData>(
+          `http://localhost:1337/api/about?locale=${currentLang}`,
+        )
+        const textData = data.data.attributes
+        setTextContent({ ...textData })
+      } catch (e: unknown) {
+        console.error(`Ошибка при получении текстовых данных: ${e}`)
+      }
+    }
+    getTextData()
+  }, [currentLang])
+
+  useEffect(() => {
+    const getMediaData = async () => {
+      try {
+        const { data } = await axios.get<AboutMediaData>(
+          'http://localhost:1337/api/about-media?populate=*',
+        )
+        const videoPreviewImage =
+          data.data.attributes.videoPreviewImage.data.attributes
+        setVideoImage(videoPreviewImage)
+
+        const videoPlayIcon =
+          data.data.attributes.videoPlayerIcon.data.attributes
+        setVideoIcon(videoPlayIcon)
+      } catch (e: unknown) {
+        console.error(`Ошибка при получении медиа данных: ${e}`)
+      }
+    }
+    getMediaData()
+  }, [])
+
+  const videoPreviewSrc = `http://localhost:1337${videoImage?.url}`
+  const videoPlaySrc = `http://localhost:1337${videoIcon?.url}`
+
+  if (!videoIcon && !videoImage) {
+    return <></>
+  }
+
   return (
     <SectionContainer>
       <SectionWrapper>
         <TextInfoWrapper>
-          <Heading>О нас</Heading>
+          <Heading>{textContent?.heading}</Heading>
           <HeadingLine />
-          <Title>Салон красоты «Сахар»</Title>
-          <Text>
-            Мы создаем красоту, предоставляя качественные услуги в дружелюбной
-            обстановке по доступным ценам. Мы строим одну из лучших сетей
-            салонов красоты в России, успех которой основан на доверии,
-            честности и гармонии в команде
-          </Text>
+          <Title>{textContent?.title}</Title>
+          <Text>{textContent?.text}</Text>
           <ButtonWrapper>
-            <Button>Оставить заявку</Button>
-            <Button>Подробности</Button>
+            <Button>{textContent?.firstButtonText}</Button>
+            <Button>{textContent?.secondButtonText}</Button>
           </ButtonWrapper>
         </TextInfoWrapper>
-        <VideoBlock>
+        <VideoBlock backgroundImage={videoPreviewSrc}>
           <Play>
-            <Image src={playImage} width={56} height={56} alt="Play" />
-            <PlayText>Смотреть видео</PlayText>
+            <Image
+              loader={() => videoPlaySrc}
+              src={videoPlaySrc}
+              width={56}
+              height={56}
+              alt={`${videoIcon?.alternativeText}`}
+              unoptimized
+            />
+            <PlayText>{textContent?.videoPlayerText}</PlayText>
           </Play>
         </VideoBlock>
       </SectionWrapper>

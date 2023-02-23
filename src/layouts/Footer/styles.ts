@@ -129,11 +129,11 @@ export const LanguageBlock = styled.p`
   color: ${theme.colors.textPrimary};
 
   ${media.tablet} {
+    display: flex;
     width: 285px;
     height: 25px;
-    text-align: end;
-    align-items: center;
-    padding: 5px 10px;
+    padding: 5px 0px;
+    justify-content: flex-end;
   }
   ${media.laptopL} {
   }
