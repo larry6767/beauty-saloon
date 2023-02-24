@@ -1,6 +1,6 @@
 import { media } from '@/theme/breakpoints'
 import { theme } from '@/theme/theme'
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 
 export const ServicesWrapper = styled.div`
   display: flex;

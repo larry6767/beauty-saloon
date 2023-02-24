@@ -1,5 +1,5 @@
 import { theme } from '@/theme/theme'
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import { media } from '../../theme/breakpoints'
 
 export const HeaderContainer = styled.div`
@@ -90,19 +90,6 @@ export const CentralBlock = styled.div`
 
   // Overflow changes
   position: relative;
-`
-
-export const MenuIcon = styled.div`
-  position: absolute;
-  top: 100px;
-  left: 35px;
-  cursor: pointer;
-  &:hover {
-    filter: contrast(200%);
-  }
-  ${media.tablet} {
-    display: none;
-  }
 `
 
 export const LogoIconContainer = styled.div`

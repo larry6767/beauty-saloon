@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import Slider from 'react-slick'
 // local libs
 import { media } from 'src/theme'

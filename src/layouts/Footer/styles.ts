@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import { theme } from '@/theme/theme'
 import { media } from '../../theme/breakpoints'
 

@@ -1,7 +1,6 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import { theme } from '@/theme/theme'
 import { media } from '../../../theme/breakpoints'
-import { VideoBlockProps } from './types'
 
 export const SectionContainer = styled.div`
   position: relative;
@@ -141,10 +140,8 @@ export const Button = styled.button`
   }
 `
 
-export const VideoBlock = styled.div<VideoBlockProps>`
+export const VideoBlock = styled.div`
   width: 100%;
-  ${({ backgroundImage }) =>
-    !backgroundImage ? null : `background-image: url(${backgroundImage})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
