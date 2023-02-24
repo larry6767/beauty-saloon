@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { theme } from '@/theme/theme'
 import { media } from '../../../theme/breakpoints'
+import { VideoBlockProps } from './types'
 
 export const SectionContainer = styled.div`
   position: relative;
@@ -9,8 +10,6 @@ export const SectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 92px;
-  margin: 60px 0;
 `
 
 export const SectionWrapper = styled.div`
@@ -38,9 +37,10 @@ export const TextInfoWrapper = styled.div`
     width: 380px;
     height: 590px;
     justify-content: center;
-    padding-left: 5px;
+    padding-left: 0;
   }
   ${media.laptopL} {
+    justify-content: start;
     width: 560px;
     height: 440px;
   }
@@ -49,14 +49,11 @@ export const TextInfoWrapper = styled.div`
 export const Heading = styled.p`
   font-size: 20px;
   font-weight: 700;
-  margin: 0px 0 5px 0;
+  margin: 0 0 5px 0;
 
   ${media.tablet} {
     font-size: 32px;
-    margin: 10px 0 35px 0;
-  }
-  ${media.laptopL} {
-    margin-top: -70px;
+    margin-bottom: 35px;
   }
 `
 
@@ -69,11 +66,10 @@ export const HeadingLine = styled.div`
 
   ${media.tablet} {
     position: absolute;
-    margin-top: -330px;
-    margin-bottom: 35px;
+    top: 102px;
   }
   ${media.laptopL} {
-    margin-top: -310px;
+    top: 52px;
   }
 `
 
@@ -87,10 +83,12 @@ export const Text = styled.div`
   color: #757575;
 
   ${media.tablet} {
+    height: 168px;
     padding-right: 15px;
     width: 360px;
   }
   ${media.laptopL} {
+    height: auto;
     width: 540px;
   }
 `
@@ -143,9 +141,10 @@ export const Button = styled.button`
   }
 `
 
-export const VideoBlock = styled.div`
+export const VideoBlock = styled.div<VideoBlockProps>`
   width: 100%;
-  background-image: url(/aboutUs/about.jpg);
+  ${({ backgroundImage }) =>
+    !backgroundImage ? null : `background-image: url(${backgroundImage})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;

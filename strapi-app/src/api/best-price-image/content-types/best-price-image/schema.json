@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "best_price_images",
+  "info": {
+    "singularName": "best-price-image",
+    "pluralName": "best-price-images",
+    "displayName": "Best Price Image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "image": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

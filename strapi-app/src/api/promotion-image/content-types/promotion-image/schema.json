@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotion_images",
+  "info": {
+    "singularName": "promotion-image",
+    "pluralName": "promotion-images",
+    "displayName": "Promotion Image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
