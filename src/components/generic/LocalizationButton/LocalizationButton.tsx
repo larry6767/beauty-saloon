@@ -1,9 +1,9 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { Link } from '../Link'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import '../../../utils/i18next'
-import { changeLanguage } from '../../../utils/i18next'
+// local libs
+import { Link } from 'src/components/generic/Link'
+import 'src/utils/i18next'
+import { changeLanguage } from 'src/utils/i18next'
 import { LinkWrapper } from './styles'
 
 export const LocalizationButton = ({

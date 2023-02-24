@@ -1,9 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+// local libs
 import {
   SectionContainer,
   TextInfoWrapper,
@@ -19,48 +19,19 @@ import {
   PlayText,
 } from './styles'
 import { useTranslation } from 'next-i18next'
+// types
+import type { FC } from 'react'
+import type { AboutTextData, MediaData, AboutMediaData } from './types'
 
-export interface MediaDataInterface {
-  data: {
-    attributes: {
-      alternativeText: string
-      id: number
-      url: string
-    }
-  }
-}
-
-type AboutTextData = {
-  data: {
-    attributes: {
-      firstButtonText: string
-      heading: string
-      secondButtonText: string
-      text: string
-      title: string
-      videoPlayerText: string
-    }
-  }
-}
-
-type AboutMediaData = {
-  data: {
-    attributes: {
-      videoPlayerIcon: MediaDataInterface
-      videoPreviewImage: MediaDataInterface
-    }
-  }
-}
-
-export const AboutUs = () => {
+export const AboutUs: FC = () => {
   const [textContent, setTextContent] = useState<
     AboutTextData['data']['attributes'] | never
   >()
   const [videoImage, setVideoImage] = useState<
-    MediaDataInterface['data']['attributes'] | never
+    MediaData['data']['attributes'] | never
   >()
   const [videoIcon, setVideoIcon] = useState<
-    MediaDataInterface['data']['attributes'] | never
+    MediaData['data']['attributes'] | never
   >()
   const { i18n } = useTranslation()
   const currentLang = i18n.language

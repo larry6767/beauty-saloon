@@ -24,7 +24,7 @@ import {
 } from './styles'
 import { Link } from '@/components/generic/Link'
 import { theme } from '@/theme/theme'
-import { MediaDataInterface } from '../AboutUs/AboutUs'
+import { MediaData } from '../AboutUs/types'
 
 interface CardDataInterface {
   attributes: {
@@ -32,7 +32,7 @@ interface CardDataInterface {
     careerYears: string
     description: string
     name: string
-    image: MediaDataInterface
+    image: MediaData
   }
 }
 

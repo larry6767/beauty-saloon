@@ -26,56 +26,9 @@ import {
 } from './styles'
 import { PromotionsContentWrapperFirst } from './styles'
 import { PromotionsContentWrapperOther } from './styles'
-
-//
-import imgUnavailabe from '/src/components/sections/Promotions/img-unavailabe.png'
-const testContent = {
-  img: imgUnavailabe,
-  header: 'Lorem ipsum dolor sit',
-  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  date: '1 декабря 2020',
-}
+import { promotionsContent } from './fixtures'
 
 export const Promotions = () => {
-  const promotionsContent = [
-    {
-      date: testContent.date,
-      header: testContent.header,
-      image: {
-        src: testContent.img,
-        alt: 'A',
-      },
-      text: 'A' + testContent.text,
-    },
-    {
-      date: testContent.date,
-      header: testContent.header,
-      image: {
-        src: testContent.img,
-        alt: 'B',
-      },
-      text: 'B' + testContent.text,
-    },
-    {
-      date: testContent.date,
-      header: testContent.header,
-      image: {
-        src: testContent.img,
-        alt: 'C',
-      },
-      text: 'C' + testContent.text,
-    },
-    {
-      date: testContent.date,
-      header: testContent.header,
-      image: {
-        src: testContent.img,
-        alt: 'D',
-      },
-      text: 'D' + testContent.text,
-    },
-  ]
-
   return (
     <>
       <PromotionsWrapper>
