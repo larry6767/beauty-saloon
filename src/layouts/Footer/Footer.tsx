@@ -2,13 +2,11 @@
 
 import React from 'react'
 import Image from 'next/image'
+// local libs
 import * as telephoneIcon from 'assets/footerIcons/telephone.svg'
-import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
-import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
-import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
-import { Link } from '@/components/generic/Link'
+import { logoIcons } from './fixtures'
+import { Link } from 'src/components/generic/Link'
 import {
-  // ContactsList,
   ContactBlock,
   TelephoneIcon,
   IconList,
@@ -19,16 +17,10 @@ import {
   FooterWrapper,
   ContactBlockContainer,
 } from './styles'
-import { theme } from '@/theme/theme'
-import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
+import { theme } from 'src/theme/theme'
+import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
 
 export const Footer = () => {
-  const logoIcons = [
-    { image: tiktokLogo, url: '#', alt: 'TikTok' },
-    { image: whatsappLogo, url: '#', alt: 'WhatsApp' },
-    { image: instagramLogo, url: '#', alt: 'Instagram' },
-  ]
-
   return (
     <FooterContainer>
       <FooterWrapper>
