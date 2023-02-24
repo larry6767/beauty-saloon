@@ -2,12 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 // local libs
 import * as logo from 'assets/headerIcons/logo.png'
-import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
-import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
-import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
-import * as telegramLogo from 'assets/headerIcons/telegramLogo.svg'
 import { MenuButton } from './MenuButton'
 import { Link } from '@/components/generic/Link'
+import { topLinks, logoIcons, bottomLinks } from './fixtures'
 import {
   BottomLinkItems,
   BottomLinkList,
@@ -25,43 +22,10 @@ import {
   LanguageBlock,
   LogoIcon,
 } from './styles'
-import { LocalizationButton } from '@/components/generic/LocalizationButton/LocalizationButton'
-import { theme } from '@/theme/theme'
+import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
+import { theme } from 'src/theme/theme'
 
 export const Header = () => {
-  const topLinks = [
-    'Мастер на дом',
-    'О нас',
-    'Наша команда',
-    'Отзывы',
-    'Вакансии',
-    'Цены',
-    'Акции',
-    'Галерея',
-    'Контакты',
-    'Франшиза',
-  ]
-
-  const logoIcons = [
-    { image: tiktokLogo, url: '#', alt: 'TikTok' },
-    { image: whatsappLogo, url: '#', alt: 'WhatsApp' },
-    { image: instagramLogo, url: '#', alt: 'Instagram' },
-    { image: telegramLogo, url: '#', alt: 'Telegram' },
-  ]
-
-  const bottomLinks = [
-    'депиляция',
-    'косметология',
-    'маникюр/педикюр',
-    'брови/ресницы',
-    'визаж',
-    'парикмахер',
-    'массаж',
-    'коррекция тела',
-    'для мужчин',
-    'загар',
-  ]
-
   return (
     <HeaderContainer>
       <TopListContainer>
