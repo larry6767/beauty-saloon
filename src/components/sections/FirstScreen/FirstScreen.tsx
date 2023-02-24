@@ -22,6 +22,7 @@ export const FirstScreen = () => {
             key={x}
             alt={x}
             src={x}
+            priority
             fill
             style={{ objectFit: 'contain' }}
           />
