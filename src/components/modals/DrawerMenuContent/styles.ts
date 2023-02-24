@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import { theme } from '@/theme/theme'
 
 export const DrawerWrapper = styled.div`

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 
-export const PageContentContainer = styled.div`
+export const PageContent = styled.div`
   flex: 1 1 auto;
 `

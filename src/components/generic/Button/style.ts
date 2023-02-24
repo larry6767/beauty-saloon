@@ -1,6 +1,5 @@
-import styled from '@emotion/styled'
-
-//types
+import { styled } from '@linaria/react'
+// types
 import { ButtonContainerProps } from './types'
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`

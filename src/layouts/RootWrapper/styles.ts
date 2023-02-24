@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 
 export const Container = styled.div`
   min-height: 100%;

@@ -1,9 +1,10 @@
 import React from 'react'
 import { default as NextLink } from 'next/link'
 //local libs
-import { StyledLink } from './styles'
+import { StyledLink, StyledLinkWithoutNextLinkWrapper } from './styles'
+import { theme } from 'src/theme'
 //types
-import type { FC } from 'react'
+import type { FC, CSSProperties } from 'react'
 import type { LinkProps } from './types'
 
 export const Link: FC<LinkProps> = ({
@@ -13,39 +14,37 @@ export const Link: FC<LinkProps> = ({
   margin,
   padding,
   color,
-  hoverColor,
   lineHeight,
-  fontSize,
+  fontSize = theme.fontSize.mediumFont,
   transform,
-  weight,
-  withoutNextLinkWrapper, //для случаев, когда кнопка мимикрирует под ссылку
+  fontWeight,
+  withoutNextLinkWrapper, // для случаев, когда кнопка мимикрирует под ссылку
   children,
   ...rest
 }) => {
-  const commonProps = {
+  const styledLinkStyles: CSSProperties = {
     width,
     margin,
     padding,
     color,
-    hoverColor,
     lineHeight,
     fontSize,
     transform,
-    weight,
+    fontWeight,
   }
+
   return withoutNextLinkWrapper ? (
-    <StyledLink
+    <StyledLinkWithoutNextLinkWrapper
       as="button"
       type="button"
-      withoutNextLinkWrapper
-      {...commonProps}
+      style={styledLinkStyles}
       {...rest}
     >
       {children}
-    </StyledLink>
+    </StyledLinkWithoutNextLinkWrapper>
   ) : (
     <NextLink href={href} passHref shallow={shallow} legacyBehavior>
-      <StyledLink {...commonProps} {...rest}>
+      <StyledLink style={styledLinkStyles} {...rest}>
         {children}
       </StyledLink>
     </NextLink>

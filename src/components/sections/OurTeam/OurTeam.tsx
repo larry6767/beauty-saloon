@@ -121,7 +121,9 @@ export const OurTeam = () => {
             <InfoCardWrapper key={item.name}>
               <PhotoContainer>
                 <PhotoBlock
-                  backgroundImage={`http://localhost:1337${item.image.data.attributes.url}`}
+                  style={{
+                    backgroundImage: `http://localhost:1337${item.image.data.attributes.url}`,
+                  }}
                 />
               </PhotoContainer>
               <TextInfoContainer>

@@ -1,6 +1,6 @@
 import { media } from '@/theme'
 import { theme } from '@/theme/theme'
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 export const FlexCenter = styled.div`
   display: flex;
   // flex-direction: column;

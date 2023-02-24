@@ -1,8 +1,8 @@
 import { media } from '@/theme/breakpoints'
 import { theme } from '@/theme/theme'
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 // Types
-import { FlexProps } from './types'
+// import { FlexProps } from './types'
 
 export const PromotionsWrapper = styled.div`
   display: flex;
@@ -367,18 +367,18 @@ export const PromotionsDate = styled.p`
   overflow-wrap: break-word;
 `
 
-export const Flex = styled.div<FlexProps>`
-  ${({ display }) => (!display ? 'display: flex' : `display: ${display}`)};
-  ${({ flexFlow }) => (!flexFlow ? null : `flex-flow: ${flexFlow}`)};
-  ${({ flex }) => (!flex ? null : `flex: ${flex}`)};
-  ${({ justifyContent }) =>
-    !justifyContent ? null : `justify-content: ${justifyContent}`};
-  ${({ alignItems }) => (!alignItems ? null : `align-items: ${alignItems}`)};
+// export const Flex = styled.div<FlexProps>`
+//   ${({ display }) => (!display ? 'display: flex' : `display: ${display}`)};
+//   ${({ flexFlow }) => (!flexFlow ? null : `flex-flow: ${flexFlow}`)};
+//   ${({ flex }) => (!flex ? null : `flex: ${flex}`)};
+//   ${({ justifyContent }) =>
+//     !justifyContent ? null : `justify-content: ${justifyContent}`};
+//   ${({ alignItems }) => (!alignItems ? null : `align-items: ${alignItems}`)};
 
-  ${({ width }) => (!width ? null : `width: ${width};`)};
-  ${({ height }) => (!height ? null : `height: ${height};`)};
+//   ${({ width }) => (!width ? null : `width: ${width};`)};
+//   ${({ height }) => (!height ? null : `height: ${height};`)};
 
-  ${({ maxWidth }) => (!maxWidth ? null : `max-width: ${maxWidth};`)};
+//   ${({ maxWidth }) => (!maxWidth ? null : `max-width: ${maxWidth};`)};
 
-  ${({ minHeight }) => (!minHeight ? null : `min-height: ${minHeight};`)};
-`
+//   ${({ minHeight }) => (!minHeight ? null : `min-height: ${minHeight};`)};
+// `

@@ -1,12 +1,9 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
-import { useStoreon } from 'storeon/react'
 // local libs
 import * as logo from 'assets/headerIcons/logo.png'
-import * as menuIcon from 'assets/headerIcons/menuIcon.svg'
-import { Link } from 'src/components/generic/Link'
+import { MenuButton } from './MenuButton'
+import { Link } from '@/components/generic/Link'
 import { topLinks, logoIcons, bottomLinks } from './fixtures'
 import {
   BottomLinkItems,
@@ -23,18 +20,12 @@ import {
   ContactsList,
   Number,
   LanguageBlock,
-  MenuIcon,
   LogoIcon,
 } from './styles'
-import 'src/utils/i18next'
 import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
 import { theme } from 'src/theme/theme'
-import { UpperLayerActions } from 'src/store/upperLayer'
-import { DrawerMenuContent } from 'src/components/modals/DrawerMenuContent/DrawerMenuContent'
 
 export const Header = () => {
-  const { dispatch } = useStoreon('upperLayer')
-
   return (
     <HeaderContainer>
       <TopListContainer>
@@ -60,16 +51,7 @@ export const Header = () => {
             <Image src={logo} alt="logo" priority />
           </Link>
         </LogoIconContainer>
-        <MenuIcon
-          onClick={() =>
-            dispatch(UpperLayerActions.open, {
-              kind: 'drawer',
-              content: <DrawerMenuContent />,
-            })
-          }
-        >
-          <Image src={menuIcon} width={60} height={60} alt="Menu" />
-        </MenuIcon>
+        <MenuButton />
         <ContactsList>
           <IconList>
             {logoIcons.map((icon) => (
@@ -107,7 +89,7 @@ export const Header = () => {
                 key={item}
                 href="#"
                 fontSize="12px"
-                weight="bold"
+                fontWeight="bold"
                 transform="uppercase"
                 padding={`12px 5px 0px 5px`}
               >

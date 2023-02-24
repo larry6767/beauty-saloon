@@ -1,40 +1,37 @@
-import { theme } from '@/theme/theme'
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
+// import { css } from '@linaria/core'
 
-//types
-import type { StyledLinkProps } from './types'
+// const base = css`
 
-export const StyledLink = styled.a<StyledLinkProps>`
+// `
+
+export const StyledLink = styled.a`
   display: inline-block;
-
   line-height: 1.5;
   text-decoration: none;
   color: white;
-  font-size: ${({ fontSize }) =>
-    fontSize ? fontSize : theme.fontSize.mediumFont};
-
-  ${({ width }) => (!width ? null : `width: ${width}`)};
-  ${({ margin }) => (!margin ? null : `margin: ${margin}`)};
-  ${({ padding }) => (!padding ? null : `padding: ${padding}`)};
-  ${({ weight }) => (!weight ? null : `font-weight: ${weight}`)};
-  ${({ transform }) => (!transform ? null : `text-transform: ${transform}`)};
-  ${({ color }) => (!color ? null : `color: ${color}`)};
-  ${({ lineHeight }) => (!lineHeight ? null : `line-height: ${lineHeight}`)};
-
-  ${({ withoutNextLinkWrapper }) =>
-    withoutNextLinkWrapper
-      ? `
-      box-shadow: none;
-      outline: none;
-      background: none;
-      border: none;
-    `
-      : null};
 
   cursor: pointer;
 
   &:hover {
-    ${({ hoverColor }) =>
-      !hoverColor ? `color: black` : `color: ${hoverColor}`};
+    color: black;
   }
+`
+
+export const StyledLinkWithoutNextLinkWrapper = styled.a`
+  display: inline-block;
+  line-height: 1.5;
+  text-decoration: none;
+  color: white;
+
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+
+  box-shadow: none;
+  outline: none;
+  background: none;
+  border: none;
 `

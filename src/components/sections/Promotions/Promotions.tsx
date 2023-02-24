@@ -1,9 +1,8 @@
-'use client'
 import React from 'react'
 import Image from 'next/image'
 // Styles
 import {
-  Flex,
+  // Flex,
   PromotionsItemContentWrapper,
   PromotionsDate,
   PromotionsItemHeader,
@@ -51,15 +50,15 @@ export const Promotions = () => {
                 />
               </PromotionsImageFirst>
               <PromotionsContentWrapperFirst>
-                <Flex flexFlow="column nowrap" minHeight="100%">
+                <div style={{ flexFlow: 'column nowrap', minHeight: '100%' }}>
                   <PromotionsItemHeader>
                     {promotionsContent[0].header}
                   </PromotionsItemHeader>
-                  <Flex flex="1 1 auto">
+                  <div style={{ flex: '1 1 auto' }}>
                     <PromotionsText>{promotionsContent[0].text}</PromotionsText>
-                  </Flex>
+                  </div>
                   <PromotionsDate>{promotionsContent[0].date}</PromotionsDate>
-                </Flex>
+                </div>
               </PromotionsContentWrapperFirst>
             </PromotionsItemFirst>
 
@@ -77,19 +76,21 @@ export const Promotions = () => {
                     />
                   </PromotionsImage>
                   <PromotionsItemContentWrapper>
-                    <Flex flexFlow="column nowrap" minHeight="100%">
+                    <div
+                      style={{ flexFlow: 'column nowrap', minHeight: '100%' }}
+                    >
                       <PromotionsItemHeader>
                         {promotionsContent[1].header}
                       </PromotionsItemHeader>
-                      <Flex flex="1 1 auto">
+                      <div style={{ flex: '1 1 auto' }}>
                         <PromotionsText>
                           {promotionsContent[1].text}
                         </PromotionsText>
-                      </Flex>
+                      </div>
                       <PromotionsDate>
                         {promotionsContent[1].date}
                       </PromotionsDate>
-                    </Flex>
+                    </div>
                   </PromotionsItemContentWrapper>
                 </PromotionsItem>
               </PromotionsItemSecond>
@@ -107,19 +108,21 @@ export const Promotions = () => {
                     />
                   </PromotionsImage>
                   <PromotionsItemContentWrapper>
-                    <Flex flexFlow="column nowrap" minHeight="100%">
+                    <div
+                      style={{ flexFlow: 'column nowrap', minHeight: '100%' }}
+                    >
                       <PromotionsItemHeader>
                         {promotionsContent[2].header}
                       </PromotionsItemHeader>
-                      <Flex flex="1 1 auto">
+                      <div style={{ flex: '1 1 auto' }}>
                         <PromotionsText>
                           {promotionsContent[2].text}
                         </PromotionsText>
-                      </Flex>
+                      </div>
                       <PromotionsDate>
                         {promotionsContent[2].date}
                       </PromotionsDate>
-                    </Flex>
+                    </div>
                   </PromotionsItemContentWrapper>
                 </PromotionsItem>
               </PromotionsItemThird>
@@ -141,15 +144,20 @@ export const Promotions = () => {
                         />
                       </PromotionsImage>
                       <PromotionsContentWrapperOther>
-                        <Flex flexFlow="column nowrap" minHeight="100%">
+                        <div
+                          style={{
+                            flexFlow: 'column nowrap',
+                            minHeight: '100%',
+                          }}
+                        >
                           <PromotionsItemHeader>
                             {item.header}
                           </PromotionsItemHeader>
-                          <Flex flex="1 1 auto">
+                          <div style={{ flex: '1 1 auto' }}>
                             <PromotionsText>{item.text}</PromotionsText>
-                          </Flex>
+                          </div>
                           <PromotionsDate>{item.date}</PromotionsDate>
-                        </Flex>
+                        </div>
                       </PromotionsContentWrapperOther>
                     </PromotionsItem>
                   </PromotionsItemOther>

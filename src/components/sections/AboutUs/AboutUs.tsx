@@ -91,7 +91,7 @@ export const AboutUs: FC = () => {
             <Button>{textContent?.secondButtonText}</Button>
           </ButtonWrapper>
         </TextInfoWrapper>
-        <VideoBlock backgroundImage={videoPreviewSrc}>
+        <VideoBlock style={{ backgroundImage: videoPreviewSrc }}>
           <Play>
             <Image
               loader={() => videoPlaySrc}

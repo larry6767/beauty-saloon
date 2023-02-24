@@ -1,7 +1,6 @@
-import styled from '@emotion/styled'
+import { styled } from '@linaria/react'
 import { theme } from '@/theme/theme'
 import { media } from '../../../theme/breakpoints'
-import { PhotoBlockProps } from './types'
 
 export const SectionContainer = styled.div`
   width: 100%;
@@ -201,11 +200,9 @@ export const PhotoContainer = styled.div`
   }
 `
 
-export const PhotoBlock = styled.div<PhotoBlockProps>`
+export const PhotoBlock = styled.div`
   width: 330px;
   height: 330px;
-  ${({ backgroundImage }) =>
-    !backgroundImage ? null : `background-image: url(${backgroundImage})`};
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 100%;
