@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+// import React, { useEffect, useState } from 'react'
+// import { useTranslation } from 'next-i18next'
 // local libs
-import { Link } from 'src/components/generic/Link'
-import 'src/utils/i18next'
-import { changeLanguage } from 'src/utils/i18next'
+// import { Link } from 'src/components/generic/Link'
+// import { changeLanguage } from 'src/utils/i18next'
 import { LinkWrapper } from './styles'
 
 export const LocalizationButton = ({
@@ -15,26 +14,27 @@ export const LocalizationButton = ({
   color?: string
   hoverColor?: string
 }) => {
-  const { t, i18n } = useTranslation()
-  const [languages, setLanguages] = useState<Array<string>>()
-  const locales = i18n.options.supportedLngs
+  console.error(color, hoverColor)
+  // const { t, i18n } = useTranslation()
+  // const [languages, setLanguages] = useState<Array<string>>()
+  // const locales = i18n.options.supportedLngs
 
-  useEffect(() => {
-    if (locales) {
-      const filtredLocales = locales.filter((locale) =>
-        locale !== 'cimode' ? locale : false,
-      )
-      setLanguages(filtredLocales)
-    }
-    // eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   if (locales) {
+  //     const filtredLocales = locales.filter((locale) =>
+  //       locale !== 'cimode' ? locale : false,
+  //     )
+  //     setLanguages(filtredLocales)
+  //   }
+  //   // eslint-disable-next-line
+  // }, [])
 
-  if (!languages) return <></>
+  // if (!languages) return <></>
 
   return (
     <>
       <LinkWrapper>
-        {languages.map((locale, i, arr) => {
+        {/* {languages.map((locale, i, arr) => {
           return (
             <React.Fragment key={locale}>
               <Link
@@ -49,7 +49,7 @@ export const LocalizationButton = ({
               {arr.length === i + 1 ? null : '|'}
             </React.Fragment>
           )
-        })}
+        })} */}
       </LinkWrapper>
     </>
   )
