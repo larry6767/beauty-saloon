@@ -1,9 +1,4 @@
 import { styled } from '@linaria/react'
-// import { css } from '@linaria/core'
-
-// const base = css`
-
-// `
 
 export const StyledLink = styled.a`
   display: inline-block;

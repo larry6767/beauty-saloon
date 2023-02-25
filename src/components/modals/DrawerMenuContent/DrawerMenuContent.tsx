@@ -13,9 +13,11 @@ import {
   LinkContentTelephone,
   TelephoneImgWrapper,
 } from './styles'
-import * as angle from 'assets/icons/angle-right-solid.svg'
-import * as phone from 'assets/icons/telephone.svg'
+import angle from 'assets/icons/angle-right-solid.svg'
+import phone from 'assets/icons/telephone.svg'
 import { theme } from '@/theme/theme'
+// types
+import type { StaticImageData } from 'next/image'
 
 export const DrawerMenuContent = () => {
   const drawerLinks = [
@@ -51,7 +53,12 @@ export const DrawerMenuContent = () => {
               <LinkContent>
                 {item}
                 <ImgWrapper>
-                  <Image src={angle} width={10} height={10} alt="Перейти" />
+                  <Image
+                    src={angle as StaticImageData}
+                    width={10}
+                    height={10}
+                    alt="Перейти"
+                  />
                 </ImgWrapper>
               </LinkContent>
             </Link>
@@ -71,12 +78,22 @@ export const DrawerMenuContent = () => {
             <LinkContent>
               <LinkContentTelephone>
                 <TelephoneImgWrapper>
-                  <Image src={phone} width={18} height={18} alt="telephone" />
+                  <Image
+                    src={phone as StaticImageData}
+                    width={18}
+                    height={18}
+                    alt="telephone"
+                  />
                 </TelephoneImgWrapper>
                 {drawerLinksTel}
               </LinkContentTelephone>
               <ImgWrapper>
-                <Image src={angle} width={10} height={10} alt="Перейти" />
+                <Image
+                  src={angle as StaticImageData}
+                  width={10}
+                  height={10}
+                  alt="Перейти"
+                />
               </ImgWrapper>
             </LinkContent>
           </Link>

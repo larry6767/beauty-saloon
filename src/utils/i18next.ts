@@ -23,4 +23,5 @@ i18n
 export const changeLanguage = (lang: string) => {
   i18n.changeLanguage(lang)
 }
+
 export default i18n

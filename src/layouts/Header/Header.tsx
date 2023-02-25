@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 // local libs
-import * as logo from 'assets/headerIcons/logo.png'
+import logo from 'assets/headerIcons/logo.png'
 import { MenuButton } from './MenuButton'
 import { Link } from '@/components/generic/Link'
 import { topLinks, logoIcons, bottomLinks } from './fixtures'

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 // local libs
-import * as telephoneIcon from 'assets/footerIcons/telephone.svg'
+import telephoneIcon from 'assets/footerIcons/telephone.svg'
 import { logoIcons } from './fixtures'
 import { Link } from 'src/components/generic/Link'
 import {
@@ -17,6 +17,8 @@ import {
 } from './styles'
 import { theme } from 'src/theme/theme'
 import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
+// types
+import type { StaticImageData } from 'next/image'
 
 export const Footer = () => {
   return (
@@ -24,7 +26,12 @@ export const Footer = () => {
       <FooterWrapper>
         <ContactBlockContainer>
           <TelephoneIcon>
-            <Image src={telephoneIcon} width={18} height={18} alt="Telephone" />
+            <Image
+              src={telephoneIcon as StaticImageData}
+              width={18}
+              height={18}
+              alt="Telephone"
+            />
           </TelephoneIcon>
           <ContactBlock>
             <Number href="tel:+420000000000">+420 000 000 000</Number>
