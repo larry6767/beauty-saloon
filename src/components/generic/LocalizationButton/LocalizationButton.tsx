@@ -8,8 +8,14 @@ import { usePathname } from 'next/navigation'
 import { i18n } from '@/config/i18n/i18n-config'
 import { Link } from 'src/components/generic'
 import { LinkWrapper } from './styles'
+// types
+import type { FC } from 'react'
+import type { StyledLinkProps } from 'src/components/generic/Link'
 
-export function LocalizationButton({ color }: { color: string }) {
+export const LocalizationButton: FC<StyledLinkProps> = ({
+  color,
+  hoverColor,
+}) => {
   const pathName = usePathname()
   const redirectedPathName = (locale: string) => {
     if (!pathName) return '/'
@@ -23,15 +29,21 @@ export function LocalizationButton({ color }: { color: string }) {
       <LinkWrapper>
         {i18n.locales.map((locale) => {
           return (
-              <Link key={locale} href={redirectedPathName(locale)} color={color} padding="10px">{locale}</Link>
+            <Link
+              key={locale}
+              href={redirectedPathName(locale)}
+              color={color}
+              hoverColor={hoverColor}
+              padding="10px"
+            >
+              {locale}
+            </Link>
           )
         })}
       </LinkWrapper>
     </>
   )
 }
-
-
 
 // export const LocalizationButton = ({
 //   color,
@@ -41,33 +53,34 @@ export function LocalizationButton({ color }: { color: string }) {
 //   hoverColor?: string
 // }) => {
 //   console.error(color, hoverColor)
-  // const { t, i18n } = useTranslation()
-  // const [languages, setLanguages] = useState<Array<string>>()
-  // const locales = i18n.options.supportedLngs
+// const { t, i18n } = useTranslation()
+// const [languages, setLanguages] = useState<Array<string>>()
+// const locales = i18n.options.supportedLngs
 
-  // useEffect(() => {
-  //   if (locales) {
-  //     const filtredLocales = locales.filter((locale) =>
-  //       locale !== 'cimode' ? locale : false,
-  //     )
-  //     setLanguages(filtredLocales)
-  //   }
-  //   // eslint-disable-next-line
-  // }, [])
+// useEffect(() => {
+//   if (locales) {
+//     const filtredLocales = locales.filter((locale) =>
+//       locale !== 'cimode' ? locale : false,
+//     )
+//     setLanguages(filtredLocales)
+//   }
+//   // eslint-disable-next-line
+// }, [])
 
-  // if (!languages) return <></>
+// if (!languages) return <></>
 
-  // return (
-  //   <>
-  //     <LinkWrapper>
-        /* {languages.map((locale, i, arr) => {
+// return (
+//   <>
+//     <LinkWrapper>
+/* {languages.map((locale, i, arr) => {
           return (
             <React.Fragment key={locale}>
               <Link
                 key={locale}
-                color={`${color}`}
-                hoverColor={`${hoverColor}`}
-                margin={'0px 2px'}
+                color={color}
+                hoverColor={hoverColor}
+                fontWeight={'bold'}
+                padding={'4px 3px'}
                 onClick={() => changeLanguage(locale)}
               >
                 {t(`localization.${locale}`)}

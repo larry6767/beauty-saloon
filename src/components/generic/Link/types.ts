@@ -1,4 +1,9 @@
-import { CSSIndent } from 'src/types'
+import { ColorsEnum } from 'src/theme'
+// types
+import type { CSSIndent } from 'src/types'
+
+export type Color = ColorsEnum.textPrimary | ColorsEnum.textSecondary
+export type HoverColor = ColorsEnum.textSecondary | ColorsEnum.textTertiary
 
 export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
   Styles &
@@ -12,7 +17,6 @@ export type Styles = {
   width?: string
   margin?: CSSIndent
   padding?: CSSIndent
-  color?: string
   lineHeight?: `${number}px`
   fontSize?: `${number}px`
   transform?:
@@ -41,5 +45,6 @@ export type Styles = {
 }
 
 export type StyledLinkProps = {
-  hoverColor: string
+  color: Color
+  hoverColor: HoverColor
 }

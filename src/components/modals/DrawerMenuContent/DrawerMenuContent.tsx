@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 // local libs
-import { Link } from '@/components/generic/Link'
+import { Link } from 'src/components/generic'
 import {
   DrawerWrapper,
   DrawerLinkItems,
@@ -15,7 +15,7 @@ import {
 } from './styles'
 import angle from 'assets/icons/angle-right-solid.svg'
 import phone from 'assets/icons/telephone.svg'
-import { theme } from '@/theme/theme'
+import { ColorsEnum } from 'src/theme'
 // types
 import type { StaticImageData } from 'next/image'
 
@@ -45,7 +45,7 @@ export const DrawerMenuContent = () => {
               key={item}
               href="#"
               width="100%"
-              color={`${theme.colors.textSecondary}`}
+              color={ColorsEnum.textSecondary}
               fontSize="12px"
               lineHeight="13px"
               padding="25px 35px"
@@ -70,7 +70,7 @@ export const DrawerMenuContent = () => {
             key={drawerLinksTel}
             href="#"
             width="100%"
-            color={`${theme.colors.textSecondary}`}
+            color={ColorsEnum.textSecondary}
             fontSize="12px"
             lineHeight="13px"
             padding="25px 35px"
@@ -103,7 +103,7 @@ export const DrawerMenuContent = () => {
         <DrawerButton>
           <Link
             href="#"
-            color={`${theme.colors.textPrimary}`}
+            color={ColorsEnum.textPrimary}
             fontSize="14px"
             lineHeight="13px"
             padding="15px 55px"

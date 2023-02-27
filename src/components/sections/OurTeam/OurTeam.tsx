@@ -23,7 +23,7 @@ import {
   PhotoBlock,
 } from './styles'
 import { Link } from '@/components/generic/Link'
-import { theme } from '@/theme/theme'
+import { ColorsEnum, theme } from '@/theme/theme'
 import { MediaData } from '../AboutUs/types'
 
 interface CardDataInterface {
@@ -111,7 +111,7 @@ export const OurTeam = () => {
           <Link
             href="#"
             fontSize={`${theme.fontSize.mediumFont}`}
-            color="black"
+            color={ColorsEnum.textSecondary}
           >
             {textContent?.linkText.toUpperCase()}
           </Link>

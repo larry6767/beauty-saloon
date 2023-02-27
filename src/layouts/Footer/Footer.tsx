@@ -15,7 +15,7 @@ import {
   FooterWrapper,
   ContactBlockContainer,
 } from './styles'
-import { theme } from 'src/theme/theme'
+import { ColorsEnum, theme } from 'src/theme'
 import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
 // types
 import type { StaticImageData } from 'next/image'
@@ -54,8 +54,8 @@ export const Footer = () => {
         </IconList>
         <LanguageBlock>
           <LocalizationButton
-            // color={'white'}
-            // hoverColor={theme.colors.secondary}
+            color={ColorsEnum.textPrimary}
+            hoverColor={ColorsEnum.textTertiary}
           />
         </LanguageBlock>
       </FooterWrapper>
