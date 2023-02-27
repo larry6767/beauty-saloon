@@ -1,21 +1,21 @@
 import React, { FC } from 'react'
 import Image from 'next/dist/client/image'
-// Types
+// local libs
+import {
+  PromotionsCardContent,
+  PromotionsCardContentWrapper,
+  PromotionsCardDate,
+  PromotionsCardHeader,
+  PromotionsCardImage,
+  PromotionsCardText,
+  PromotionsCardTextWrapper,
+  PromotionsCardWrapper,
+} from './styles'
+// types
 import type {
   PromotionsCardContentProps,
   PromotionsCardStyledProps,
 } from './types'
-// Styles
-import {
-  PromotionsCardContent,
-  promotionsCardContentWrapper,
-  PromotionsCardDate,
-  PromotionsCardHeader,
-  promotionsCardImage,
-  PromotionsCardText,
-  PromotionsCardTextWrapper,
-  promotionsCardWrapper,
-} from './styles'
 
 export const PromotionsCard: FC<
   PromotionsCardContentProps & PromotionsCardStyledProps
@@ -25,13 +25,13 @@ export const PromotionsCard: FC<
   header,
   text,
   date,
-  cardStyles,
+  kind,
   widthImg = 100,
   heightImg = 100,
 }) => {
   return (
-    <div className={promotionsCardWrapper} card-wrapper={cardStyles}>
-      <div className={promotionsCardImage} card-image={cardStyles}>
+    <PromotionsCardWrapper data-kind-wrapper={kind}>
+      <PromotionsCardImage data-kind-image={kind}>
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -40,11 +40,8 @@ export const PromotionsCard: FC<
             height: `${heightImg}%`,
           }}
         />
-      </div>
-      <div
-        className={promotionsCardContentWrapper}
-        card-content-wrapper={cardStyles}
-      >
+      </PromotionsCardImage>
+      <PromotionsCardContentWrapper data-kind-content-wrapper={kind}>
         <PromotionsCardContent>
           <PromotionsCardHeader>{header}</PromotionsCardHeader>
           <PromotionsCardTextWrapper>
@@ -52,7 +49,7 @@ export const PromotionsCard: FC<
           </PromotionsCardTextWrapper>
           <PromotionsCardDate>{date}</PromotionsCardDate>
         </PromotionsCardContent>
-      </div>
-    </div>
+      </PromotionsCardContentWrapper>
+    </PromotionsCardWrapper>
   )
 }

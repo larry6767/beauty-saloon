@@ -6,7 +6,8 @@ type ImageProps = {
   alt: string
 }
 
-type PromotionsDataType = {
+export type PromotionsDataType = {
+  kind: 'big-card' | 'regular'
   image: ImageProps
   header: string
   text: string
