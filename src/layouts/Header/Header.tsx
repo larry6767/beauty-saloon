@@ -65,7 +65,7 @@ export const Header = () => {
             <Link
               color={ColorsEnum.textSecondary}
               fontSize="9px"
-              transform="uppercase"
+              textTransform="uppercase"
               withoutNextLinkWrapper
             >
               заказать звонок
@@ -90,7 +90,7 @@ export const Header = () => {
                 href="#"
                 fontSize="12px"
                 fontWeight="bold"
-                transform="uppercase"
+                textTransform="uppercase"
                 padding={`12px 5px 0px 5px`}
               >
                 {item}

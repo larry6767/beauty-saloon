@@ -1,6 +1,6 @@
 'use client'
 
-// import React, { useEffect, useState } from 'react'
+import React from 'react'
 // import { useTranslation } from 'next-i18next'
 import { usePathname } from 'next/navigation'
 
@@ -11,12 +11,14 @@ import { LinkWrapper } from './styles'
 // types
 import type { FC } from 'react'
 import type { StyledLinkProps } from 'src/components/generic/Link'
+import { ColorsEnum } from '@/theme'
 
 export const LocalizationButton: FC<StyledLinkProps> = ({
   color,
   hoverColor,
 }) => {
   const pathName = usePathname()
+  const currentLocale = pathName?.split('/')[1]
   const redirectedPathName = (locale: string) => {
     if (!pathName) return '/'
     const segments = pathName.split('/')
@@ -27,17 +29,24 @@ export const LocalizationButton: FC<StyledLinkProps> = ({
   return (
     <>
       <LinkWrapper>
-        {i18n.locales.map((locale) => {
+        {i18n.locales.map((locale, i, arr) => {
           return (
-            <Link
-              key={locale}
-              href={redirectedPathName(locale)}
-              color={color}
-              hoverColor={hoverColor}
-              padding="10px"
-            >
-              {locale}
-            </Link>
+            <React.Fragment key={locale}>
+              <Link
+                key={locale}
+                color={
+                  currentLocale === locale ? ColorsEnum.textTertiary : color
+                }
+                hoverColor={hoverColor}
+                fontWeight={'bold'}
+                textTransform="uppercase"
+                padding={'4px 3px'}
+                href={redirectedPathName(locale)}
+              >
+                {locale}
+              </Link>
+              {arr.length === i + 1 ? null : '|'}
+            </React.Fragment>
           )
         })}
       </LinkWrapper>

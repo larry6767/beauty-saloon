@@ -37,7 +37,7 @@ export const Footer = () => {
             <Number href="tel:+420000000000">+420 000 000 000</Number>
             <Link
               fontSize={`${theme.fontSize.smallFont}`}
-              transform="uppercase"
+              textTransform="uppercase"
               padding={`0px`}
               withoutNextLinkWrapper
             >
