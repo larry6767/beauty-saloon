@@ -23,7 +23,7 @@ import {
   LogoIcon,
 } from './styles'
 import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
-import { theme } from 'src/theme/theme'
+// import { theme } from 'src/theme/theme'
 
 export const Header = () => {
   return (
@@ -76,7 +76,7 @@ export const Header = () => {
         <LanguageBlock>
           <LocalizationButton
             color={'black'}
-            hoverColor={theme.colors.secondary}
+            // hoverColor={theme.colors.secondary}
           />
         </LanguageBlock>
       </CentralBlock>

@@ -2,19 +2,45 @@
 
 // import React, { useEffect, useState } from 'react'
 // import { useTranslation } from 'next-i18next'
+import { usePathname } from 'next/navigation'
+
 // local libs
-// import { Link } from 'src/components/generic/Link'
-// import { changeLanguage } from 'src/utils/i18next'
+import { i18n } from '@/config/i18n/i18n-config'
+import { Link } from 'src/components/generic'
 import { LinkWrapper } from './styles'
 
-export const LocalizationButton = ({
-  color,
-  hoverColor,
-}: {
-  color?: string
-  hoverColor?: string
-}) => {
-  console.error(color, hoverColor)
+export function LocalizationButton({ color }: { color: string }) {
+  const pathName = usePathname()
+  const redirectedPathName = (locale: string) => {
+    if (!pathName) return '/'
+    const segments = pathName.split('/')
+    segments[1] = locale
+    return segments.join('/')
+  }
+
+  return (
+    <>
+      <LinkWrapper>
+        {i18n.locales.map((locale) => {
+          return (
+              <Link key={locale} href={redirectedPathName(locale)} color={color} padding="10px">{locale}</Link>
+          )
+        })}
+      </LinkWrapper>
+    </>
+  )
+}
+
+
+
+// export const LocalizationButton = ({
+//   color,
+//   hoverColor,
+// }: {
+//   color?: string
+//   hoverColor?: string
+// }) => {
+//   console.error(color, hoverColor)
   // const { t, i18n } = useTranslation()
   // const [languages, setLanguages] = useState<Array<string>>()
   // const locales = i18n.options.supportedLngs
@@ -31,10 +57,10 @@ export const LocalizationButton = ({
 
   // if (!languages) return <></>
 
-  return (
-    <>
-      <LinkWrapper>
-        {/* {languages.map((locale, i, arr) => {
+  // return (
+  //   <>
+  //     <LinkWrapper>
+        /* {languages.map((locale, i, arr) => {
           return (
             <React.Fragment key={locale}>
               <Link
@@ -49,8 +75,8 @@ export const LocalizationButton = ({
               {arr.length === i + 1 ? null : '|'}
             </React.Fragment>
           )
-        })} */}
-      </LinkWrapper>
-    </>
-  )
-}
+//         })} */
+//       </LinkWrapper>
+//     </>
+//   )
+// }

@@ -54,8 +54,8 @@ export const Footer = () => {
         </IconList>
         <LanguageBlock>
           <LocalizationButton
-            color={'white'}
-            hoverColor={theme.colors.secondary}
+            // color={'white'}
+            // hoverColor={theme.colors.secondary}
           />
         </LanguageBlock>
       </FooterWrapper>
