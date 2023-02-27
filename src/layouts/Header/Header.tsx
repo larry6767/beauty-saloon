@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 // local libs
-import * as logo from 'assets/headerIcons/logo.png'
+import logo from 'assets/headerIcons/logo.png'
 import { MenuButton } from './MenuButton'
 import { Link } from '@/components/generic/Link'
 import { topLinks, logoIcons, bottomLinks } from './fixtures'
@@ -65,7 +65,7 @@ export const Header = () => {
             <Link
               color={ColorsEnum.textSecondary}
               fontSize="9px"
-              transform="uppercase"
+              textTransform="uppercase"
               withoutNextLinkWrapper
             >
               заказать звонок
@@ -90,7 +90,7 @@ export const Header = () => {
                 href="#"
                 fontSize="12px"
                 fontWeight="bold"
-                transform="uppercase"
+                textTransform="uppercase"
                 padding={`12px 5px 0px 5px`}
               >
                 {item}

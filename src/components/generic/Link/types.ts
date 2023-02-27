@@ -2,7 +2,10 @@ import { ColorsEnum } from 'src/theme'
 // types
 import type { CSSIndent } from 'src/types'
 
-export type Color = ColorsEnum.textPrimary | ColorsEnum.textSecondary
+export type Color =
+  | ColorsEnum.textPrimary
+  | ColorsEnum.textSecondary
+  | ColorsEnum.textTertiary
 export type HoverColor = ColorsEnum.textSecondary | ColorsEnum.textTertiary
 
 export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
@@ -19,7 +22,7 @@ export type Styles = {
   padding?: CSSIndent
   lineHeight?: `${number}px`
   fontSize?: `${number}px`
-  transform?:
+  textTransform?:
     | 'none'
     | 'capitalize'
     | 'uppercase'

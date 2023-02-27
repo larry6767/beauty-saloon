@@ -18,7 +18,7 @@ import {
   Play,
   PlayText,
 } from './styles'
-import { useTranslation } from 'next-i18next'
+// import { useTranslation } from 'next-i18next'
 // types
 import type { FC } from 'react'
 import type { AboutTextData, MediaData, AboutMediaData } from './types'
@@ -33,8 +33,9 @@ export const AboutUs: FC = () => {
   const [videoIcon, setVideoIcon] = useState<
     MediaData['data']['attributes'] | never
   >()
-  const { i18n } = useTranslation()
-  const currentLang = i18n.language
+  // const { i18n } = useTranslation()
+  // const currentLang = i18n.language
+  const currentLang = 'en'
 
   useEffect(() => {
     const getTextData = async () => {

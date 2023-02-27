@@ -20,12 +20,16 @@ export const StyledLink = styled.a`
     }
   }
 
+  &[data-color-kind='${ColorsEnum.textPrimary}'] {
+    color: ${theme.colors.primary};
+  }
+
   &[data-color-kind='${ColorsEnum.textSecondary}'] {
     color: ${theme.colors.textSecondary};
   }
 
-  &[data-color-kind='${ColorsEnum.textPrimary}'] {
-    color: ${theme.colors.primary};
+  &[data-color-kind='${ColorsEnum.textTertiary}'] {
+    color: ${theme.colors.textTertiary};
   }
 `
 

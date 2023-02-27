@@ -17,7 +17,7 @@ export const Link: FC<LinkProps> = ({
   hoverColor = ColorsEnum.textSecondary,
   lineHeight,
   fontSize = theme.fontSize.mediumFont,
-  transform,
+  textTransform,
   fontWeight,
   withoutNextLinkWrapper, // для случаев, когда кнопка мимикрирует под ссылку
   children,
@@ -29,7 +29,7 @@ export const Link: FC<LinkProps> = ({
     padding,
     lineHeight,
     fontSize,
-    transform,
+    textTransform,
     fontWeight,
   }
 

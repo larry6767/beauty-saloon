@@ -1,7 +1,9 @@
-import * as tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
-import * as whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
-import * as instagramLogo from 'assets/headerIcons/instagramLogo.svg'
-import * as telegramLogo from 'assets/headerIcons/telegramLogo.svg'
+import tiktokLogo from 'assets/headerIcons/tiktokLogo.svg'
+import whatsappLogo from 'assets/headerIcons/whatsappLogo.svg'
+import instagramLogo from 'assets/headerIcons/instagramLogo.svg'
+import telegramLogo from 'assets/headerIcons/telegramLogo.svg'
+// types
+import type { StaticImageData } from 'next/image'
 
 export const topLinks = [
   'Мастер на дом',
@@ -17,10 +19,10 @@ export const topLinks = [
 ]
 
 export const logoIcons = [
-  { image: tiktokLogo, url: '#', alt: 'TikTok' },
-  { image: whatsappLogo, url: '#', alt: 'WhatsApp' },
-  { image: instagramLogo, url: '#', alt: 'Instagram' },
-  { image: telegramLogo, url: '#', alt: 'Telegram' },
+  { image: tiktokLogo as StaticImageData, url: '#', alt: 'TikTok' },
+  { image: whatsappLogo as StaticImageData, url: '#', alt: 'WhatsApp' },
+  { image: instagramLogo as StaticImageData, url: '#', alt: 'Instagram' },
+  { image: telegramLogo as StaticImageData, url: '#', alt: 'Telegram' },
 ]
 
 export const bottomLinks = [

@@ -13,28 +13,18 @@ export const FirstScreen = () => {
     setIsMobile(window.screen.width <= 425)
   }, [])
 
-  if (!isMobile) {
-    return (
-      <Slider
-        heightRatio="35%"
-        items={items.map((x) => (
-          <Image
-            key={x}
-            alt={x}
-            src={x}
-            priority
-            fill
-            style={{ objectFit: 'contain' }}
-          />
-        ))}
-      />
-    )
-  }
   return (
     <Slider
-      heightRatio="100%"
-      items={mobileItems.map((x) => (
-        <Image key={x} alt={x} src={x} fill style={{ objectFit: 'contain' }} />
+      heightRatio={isMobile ? '100%' : '35%'}
+      items={(isMobile ? mobileItems : items).map((x, i) => (
+        <Image
+          key={i}
+          alt={`slide-${i}`}
+          src={x}
+          priority
+          fill
+          style={{ objectFit: 'contain' }}
+        />
       ))}
     />
   )

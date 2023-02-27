@@ -122,7 +122,7 @@ export const AdvantagesTextWrapper = styled.div`
 export const AdvantagesText = styled.p`
   width: 100%;
 
-  text-aligne: left;
+  text-align: left;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;

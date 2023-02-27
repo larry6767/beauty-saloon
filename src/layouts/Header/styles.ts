@@ -168,8 +168,7 @@ export const Number = styled.a`
   margin-bottom: 0;
 `
 
-export const LanguageBlock = styled.p`
-  font-size: 14px;
+export const LanguageBlock = styled.div`
   display: flex;
   margin-bottom: 0;
 

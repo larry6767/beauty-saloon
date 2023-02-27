@@ -4,7 +4,7 @@ import React from 'react'
 import axios from 'axios'
 import Slider from 'react-slick'
 import { useEffect, useState } from 'react'
-import { useTranslation } from 'next-i18next'
+// import { useTranslation } from 'next-i18next'
 import {
   CareerInfoContainer,
   CareerTitle,
@@ -58,8 +58,9 @@ export const OurTeam = () => {
   const [cardTextData, setCardTextData] = useState<
     Array<CardDataInterface['attributes']> | never
   >([])
-  const { i18n } = useTranslation()
-  const currentLang = i18n.language
+  // const { i18n } = useTranslation()
+  // const currentLang = i18n.language
+  const currentLang = 'en'
 
   useEffect(() => {
     const getTextData = async () => {
