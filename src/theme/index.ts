@@ -1,2 +1,2 @@
-export { theme } from './theme'
+export { theme, ColorsEnum } from './theme'
 export { media } from './breakpoints'

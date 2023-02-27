@@ -23,7 +23,7 @@ import {
   LogoIcon,
 } from './styles'
 import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
-import { theme } from 'src/theme/theme'
+import { ColorsEnum } from '@/theme'
 
 export const Header = () => {
   return (
@@ -63,7 +63,7 @@ export const Header = () => {
           <ContactBlock>
             <Number href="tel:+420000000000">+420 000 000 000</Number>
             <Link
-              color="black"
+              color={ColorsEnum.textSecondary}
               fontSize="9px"
               transform="uppercase"
               withoutNextLinkWrapper
@@ -75,8 +75,8 @@ export const Header = () => {
 
         <LanguageBlock>
           <LocalizationButton
-            color={'black'}
-            hoverColor={theme.colors.secondary}
+            color={ColorsEnum.textSecondary}
+            hoverColor={ColorsEnum.textTertiary}
           />
         </LanguageBlock>
       </CentralBlock>
