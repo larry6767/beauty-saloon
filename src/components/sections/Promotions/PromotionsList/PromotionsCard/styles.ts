@@ -1,10 +1,9 @@
 import { styled } from '@linaria/react'
-import { css } from '@linaria/core'
 // local
 import { media, theme } from 'src/theme/index'
 
-export const promotionsCardWrapper = css`
-  &[card-wrapper='regular'] {
+export const PromotionsCardWrapper = styled.div`
+  &[data-kind-wrapper='regular'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,7 +51,7 @@ export const promotionsCardWrapper = css`
     }
   }
 
-  &[card-wrapper='bigCard'] {
+  &[data-kind-wrapper='big-card'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,8 +84,8 @@ export const promotionsCardWrapper = css`
     }
   }
 `
-export const promotionsCardImage = css`
-  &[card-image='regular'] {
+export const PromotionsCardImage = styled.div`
+  &[data-kind-image='regular'] {
     position: static;
     width: 100%;
 
@@ -99,7 +98,7 @@ export const promotionsCardImage = css`
     }
   }
 
-  &[card-image='bigCard'] {
+  &[data-kind-image='big-card'] {
     position: static;
     width: 100%;
 
@@ -114,15 +113,13 @@ export const promotionsCardImage = css`
   }
 `
 
-export const promotionsCardContentWrapper = css`
-  &[card-content-wrapper='regular'] {
-    position: relative;
+export const PromotionsCardContentWrapper = styled.div`
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+  background-color: white;
 
-    padding: 20px;
-
-    z-index: 1;
-    background-color: white;
-
+  &[data-kind-content-wrapper='regular'] {
     ${media.mobileS} {
       width: 100%;
     }
@@ -136,14 +133,7 @@ export const promotionsCardContentWrapper = css`
     }
   }
 
-  &[card-content-wrapper='bigCard'] {
-    position: relative;
-
-    padding: 20px;
-
-    z-index: 1;
-    background-color: white;
-
+  &[data-kind-content-wrapper='big-card'] {
     ${media.tablet} {
       max-width: calc(50% - 20px);
       min-width: 262px;
@@ -155,6 +145,7 @@ export const promotionsCardContentWrapper = css`
     }
   }
 `
+
 export const PromotionsCardContent = styled.div`
   display: flex;
   flex-flow: column nowrap;

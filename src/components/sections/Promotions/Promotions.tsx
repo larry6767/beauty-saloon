@@ -1,5 +1,5 @@
 import React from 'react'
-// Styles
+// local libs
 import {
   PromotionsWrapper,
   PromotionsHeader,
@@ -8,7 +8,7 @@ import {
   PromotionsLink,
 } from './styles'
 import { promotionsContent } from './fixtures'
-import { PromotionsList } from './components/PromotionsList/PromotionsList'
+import { PromotionsList } from './PromotionsList/PromotionsList'
 
 export const Promotions = () => {
   return (

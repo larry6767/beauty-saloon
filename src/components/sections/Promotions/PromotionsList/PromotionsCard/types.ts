@@ -9,7 +9,7 @@ export type PromotionsCardContentProps = {
 }
 
 export type PromotionsCardStyledProps = {
-  cardStyles: 'bigCard' | 'regular'
+  kind: 'big-card' | 'regular'
   widthImg?: number
   heightImg?: number
 }

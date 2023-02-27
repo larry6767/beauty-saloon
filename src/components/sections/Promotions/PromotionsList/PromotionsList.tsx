@@ -1,7 +1,10 @@
-import React, { FC } from 'react'
-import { PromotionsCard } from 'src/components/sections/Promotions/components/PromotionsCard'
+import React from 'react'
+// local libs
+import { PromotionsCard } from './PromotionsCard'
 import { PromotionsListWrapper } from './styles'
-import { PromotionsListProps } from './types'
+// types
+import type { FC } from 'react'
+import type { PromotionsListProps } from './types'
 
 export const PromotionsList: FC<PromotionsListProps> = ({
   data = [],
@@ -11,18 +14,16 @@ export const PromotionsList: FC<PromotionsListProps> = ({
 
   return (
     <PromotionsListWrapper>
-      {data.map((item, index) => {
+      {data.map((item) => {
         return (
           <PromotionsCard
             key={item.image.alt}
-            // Data
             imageSrc={item.image.src}
             imageAlt={item.image.alt}
             header={item.header}
             text={item.text}
             date={item.date}
-            // Styles
-            cardStyles={index + 1 !== 1 ? 'regular' : 'bigCard'}
+            kind={item.kind}
             widthImg={100}
             heightImg={100}
           />
