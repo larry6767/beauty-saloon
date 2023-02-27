@@ -12,6 +12,7 @@ export const FooterContainer = styled.div`
     height: 138px;
     align-items: center;
   }
+
   ${media.laptopL} {
     height: 91px;
   }
@@ -28,6 +29,7 @@ export const FooterWrapper = styled.div`
     justify-content: space-between;
     flex-direction: row;
   }
+
   ${media.laptopL} {
     width: 1110px;
   }
@@ -44,6 +46,7 @@ export const ContactBlockContainer = styled.div`
     align-items: center;
     padding-top: 20px;
   }
+
   ${media.laptopL} {
     height: 90px;
     padding-top: 10px;
@@ -53,18 +56,21 @@ export const ContactBlockContainer = styled.div`
 export const ContactBlock = styled.div`
   display: flex;
   flex-direction: column;
+
   button {
     transition: color 0.4s ease-in-out;
     &:hover {
       color: ${theme.colors.secondary};
     }
   }
+
   ${media.tablet} {
     width: 235px;
     height: 50px;
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   ${media.laptopL} {
     width: 170px;
     justify-content: center;
@@ -81,6 +87,7 @@ export const TelephoneIcon = styled.div`
     height: 37px;
     align-items: flex-start;
   }
+
   ${media.laptopL} {
     align-items: center;
   }
@@ -92,6 +99,7 @@ export const Number = styled.a`
   font-size: ${theme.fontSize.bigFont};
   margin-bottom: 0;
   transition: color 0.4s ease-in-out;
+
   &:hover {
     color: black;
   }
@@ -110,6 +118,7 @@ export const IconList = styled.div`
     align-items: center;
     padding-top: 10px;
   }
+
   ${media.laptopL} {
     align-items: center;
   }
@@ -118,13 +127,13 @@ export const IconList = styled.div`
 export const LogoIcon = styled.a`
   filter: invert(1);
   transition: filter 0.4s ease-in-out;
+
   &:hover {
     filter: invert(0);
   }
 `
 
-export const LanguageBlock = styled.p`
-  height: 15px;
+export const LanguageBlock = styled.div`
   font-size: ${theme.fontSize.bigFont};
   color: ${theme.colors.textPrimary};
 
@@ -134,7 +143,5 @@ export const LanguageBlock = styled.p`
     height: 25px;
     padding: 5px 0px;
     justify-content: flex-end;
-  }
-  ${media.laptopL} {
   }
 `

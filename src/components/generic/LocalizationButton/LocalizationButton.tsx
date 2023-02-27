@@ -7,13 +7,13 @@ import { Link } from 'src/components/generic/Link'
 import 'src/utils/i18next'
 import { changeLanguage } from 'src/utils/i18next'
 import { LinkWrapper } from './styles'
+// types
+import type { FC } from 'react'
+import type { StyledLinkProps } from 'src/components/generic/Link'
 
-export const LocalizationButton = ({
+export const LocalizationButton: FC<StyledLinkProps> = ({
   color,
   hoverColor,
-}: {
-  color?: string
-  hoverColor?: string
 }) => {
   const { t, i18n } = useTranslation()
   const [languages, setLanguages] = useState<Array<string>>()
@@ -40,9 +40,10 @@ export const LocalizationButton = ({
             <React.Fragment key={locale}>
               <Link
                 key={locale}
-                color={`${color}`}
-                hoverColor={`${hoverColor}`}
-                margin={'0px 2px'}
+                color={color}
+                hoverColor={hoverColor}
+                fontWeight={'bold'}
+                padding={'4px 3px'}
                 onClick={() => changeLanguage(locale)}
               >
                 {t(`localization.${locale}`)}

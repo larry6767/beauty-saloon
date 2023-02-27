@@ -2,7 +2,7 @@ import React from 'react'
 import { default as NextLink } from 'next/link'
 //local libs
 import { StyledLink, StyledLinkWithoutNextLinkWrapper } from './styles'
-import { theme } from 'src/theme'
+import { ColorsEnum, theme } from 'src/theme'
 //types
 import type { FC, CSSProperties } from 'react'
 import type { LinkProps } from './types'
@@ -13,7 +13,8 @@ export const Link: FC<LinkProps> = ({
   width,
   margin,
   padding,
-  color,
+  color = ColorsEnum.textPrimary,
+  hoverColor = ColorsEnum.textSecondary,
   lineHeight,
   fontSize = theme.fontSize.mediumFont,
   transform,
@@ -26,7 +27,6 @@ export const Link: FC<LinkProps> = ({
     width,
     margin,
     padding,
-    color,
     lineHeight,
     fontSize,
     transform,
@@ -35,6 +35,8 @@ export const Link: FC<LinkProps> = ({
 
   return withoutNextLinkWrapper ? (
     <StyledLinkWithoutNextLinkWrapper
+      data-hover-kind={hoverColor}
+      data-color-kind={color}
       as="button"
       type="button"
       style={styledLinkStyles}
@@ -44,7 +46,12 @@ export const Link: FC<LinkProps> = ({
     </StyledLinkWithoutNextLinkWrapper>
   ) : (
     <NextLink href={href} passHref shallow={shallow} legacyBehavior>
-      <StyledLink style={styledLinkStyles} {...rest}>
+      <StyledLink
+        data-hover-kind={hoverColor}
+        data-color-kind={color}
+        style={styledLinkStyles}
+        {...rest}
+      >
         {children}
       </StyledLink>
     </NextLink>
