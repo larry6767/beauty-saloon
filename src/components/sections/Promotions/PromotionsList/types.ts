@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { StaticImageData } from 'next/image'
+import { PromotionsCardEnum } from './PromotionsCard/types'
 
 type ImageProps = {
   src: string | StaticImageData
@@ -7,7 +8,7 @@ type ImageProps = {
 }
 
 export type PromotionsDataType = {
-  kind: 'big-card' | 'regular'
+  kind: PromotionsCardEnum
   image: ImageProps
   header: string
   text: string

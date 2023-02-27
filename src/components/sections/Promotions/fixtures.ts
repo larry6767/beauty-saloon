@@ -1,6 +1,7 @@
 import imgUnavailabe from '/src/components/sections/Promotions/img-unavailabe.png'
 // types
 import { PromotionsDataType } from './PromotionsList'
+import { PromotionsCardEnum } from './PromotionsList/PromotionsCard/types'
 export const testContent = {
   img: imgUnavailabe,
   header: 'Lorem ipsum dolor sit',
@@ -10,7 +11,7 @@ export const testContent = {
 
 export const promotionsContent: Array<PromotionsDataType> = [
   {
-    kind: 'big-card',
+    kind: PromotionsCardEnum.bigCard,
     date: testContent.date,
     header: testContent.header,
     image: {
@@ -20,7 +21,7 @@ export const promotionsContent: Array<PromotionsDataType> = [
     text: 'A' + testContent.text,
   },
   {
-    kind: 'regular',
+    kind: PromotionsCardEnum.regular,
     date: testContent.date,
     header: testContent.header,
     image: {
@@ -30,7 +31,7 @@ export const promotionsContent: Array<PromotionsDataType> = [
     text: 'B' + testContent.text,
   },
   {
-    kind: 'regular',
+    kind: PromotionsCardEnum.regular,
     date: testContent.date,
     header: testContent.header,
     image: {
@@ -40,7 +41,7 @@ export const promotionsContent: Array<PromotionsDataType> = [
     text: 'C' + testContent.text,
   },
   {
-    kind: 'regular',
+    kind: PromotionsCardEnum.regular,
     date: testContent.date,
     header: testContent.header,
     image: {

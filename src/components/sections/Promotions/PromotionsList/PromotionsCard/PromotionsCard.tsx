@@ -12,8 +12,9 @@ import {
   PromotionsCardWrapper,
 } from './styles'
 // types
-import type {
+import {
   PromotionsCardContentProps,
+  PromotionsCardEnum,
   PromotionsCardStyledProps,
 } from './types'
 
@@ -25,7 +26,7 @@ export const PromotionsCard: FC<
   header,
   text,
   date,
-  kind,
+  kind = PromotionsCardEnum.regular,
   widthImg = 100,
   heightImg = 100,
 }) => {

@@ -1,9 +1,10 @@
 import { styled } from '@linaria/react'
 // local
 import { media, theme } from 'src/theme/index'
+import { PromotionsCardEnum } from './types'
 
 export const PromotionsCardWrapper = styled.div`
-  &[data-kind-wrapper='regular'] {
+  &[data-kind-wrapper='${PromotionsCardEnum.regular}'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,7 +52,7 @@ export const PromotionsCardWrapper = styled.div`
     }
   }
 
-  &[data-kind-wrapper='big-card'] {
+  &[data-kind-wrapper='${PromotionsCardEnum.bigCard}'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,7 +86,7 @@ export const PromotionsCardWrapper = styled.div`
   }
 `
 export const PromotionsCardImage = styled.div`
-  &[data-kind-image='regular'] {
+  &[data-kind-image='${PromotionsCardEnum.regular}'] {
     position: static;
     width: 100%;
 
@@ -98,7 +99,7 @@ export const PromotionsCardImage = styled.div`
     }
   }
 
-  &[data-kind-image='big-card'] {
+  &[data-kind-image='${PromotionsCardEnum.bigCard}'] {
     position: static;
     width: 100%;
 
@@ -119,7 +120,7 @@ export const PromotionsCardContentWrapper = styled.div`
   z-index: 1;
   background-color: white;
 
-  &[data-kind-content-wrapper='regular'] {
+  &[data-kind-content-wrapper='${PromotionsCardEnum.regular}'] {
     ${media.mobileS} {
       width: 100%;
     }
@@ -133,7 +134,7 @@ export const PromotionsCardContentWrapper = styled.div`
     }
   }
 
-  &[data-kind-content-wrapper='big-card'] {
+  &[data-kind-content-wrapper='${PromotionsCardEnum.bigCard}'] {
     ${media.tablet} {
       max-width: calc(50% - 20px);
       min-width: 262px;

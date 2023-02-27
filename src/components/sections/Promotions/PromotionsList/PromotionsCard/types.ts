@@ -1,5 +1,10 @@
 import { StaticImageData } from 'next/image'
 
+export enum PromotionsCardEnum {
+  bigCard = 'bigCard',
+  regular = 'regular',
+}
+
 export type PromotionsCardContentProps = {
   imageSrc: string | StaticImageData
   imageAlt: string
@@ -9,7 +14,7 @@ export type PromotionsCardContentProps = {
 }
 
 export type PromotionsCardStyledProps = {
-  kind: 'big-card' | 'regular'
+  kind: PromotionsCardEnum
   widthImg?: number
   heightImg?: number
 }
