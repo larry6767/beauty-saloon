@@ -1,13 +1,30 @@
-import { OurTeam } from '@/components/sections/OurTeam'
-import { AboutUs } from '@/components/sections/AboutUs'
-import { FirstScreen } from '@/components/sections/FirstScreen'
-import { Services } from '@/components/sections/Services/Services'
-import { Promotions } from '@/components/sections/Promotions/Promotions'
-import { Advantages } from '@/components/sections/Advantages/Advantages'
+import { OurTeam } from 'src/components/sections/OurTeam'
+import { AboutUs } from 'src/components/sections/AboutUs'
+import { FirstScreen } from 'src/components/sections/FirstScreen'
+import { Services } from 'src/components/sections/Services/Services'
+import { Promotions } from 'src/components/sections/Promotions/Promotions'
+import { Advantages } from 'src/components/sections/Advantages/Advantages'
+import { getDictionary } from 'src/config/i18n/getDictionary'
+import { Locale } from 'src/config/i18n'
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
+  const dictionary = await getDictionary(lang)
+
   return (
     <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          padding: '15px 0 0',
+        }}
+      >
+        {dictionary['server-component'].welcome}
+      </div>
       <FirstScreen />
       <Services />
       <Promotions />

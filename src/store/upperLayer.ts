@@ -17,25 +17,25 @@ export enum UpperLayerEnum {
   drawer = 'drawer',
 }
 
-interface OpenedState {
+type OpenedState = {
   isOpen: true
   kind: keyof typeof UpperLayerEnum
   content: JSX.Element
   scrollY: number
 }
 
-interface ClosedState {
+type ClosedState = {
   isOpen: false
   kind: null
   content: null
   scrollY: number
 }
 
-export interface UpperLayerState {
+export type UpperLayerState = {
   upperLayer: ClosedState | OpenedState
 }
 
-export interface UpperLayerEvents {
+export type UpperLayerEvents = {
   [UpperLayerActions.open]: Pick<OpenedState, 'content' | 'kind'>
   [UpperLayerActions.close]: void
   [UpperLayerInternalActions.set]: UpperLayerState['upperLayer']
