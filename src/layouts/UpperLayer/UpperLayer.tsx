@@ -6,15 +6,18 @@ import FocusLock from 'react-focus-lock'
 // local libs
 import { UpperLayerEnum, UpperLayerState } from '@/store/upperLayer'
 import { ModalView } from '@/layouts/UpperLayer/ModalView/ModalView'
-
 export const UpperLayer = () => {
   const {
     upperLayer: { isOpen, kind, content },
   }: UpperLayerState = useStoreon('upperLayer')
 
   const kindMapping = {
-    [UpperLayerEnum.modal]: <ModalView drawer={false}>{content}</ModalView>,
-    [UpperLayerEnum.drawer]: <ModalView drawer={true}>{content}</ModalView>,
+    [UpperLayerEnum.modal]: (
+      <ModalView kind={UpperLayerEnum.modal}>{content}</ModalView>
+    ),
+    [UpperLayerEnum.drawer]: (
+      <ModalView kind={UpperLayerEnum.drawer}>{content}</ModalView>
+    ),
   }
 
   return !isOpen
