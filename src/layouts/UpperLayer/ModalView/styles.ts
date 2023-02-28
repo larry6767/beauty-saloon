@@ -124,14 +124,6 @@ export const ModalCloseButton = styled.button`
     left: 0px;
     z-index: 1;
   }
-
-  &[data-loading='${UpperLayerEnum.modal}'] {
-  }
-
-  &[data-loading='${UpperLayerEnum.drawer}'] {
-    top: 0px;
-    left: 0px;
-  }
 `
 
 export const FlexButton = styled.span`
@@ -192,15 +184,6 @@ export const ModalWrapper = styled.div`
         left: 0px;
       }
     }
-  }
-  &[data-loading='${UpperLayerEnum.modal}'] {
-    overflow-y: visible;
-    overflow-x: visible;
-  }
-
-  &[data-loading='${UpperLayerEnum.drawer}'] {
-    overflow-y: visible;
-    overflow-x: visible;
   }
 `
 export const TopBorder = styled.span`

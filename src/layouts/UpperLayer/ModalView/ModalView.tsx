@@ -24,7 +24,6 @@ import { UpperLayerEnum } from 'src/store/upperLayer'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
-  renderEmpty = <h3 style={{ margin: '10px' }}>empty</h3>,
   kind = UpperLayerEnum.modal,
 }) => {
   const { dispatch } = useStoreon('upperLayerModule')
@@ -34,15 +33,10 @@ export const ModalView: FC<ModalViewProps> = ({
       data-kind={kind}
       onClick={() => dispatch(UpperLayerActions.close)}
     >
-      <ModalWrapper
-        data-loading={!children ? kind : null}
-        data-kind={kind}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <ModalWrapper data-kind={kind} onClick={(e) => e.stopPropagation()}>
         <TopBorder data-kind={kind} />
         <FlexButton data-kind={kind}>
           <ModalCloseButton
-            data-loading={!children ? kind : null}
             data-kind={kind}
             onClick={() => dispatch(UpperLayerActions.close)}
           >
@@ -58,13 +52,7 @@ export const ModalView: FC<ModalViewProps> = ({
             />
           </ModalCloseButton>
         </FlexButton>
-
-        <ModalViewContent
-          data-loading={!children ? kind : null}
-          data-kind={kind}
-        >
-          {children || renderEmpty}
-        </ModalViewContent>
+        <ModalViewContent data-kind={kind}>{children}</ModalViewContent>
         <BottomBorder data-kind={kind} />
       </ModalWrapper>
     </ModalBackdrop>
