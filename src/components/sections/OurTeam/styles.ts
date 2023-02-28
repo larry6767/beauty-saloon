@@ -53,18 +53,17 @@ export const SectionWrapper = styled.div`
       height: 25px;
       font-size: 0;
       border: none;
-      background: url('/assets/ourTeamContent/dot-outlined.svg') 50% 50% / 60%
+      background: url('/assets/our-team/dot-outlined.svg') 50% 50% / 60%
         no-repeat;
       cursor: pointer;
       &:hover {
-        background: url('/assets/ourTeamContent/dot-filled.svg') 51% 51% / 66%
+        background: url('/assets/our-team/dot-filled.svg') 51% 51% / 66%
           no-repeat;
       }
     }
 
     .slick-active {
-      background: url('/assets/ourTeamContent/dot-filled.svg') 50% 65% / 60%
-        no-repeat;
+      background: url('/assets/our-team/dot-filled.svg') 50% 65% / 60% no-repeat;
     }
   }
   ${media.tablet} {
@@ -102,13 +101,11 @@ export const SectionWrapper = styled.div`
     }
     .slick-arrow.slick-prev {
       left: -48px;
-      background: url('/assets/ourTeamContent/arrow-left.svg') 0 0 / 100%
-        no-repeat;
+      background: url('/assets/our-team/arrow-left.svg') 0 0 / 100% no-repeat;
     }
     .slick-arrow.slick-next {
       right: -48px;
-      background: url('/assets/ourTeamContent/arrow-right.svg') 0 0 / 100%
-        no-repeat;
+      background: url('/assets/our-team/arrow-right.svg') 0 0 / 100% no-repeat;
     }
     .slick-arrow.slick-disabled {
       opacity: 50%;

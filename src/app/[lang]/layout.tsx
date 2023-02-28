@@ -1,6 +1,12 @@
 import { Montserrat } from '@next/font/google'
 // local libs
-import { Footer, Header, PageContent, RootWrapper, UpperLayer } from '@/layouts'
+import {
+  Footer,
+  Header,
+  PageContent,
+  RootWrapper,
+  UpperLayer,
+} from 'src/layouts'
 import Head from './head'
 import 'normalize.css'
 import './style.linaria.global'
@@ -20,16 +26,16 @@ const montserrat = Montserrat({
 
 export default function RootLayout({
   children,
-  params,
+  params: { lang },
 }: {
   children: React.ReactNode
   params: { lang: Locale }
 }) {
   return (
-    <html className={`${montserrat.className} scrollAuto`} lang={params.lang}>
+    <html className={`${montserrat.className} scrollAuto`} lang={lang}>
       <Head />
       <body className="scrollAuto">
-        <RootWrapper>
+        <RootWrapper lang={lang}>
           <Header />
           <PageContent>{children}</PageContent>
           <Footer />

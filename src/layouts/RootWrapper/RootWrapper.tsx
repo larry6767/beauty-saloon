@@ -1,20 +1,24 @@
 'use client'
 
 import React from 'react'
-// local libs
-import { Container, Overflow } from './styles'
 import { StoreContext } from 'storeon/react'
-import { store } from '@/store'
+// local libs
+import { store } from 'src/store'
+import { AppContext } from './context'
+import { Container, Overflow } from './styles'
 import { baseLayoutId } from './consts'
+// types
+import type { FC } from 'react'
+import type { RootWrapperProps } from './types'
 
-export const RootWrapper = ({ children }: { children: React.ReactNode }) => {
+export const RootWrapper: FC<RootWrapperProps> = ({ lang, children }) => {
   return (
-    <>
+    <AppContext.Provider value={{ lang }}>
       <StoreContext.Provider value={store}>
         <Overflow id={baseLayoutId}>
           <Container>{children}</Container>
         </Overflow>
       </StoreContext.Provider>
-    </>
+    </AppContext.Provider>
   )
 }

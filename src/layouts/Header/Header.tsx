@@ -22,7 +22,7 @@ import {
   LanguageBlock,
   LogoIcon,
 } from './styles'
-import { LocalizationButton } from 'src/components/generic/LocalizationButton/LocalizationButton'
+import { LocalizationButton } from '@/components/shared/LocalizationButton/LocalizationButton'
 import { ColorsEnum } from '@/theme'
 
 export const Header = () => {
