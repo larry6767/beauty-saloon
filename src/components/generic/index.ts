@@ -1,3 +1,3 @@
-export { Slider } from './Slider'
+export { Slider, ImageSlider } from './Slider'
 export { Button } from './Button'
 export { Link } from './Link'

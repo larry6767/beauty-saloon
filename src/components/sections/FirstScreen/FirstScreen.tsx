@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 // local libs
 import Image from 'next/image'
-import { Slider } from 'src/components/generic'
+import { ImageSlider } from 'src/components/generic'
 import { items, mobileItems } from './fixtures'
 
 export const FirstScreen = () => {
@@ -14,7 +14,7 @@ export const FirstScreen = () => {
   }, [])
 
   return (
-    <Slider
+    <ImageSlider
       heightRatio={isMobile ? '100%' : '35%'}
       items={(isMobile ? mobileItems : items).map((x, i) => (
         <Image

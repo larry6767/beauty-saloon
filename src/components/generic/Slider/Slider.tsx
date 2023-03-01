@@ -1,31 +1,17 @@
+'use client'
+
 import React from 'react'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import { Carousel, Wrap } from './styles'
+// local libs
+import { Carousel } from './styles'
+import { settings } from './settings'
 // types
-import type { Settings } from 'react-slick'
 import type { FC } from 'react'
 import type { SliderProps } from './types'
 
-export const Slider: FC<SliderProps> = ({ items, heightRatio }) => {
-  const settings: Settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-  }
-
+export const Slider: FC<SliderProps> = ({ items, ...rest }) => {
   return (
-    <Carousel {...settings}>
-      {items.map((item, i) => (
-        <Wrap key={i} heightRatio={heightRatio}>
-          {item}
-        </Wrap>
-      ))}
+    <Carousel {...settings} {...rest}>
+      {items}
     </Carousel>
   )
 }

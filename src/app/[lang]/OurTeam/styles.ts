@@ -1,6 +1,5 @@
 import { styled } from '@linaria/react'
-import { theme } from '@/theme/theme'
-import { media } from '../../../theme/breakpoints'
+import { theme, media } from 'src/theme'
 
 export const SectionContainer = styled.div`
   width: 100%;
@@ -34,12 +33,15 @@ export const SectionWrapper = styled.div`
       width: 1110px;
     }
   }
+
   .slick-track {
     display: flex;
   }
+
   .slick-arrow {
     display: none !important;
   }
+
   .slick-dots {
     position: absolute;
     bottom: -10px;
@@ -66,6 +68,7 @@ export const SectionWrapper = styled.div`
       background: url('/assets/our-team/dot-filled.svg') 50% 65% / 60% no-repeat;
     }
   }
+
   ${media.tablet} {
     width: 740px;
     padding-left: 0;
@@ -78,6 +81,7 @@ export const SectionWrapper = styled.div`
       left: 39%;
     }
   }
+
   ${media.laptopL} {
     width: 1110px;
     overflow: visible;
@@ -85,6 +89,7 @@ export const SectionWrapper = styled.div`
     .slick-dots {
       display: none !important;
     }
+
     .slick-arrow {
       display: flex !important;
       width: 14px;
@@ -99,14 +104,17 @@ export const SectionWrapper = styled.div`
         filter: contrast(700%);
       }
     }
+
     .slick-arrow.slick-prev {
       left: -48px;
       background: url('/assets/our-team/arrow-left.svg') 0 0 / 100% no-repeat;
     }
+
     .slick-arrow.slick-next {
       right: -48px;
       background: url('/assets/our-team/arrow-right.svg') 0 0 / 100% no-repeat;
     }
+
     .slick-arrow.slick-disabled {
       opacity: 50%;
       pointer-events: none;
@@ -184,12 +192,14 @@ export const PhotoContainer = styled.div`
     height: 300px;
     padding-top: 20px;
   }
+
   ${media.tablet} {
     width: 240px;
     align-items: flex-start;
     padding: 35px 35px 0 0;
     margin-top: 0;
   }
+
   ${media.laptopL} {
     width: 340px;
     justify-content: center;
@@ -208,10 +218,12 @@ export const PhotoBlock = styled.div`
     width: 250px;
     height: 250px;
   }
+
   ${media.tablet} {
     width: 180px;
     height: 180px;
   }
+
   ${media.laptopL} {
     width: 250px;
     height: 250px;
@@ -251,6 +263,7 @@ export const CareerInfoContainer = styled.div`
   ${media.tablet} {
     width: 250px;
   }
+
   ${media.laptopL} {
     width: 265px;
   }

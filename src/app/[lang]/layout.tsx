@@ -22,6 +22,7 @@ const montserrat = Montserrat({
   weight: ['400', '700'],
   style: ['normal'],
   subsets: ['cyrillic'],
+  display: 'swap',
 })
 
 export default function RootLayout({
