@@ -1,4 +1,4 @@
-import { OurTeam } from 'src/components/sections/OurTeam'
+import { OurTeam } from './OurTeam'
 import { AboutUs } from 'src/components/sections/AboutUs'
 import { FirstScreen } from 'src/components/sections/FirstScreen'
 import { Services } from 'src/components/sections/Services/Services'
@@ -30,7 +30,8 @@ export default async function Home({
       <Promotions />
       <Advantages />
       <AboutUs />
-      <OurTeam />
+      {/* @ts-expect-error Server Component */}
+      <OurTeam lang={lang} />
     </>
   )
 }
