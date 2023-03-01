@@ -19,35 +19,30 @@ import {
 // types
 import type { StaticImageData } from 'next/image'
 import type { FC } from 'react'
-import type { ModalViewProps } from './types'
+import { ModalViewProps } from './types'
+import { UpperLayerEnum } from 'src/store/upperLayer'
 
 export const ModalView: FC<ModalViewProps> = ({
   children,
-  renderEmpty = <h3 style={{ margin: '10px' }}>empty</h3>,
-  drawer,
+  kind = UpperLayerEnum.modal,
 }) => {
   const { dispatch } = useStoreon('upperLayerModule')
 
   return (
     <ModalBackdrop
-      isDrawer={drawer}
+      data-kind={kind}
       onClick={() => dispatch(UpperLayerActions.close)}
     >
-      <ModalWrapper
-        loading={!children ? 1 : 0}
-        isDrawer={drawer}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <TopBorder isDrawer={drawer} />
-        <FlexButton isDrawer={drawer}>
+      <ModalWrapper data-kind={kind} onClick={(e) => e.stopPropagation()}>
+        <TopBorder data-kind={kind} />
+        <FlexButton data-kind={kind}>
           <ModalCloseButton
-            loading={!children ? 1 : 0}
-            isDrawer={drawer}
+            data-kind={kind}
             onClick={() => dispatch(UpperLayerActions.close)}
           >
             <Image
               src={
-                !drawer
+                kind !== UpperLayerEnum.drawer
                   ? (whiteCross as StaticImageData)
                   : (drawerCross as StaticImageData)
               }
@@ -57,11 +52,8 @@ export const ModalView: FC<ModalViewProps> = ({
             />
           </ModalCloseButton>
         </FlexButton>
-
-        <ModalViewContent loading={!children ? 1 : 0} isDrawer={drawer}>
-          {children || renderEmpty}
-        </ModalViewContent>
-        <BottomBorder isDrawer={drawer} />
+        <ModalViewContent data-kind={kind}>{children}</ModalViewContent>
+        <BottomBorder data-kind={kind} />
       </ModalWrapper>
     </ModalBackdrop>
   )

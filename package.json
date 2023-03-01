@@ -10,8 +10,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
     "@formatjs/intl-localematcher": "^0.2.32",
     "@linaria/babel-preset": "^4.4.3",
     "@linaria/core": "^4.2.8",
