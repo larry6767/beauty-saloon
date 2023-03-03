@@ -1,3 +1,4 @@
+import type { Locale } from 'src/config/i18n'
 import type { MediaData } from 'src/types'
 
 export type AboutTextData = {
@@ -20,4 +21,8 @@ export type AboutMediaData = {
       videoPreviewImage: MediaData
     }
   }
+}
+
+export type AboutUsProps = {
+  lang: Locale
 }

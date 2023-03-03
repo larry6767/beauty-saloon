@@ -22,46 +22,37 @@ export const SectionWrapper = styled.div`
   padding-left: 35px;
   margin-top: 50px;
   padding-bottom: 50px;
-
   .slick-slider {
     ${media.tablet} {
       width: 740px;
     }
-
     ${media.laptopL} {
       width: 1110px;
     }
   }
-
   .slick-arrow {
     display: none !important;
   }
-
   .slick-dots {
     position: relative;
     bottom: 0 !important;
   }
-
   ${media.tablet} {
     width: 740px;
     padding-left: 0;
     padding-bottom: 0;
     margin-top: 0;
-
     .slick-dots {
       position: absolute;
       bottom: 50px !important;
     }
   }
-
   ${media.laptopL} {
     width: 1110px;
     overflow: visible;
-
     .slick-dots {
       display: none !important;
     }
-
     .slick-arrow {
       display: flex !important;
       width: 14px;
@@ -72,23 +63,20 @@ export const SectionWrapper = styled.div`
       &:hover {
         filter: contrast(700%);
       }
-      &::before {
+      &:before {
         display: none !important;
       }
     }
-
     .slick-arrow.slick-prev {
       left: -48px;
       background: url('../../../../static/our-team/arrow-left.svg') 0 0 / 100%
         no-repeat !important;
     }
-
     .slick-arrow.slick-next {
       right: -48px;
       background: url('../../../../static/our-team/arrow-right.svg') 0 0 / 100%
         no-repeat;
     }
-
     .slick-arrow.slick-disabled {
       opacity: 50%;
       pointer-events: none;
@@ -118,7 +106,6 @@ export const HeadingLineWrapper = styled.div`
       opacity: 0.4;
     }
   }
-
   ${media.tablet} {
     top: 70px;
     flex-direction: row;
@@ -150,7 +137,6 @@ export const InfoCardWrapper = styled.div`
     align-items: flex-start;
     flex-direction: row;
   }
-
   ${media.laptopL} {
     width: 1110px;
   }
@@ -167,14 +153,12 @@ export const PhotoContainer = styled.div`
     height: 300px;
     padding-top: 20px;
   }
-
   ${media.tablet} {
     width: 240px;
     align-items: flex-start;
     padding: 35px 35px 0 0;
     margin-top: 0;
   }
-
   ${media.laptopL} {
     width: 340px;
     justify-content: center;
@@ -193,12 +177,10 @@ export const PhotoBlock = styled.div`
     width: 250px;
     height: 250px;
   }
-
   ${media.tablet} {
     width: 180px;
     height: 180px;
   }
-
   ${media.laptopL} {
     width: 250px;
     height: 250px;
@@ -238,7 +220,6 @@ export const CareerInfoContainer = styled.div`
   ${media.tablet} {
     width: 250px;
   }
-
   ${media.laptopL} {
     width: 265px;
   }
