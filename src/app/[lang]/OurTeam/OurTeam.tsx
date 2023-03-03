@@ -21,6 +21,7 @@ import { Link } from 'src/components/generic/Link'
 import { ColorsEnum, theme } from 'src/theme/theme'
 import { Slider } from 'src/components/generic'
 import { fetchData } from 'src/utils'
+import { settings } from './fixtures'
 // types
 import type { OurTeamCardData, OurTeamTextData, OurTeamProps } from './types'
 import { Locale } from 'src/config/i18n'
@@ -63,12 +64,13 @@ export async function OurTeam({ lang }: OurTeamProps) {
         </HeadingLineWrapper>
 
         <Slider
+          {...settings}
           items={cardTextData.map(({ attributes: item }) => (
             <InfoCardWrapper key={item.name}>
               <PhotoContainer>
                 <PhotoBlock
                   style={{
-                    backgroundImage: `http://localhost:1337${item.image.data.attributes.url}`,
+                    backgroundImage: `url(http://localhost:1337${item.image.data.attributes.url})`,
                   }}
                 />
               </PhotoContainer>

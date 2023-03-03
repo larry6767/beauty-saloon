@@ -1,12 +1,4 @@
-export type MediaData = {
-  data: {
-    attributes: {
-      alternativeText: string
-      id: number
-      url: string
-    }
-  }
-}
+import type { MediaData } from 'src/types'
 
 export type AboutTextData = {
   data: {

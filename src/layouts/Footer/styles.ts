@@ -1,6 +1,6 @@
 import { styled } from '@linaria/react'
-import { theme } from '@/theme/theme'
-import { media } from '../../theme/breakpoints'
+import { theme } from 'src/theme/theme'
+import { media } from 'src/theme/breakpoints'
 
 export const FooterContainer = styled.div`
   height: 204px;

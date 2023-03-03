@@ -3,7 +3,7 @@ import Image from 'next/image'
 // local libs
 import logo from 'assets/headerIcons/logo.png'
 import { MenuButton } from './MenuButton'
-import { Link } from '@/components/generic/Link'
+import { Link } from 'src/components/generic/Link'
 import { topLinks, logoIcons, bottomLinks } from './fixtures'
 import {
   BottomLinkItems,
@@ -22,8 +22,8 @@ import {
   LanguageBlock,
   LogoIcon,
 } from './styles'
-import { LocalizationButton } from '@/components/shared/LocalizationButton/LocalizationButton'
-import { ColorsEnum } from '@/theme'
+import { LocalizationButton } from 'src/components/shared/LocalizationButton/LocalizationButton'
+import { ColorsEnum } from 'src/theme'
 
 export const Header = () => {
   return (

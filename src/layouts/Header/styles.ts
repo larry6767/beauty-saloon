@@ -1,6 +1,6 @@
-import { theme } from '@/theme/theme'
 import { styled } from '@linaria/react'
-import { media } from '../../theme/breakpoints'
+import { theme } from 'src/theme/theme'
+import { media } from 'src/theme/breakpoints'
 
 export const HeaderContainer = styled.div`
   height: 180px;

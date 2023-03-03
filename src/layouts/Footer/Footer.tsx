@@ -16,7 +16,7 @@ import {
   ContactBlockContainer,
 } from './styles'
 import { ColorsEnum, theme } from 'src/theme'
-import { LocalizationButton } from '@/components/shared/LocalizationButton/LocalizationButton'
+import { LocalizationButton } from 'src/components/shared/LocalizationButton/LocalizationButton'
 // types
 import type { StaticImageData } from 'next/image'
 
