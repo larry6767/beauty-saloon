@@ -24,18 +24,13 @@ export const SectionWrapper = styled.div`
   padding-bottom: 50px;
 
   .slick-slider {
-    overflow: hidden;
-
     ${media.tablet} {
       width: 740px;
     }
+
     ${media.laptopL} {
       width: 1110px;
     }
-  }
-
-  .slick-track {
-    display: flex;
   }
 
   .slick-arrow {
@@ -43,30 +38,8 @@ export const SectionWrapper = styled.div`
   }
 
   .slick-dots {
-    position: absolute;
-    bottom: -10px;
-    left: calc(40% - 35px);
-    display: flex !important;
-    flex-direction: row;
-    list-style: none;
-
-    button {
-      width: 25px;
-      height: 25px;
-      font-size: 0;
-      border: none;
-      background: url('/assets/our-team/dot-outlined.svg') 50% 50% / 60%
-        no-repeat;
-      cursor: pointer;
-      &:hover {
-        background: url('/assets/our-team/dot-filled.svg') 51% 51% / 66%
-          no-repeat;
-      }
-    }
-
-    .slick-active {
-      background: url('/assets/our-team/dot-filled.svg') 50% 65% / 60% no-repeat;
-    }
+    position: relative;
+    bottom: 0 !important;
   }
 
   ${media.tablet} {
@@ -76,9 +49,8 @@ export const SectionWrapper = styled.div`
     margin-top: 0;
 
     .slick-dots {
-      display: flex !important;
-      bottom: 48px;
-      left: 39%;
+      position: absolute;
+      bottom: 50px !important;
     }
   }
 
@@ -94,25 +66,27 @@ export const SectionWrapper = styled.div`
       display: flex !important;
       width: 14px;
       height: 26px;
-      position: absolute;
-      top: 53%;
-      z-index: 1;
-      font-size: 0;
-      border: none;
+      background-color: red;
+      transform: translate(0, -150%);
       cursor: pointer;
       &:hover {
         filter: contrast(700%);
+      }
+      &::before {
+        display: none !important;
       }
     }
 
     .slick-arrow.slick-prev {
       left: -48px;
-      background: url('/assets/our-team/arrow-left.svg') 0 0 / 100% no-repeat;
+      background: url('../../../../static/our-team/arrow-left.svg') 0 0 / 100%
+        no-repeat !important;
     }
 
     .slick-arrow.slick-next {
       right: -48px;
-      background: url('/assets/our-team/arrow-right.svg') 0 0 / 100% no-repeat;
+      background: url('../../../../static/our-team/arrow-right.svg') 0 0 / 100%
+        no-repeat;
     }
 
     .slick-arrow.slick-disabled {
@@ -176,6 +150,7 @@ export const InfoCardWrapper = styled.div`
     align-items: flex-start;
     flex-direction: row;
   }
+
   ${media.laptopL} {
     width: 1110px;
   }

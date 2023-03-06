@@ -1,8 +1,7 @@
-'use client'
-
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
+// import { useTranslation } from 'next-i18next'
 // local libs
 import {
   SectionContainer,
@@ -18,10 +17,10 @@ import {
   Play,
   PlayText,
 } from './styles'
-// import { useTranslation } from 'next-i18next'
 // types
 import type { FC } from 'react'
-import type { AboutTextData, MediaData, AboutMediaData } from './types'
+import type { AboutTextData, AboutMediaData } from './types'
+import type { MediaData } from 'src/types'
 
 export const AboutUs: FC = () => {
   const [textContent, setTextContent] = useState<
@@ -75,21 +74,23 @@ export const AboutUs: FC = () => {
   const videoPreviewSrc = `http://localhost:1337${videoImage?.url}`
   const videoPlaySrc = `http://localhost:1337${videoIcon?.url}`
 
-  if (!videoIcon && !videoImage) {
-    return <></>
-  }
+  // if () {
+  //   return <></>
+  // }
 
-  return (
+  return !textContent || !videoIcon || !videoImage ? (
+    <h3>Loading...</h3>
+  ) : (
     <SectionContainer>
       <SectionWrapper>
         <TextInfoWrapper>
-          <Heading>{textContent?.heading}</Heading>
+          <Heading>{textContent.heading}</Heading>
           <HeadingLine />
-          <Title>{textContent?.title}</Title>
-          <Text>{textContent?.text}</Text>
+          <Title>{textContent.title}</Title>
+          <Text>{textContent.text}</Text>
           <ButtonWrapper>
-            <Button>{textContent?.firstButtonText}</Button>
-            <Button>{textContent?.secondButtonText}</Button>
+            <Button>{textContent.firstButtonText}</Button>
+            <Button>{textContent.secondButtonText}</Button>
           </ButtonWrapper>
         </TextInfoWrapper>
         <VideoBlock style={{ backgroundImage: videoPreviewSrc }}>
@@ -99,10 +100,10 @@ export const AboutUs: FC = () => {
               src={videoPlaySrc}
               width={56}
               height={56}
-              alt={`${videoIcon?.alternativeText}`}
+              alt={`${videoIcon.alternativeText}`}
               unoptimized
             />
-            <PlayText>{textContent?.videoPlayerText}</PlayText>
+            <PlayText>{textContent.videoPlayerText}</PlayText>
           </Play>
         </VideoBlock>
       </SectionWrapper>
