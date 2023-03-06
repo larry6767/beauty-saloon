@@ -6,6 +6,7 @@ import { Promotions } from 'src/components/sections/Promotions/Promotions'
 import { Advantages } from 'src/components/sections/Advantages/Advantages'
 import { getDictionary } from 'src/config/i18n/getDictionary'
 import { Locale } from 'src/config/i18n'
+import { BestPrices } from '@/components/sections/BestPrices/BestPrices'
 
 export default async function Home({
   params: { lang },
@@ -27,6 +28,7 @@ export default async function Home({
       </div>
       <FirstScreen />
       <Services />
+      <BestPrices />
       <Promotions />
       <Advantages />
       <AboutUs />
