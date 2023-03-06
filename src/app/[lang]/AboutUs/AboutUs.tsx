@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import Image from 'next/image'
 // local libs
 import {
@@ -16,22 +15,25 @@ import {
   Play,
   PlayText,
 } from './styles'
+import { fetchData } from 'src/utils'
 // types
 import type { AboutTextData, AboutMediaData, AboutUsProps } from './types'
 import { Locale } from 'src/config/i18n'
 
 async function getTextData(lang: Locale) {
-  const { data } = await axios.get<AboutTextData>(
+  const { data } = await fetchData<AboutTextData>(
     `http://localhost:1337/api/about?locale=${lang}`,
   )
-  return data.data.attributes
+
+  return data.attributes
 }
 
 async function getMediaData() {
-  const { data } = await axios.get<AboutMediaData>(
+  const { data } = await fetchData<AboutMediaData>(
     'http://localhost:1337/api/about-media?populate=*',
   )
-  return data.data.attributes
+
+  return data.attributes
 }
 
 export async function AboutUs({ lang }: AboutUsProps) {
