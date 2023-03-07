@@ -58,7 +58,7 @@ export const SectionWrapper = styled.div`
       width: 14px;
       height: 26px;
       background-color: red;
-      transform: translate(0, -150%);
+      transform: translate(0, 20%);
       cursor: pointer;
       &:hover {
         filter: contrast(700%);
