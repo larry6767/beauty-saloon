@@ -43,8 +43,7 @@ export const SectionWrapper = styled.div`
     padding-bottom: 0;
     margin-top: 0;
     .slick-dots {
-      position: absolute;
-      bottom: 50px !important;
+      top: -20px;
     }
   }
   ${media.laptopL} {
