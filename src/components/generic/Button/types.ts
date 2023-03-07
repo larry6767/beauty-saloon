@@ -34,7 +34,5 @@ export type ButtonContainerProps = {
   variant: keyof typeof ButtonVariants
   disabled: boolean
   float?: FloatProps
-  margin?: string
-  width?: string
   uppercase?: boolean
 }
