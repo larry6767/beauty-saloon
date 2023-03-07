@@ -37,9 +37,11 @@ export default function RootLayout({
       <Head />
       <body className="scrollAuto">
         <RootWrapper lang={lang}>
-          <Header />
+          {/* @ts-expect-error Server Component */}
+          <Header lang={lang} />
           <PageContent>{children}</PageContent>
-          <Footer />
+          {/* @ts-expect-error Server Component */}
+          <Footer lang={lang} />
           <UpperLayer />
         </RootWrapper>
       </body>

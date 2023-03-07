@@ -17,10 +17,14 @@ import {
 } from './styles'
 import { ColorsEnum, theme } from 'src/theme'
 import { LocalizationButton } from 'src/components/shared/LocalizationButton/LocalizationButton'
+import { getDictionary } from 'src/config/i18n/getDictionary'
 // types
 import type { StaticImageData } from 'next/image'
+import { FooterProps } from './types'
 
-export const Footer = () => {
+export async function Footer({ lang }: FooterProps) {
+  const dictionary = await getDictionary(lang)
+
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -41,7 +45,7 @@ export const Footer = () => {
               padding={`0px`}
               withoutNextLinkWrapper
             >
-              заказать звонок
+              {dictionary.links.telephone}
             </Link>
           </ContactBlock>
         </ContactBlockContainer>
