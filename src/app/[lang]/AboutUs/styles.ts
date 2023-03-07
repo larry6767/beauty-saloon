@@ -100,7 +100,7 @@ export const ButtonWrapper = styled.div`
   margin-top: 30px;
   padding-bottom: 40px;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     flex-direction: column;
   }
   ${media.tablet} {
@@ -128,7 +128,7 @@ export const Button = styled.button`
   &:hover {
     background-color: black;
   }
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     margin-bottom: 12px;
   }
   ${media.tablet} {
@@ -164,7 +164,7 @@ export const VideoBlock = styled.div`
       }
     }
   }
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     margin-top: 20px;
   }
   ${media.tablet} {

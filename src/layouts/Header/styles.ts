@@ -190,8 +190,15 @@ export const BottomListContainer = styled.div`
     display: flex;
     height: 95px;
   }
+  ${media.laptop} {
+    margin-bottom: -15px;
+  }
   ${media.laptopL} {
     height: 50px;
+    margin-bottom: -22px;
+  }
+  ${media.desktop} {
+    margin-bottom: -30px;
   }
 `
 

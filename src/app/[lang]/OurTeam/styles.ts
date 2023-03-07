@@ -149,7 +149,7 @@ export const PhotoContainer = styled.div`
   align-items: center;
   padding-top: 20px;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     height: 300px;
     padding-top: 20px;
   }
@@ -173,7 +173,7 @@ export const PhotoBlock = styled.div`
   background-size: cover;
   border-radius: 100%;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     width: 250px;
     height: 250px;
   }
