@@ -1,3 +1,3 @@
-import serverComponent from './cs'
+import dictionary from './cs'
 
-export type Dictionaries = typeof serverComponent
+export type Dictionaries = typeof dictionary

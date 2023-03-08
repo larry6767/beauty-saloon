@@ -1,6 +1,6 @@
 import { Dictionaries } from './types'
 
-const serverComponent: Dictionaries = {
+const dictionary: Dictionaries = {
   links: {
     telephone: 'request a call',
     topLinks: [
@@ -30,4 +30,4 @@ const serverComponent: Dictionaries = {
   },
 }
 
-export default serverComponent
+export default dictionary

@@ -1,4 +1,4 @@
-const serverComponent = {
+const dictionary = {
   links: {
     telephone: 'požádejte o zavolání',
     topLinks: [
@@ -28,4 +28,4 @@ const serverComponent = {
   },
 }
 
-export default serverComponent
+export default dictionary
