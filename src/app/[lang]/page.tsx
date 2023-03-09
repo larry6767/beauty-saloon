@@ -6,6 +6,7 @@ import { Promotions } from 'src/components/sections/Promotions/Promotions'
 import { Advantages } from 'src/components/sections/Advantages/Advantages'
 import { getDictionary } from 'src/config/i18n/getDictionary'
 import { Locale } from 'src/config/i18n'
+import { Reviews } from '@/components/sections'
 
 export default async function Home({
   params: { lang },
@@ -29,6 +30,7 @@ export default async function Home({
       <Services />
       <Promotions />
       <Advantages />
+      <Reviews />
       <AboutUs />
       {/* @ts-expect-error Server Component */}
       <OurTeam lang={lang} />

@@ -16,11 +16,11 @@ export const FirstScreen = () => {
   return (
     <ImageSlider
       heightRatio={isMobile ? '100%' : '35%'}
-      items={(isMobile ? mobileItems : items).map((x, i) => (
+      items={(isMobile ? mobileItems : items).map((item, i) => (
         <Image
           key={i}
           alt={`slide-${i}`}
-          src={x}
+          src={item}
           priority
           fill
           style={{ objectFit: 'contain' }}
