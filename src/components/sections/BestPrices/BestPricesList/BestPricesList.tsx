@@ -7,6 +7,7 @@ import type { FC } from 'react'
 import type { BestPricesListProps } from './types'
 import { BestPricesCard } from './BestPricesCard/BestPricesCard'
 import { Slider } from 'src/components/generic/Slider/index'
+import { settings } from './settings'
 
 export const BestPricesList: FC<BestPricesListProps> = ({
   data = [],
@@ -17,28 +18,7 @@ export const BestPricesList: FC<BestPricesListProps> = ({
   return (
     <BestPricesListWrapper>
       <Slider
-        autoplay={false}
-        slidesToShow={4}
-        responsive={[
-          {
-            breakpoint: 1440,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true,
-            },
-          },
-        ]}
+        {...settings}
         items={data.map((item) => {
           return (
             <BestPricesCard

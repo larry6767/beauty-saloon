@@ -7,30 +7,18 @@ export const BestPricesCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   position: relative;
-
   width: 100%;
   min-height: 400px;
-
   background-color: aliceblue;
-
   margin: 0 0 40px 0;
 
   ${media.tablet} {
     flex: 1;
     width: auto;
-
-   
   }
-
-  ${media.laptop} {
-  
-  }
-
-  ${media.laptopL} {
-
 `
+
 export const BestPricesCardImage = styled.div`
   position: static;
   width: 100%;
@@ -52,12 +40,6 @@ export const BestPricesCardContentWrapper = styled.div`
 
   ${media.mobileS} {
     width: 100%;
-  }
-
-  ${media.tablet} {
-  }
-
-  ${media.laptop} {
   }
 `
 
@@ -84,15 +66,13 @@ export const BestPricesCardPrice = styled.p`
   color: black;
   margin-top: 10px;
   font-weight: 700;
-
   overflow-wrap: break-word;
 `
+
 export const BestPricesCardButton = styled.p`
   color: ${theme.colors.textSecondary};
   font-size: 16px;
   text-transform: upercase;
-
   text-align: center;
-
   overflow-wrap: break-word;
 `

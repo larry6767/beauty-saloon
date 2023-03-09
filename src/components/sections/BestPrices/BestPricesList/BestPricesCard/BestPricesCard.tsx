@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
+// local libs
 import {
   BestPricesCardButton,
   BestPricesCardContent,
@@ -10,7 +11,11 @@ import {
   BestPricesCardPriceWrapper,
   BestPricesCardWrapper,
 } from './styles'
-import { BestPricesCardContentProps, BestPricesCardStyledProps } from './types'
+// types
+import type {
+  BestPricesCardContentProps,
+  BestPricesCardStyledProps,
+} from './types'
 
 export const BestPricesCard: FC<
   BestPricesCardContentProps & BestPricesCardStyledProps
