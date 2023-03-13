@@ -43,8 +43,7 @@ export const SectionWrapper = styled.div`
     padding-bottom: 0;
     margin-top: 0;
     .slick-dots {
-      position: absolute;
-      bottom: 50px !important;
+      top: -20px;
     }
   }
   ${media.laptopL} {
@@ -58,7 +57,7 @@ export const SectionWrapper = styled.div`
       width: 14px;
       height: 26px;
       background-color: red;
-      transform: translate(0, -150%);
+      transform: translate(0, 20%);
       cursor: pointer;
       &:hover {
         filter: contrast(700%);
@@ -149,7 +148,7 @@ export const PhotoContainer = styled.div`
   align-items: center;
   padding-top: 20px;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     height: 300px;
     padding-top: 20px;
   }
@@ -173,7 +172,7 @@ export const PhotoBlock = styled.div`
   background-size: cover;
   border-radius: 100%;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     width: 250px;
     height: 250px;
   }

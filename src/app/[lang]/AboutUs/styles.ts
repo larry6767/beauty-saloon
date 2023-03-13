@@ -100,7 +100,7 @@ export const ButtonWrapper = styled.div`
   margin-top: 30px;
   padding-bottom: 40px;
 
-  @media (max-width: 380px) {
+  ${media.mobileM} {
     flex-direction: column;
   }
   ${media.tablet} {
@@ -133,6 +133,9 @@ export const VideoBlock = styled.div`
         transform: rotate(360deg);
       }
     }
+  }
+  ${media.mobileM} {
+    margin-top: 20px;
   }
   ${media.tablet} {
     position: absolute;

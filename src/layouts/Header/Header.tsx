@@ -4,7 +4,7 @@ import Image from 'next/image'
 import logo from 'assets/headerIcons/logo.png'
 import { MenuButton } from './MenuButton'
 import { Link } from 'src/components/generic/Link'
-import { topLinks, logoIcons, bottomLinks } from './fixtures'
+import { logoIcons } from './fixtures'
 import {
   BottomLinkItems,
   BottomLinkList,
@@ -24,13 +24,18 @@ import {
 } from './styles'
 import { LocalizationButton } from 'src/components/shared/LocalizationButton/LocalizationButton'
 import { ColorsEnum } from 'src/theme'
+import { getDictionary } from 'src/config/i18n/getDictionary'
+// types
+import { HeaderProps } from './types'
 
-export const Header = () => {
+export async function Header({ lang }: HeaderProps) {
+  const dictionary = await getDictionary(lang)
+
   return (
     <HeaderContainer>
       <TopListContainer>
         <TopLinkList>
-          {topLinks.map((item) => (
+          {dictionary.links.topLinks.map((item) => (
             <TopLinkItems key={item}>
               <Link
                 key={item}
@@ -68,7 +73,7 @@ export const Header = () => {
               textTransform="uppercase"
               withoutNextLinkWrapper
             >
-              заказать звонок
+              {dictionary.links.telephone}
             </Link>
           </ContactBlock>
         </ContactsList>
@@ -83,7 +88,7 @@ export const Header = () => {
 
       <BottomListContainer>
         <BottomLinkList>
-          {bottomLinks.map((item) => (
+          {dictionary.links.bottomLinks.map((item) => (
             <BottomLinkItems key={item}>
               <Link
                 key={item}

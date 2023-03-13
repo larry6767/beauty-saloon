@@ -10,10 +10,10 @@ export const HeaderContainer = styled.div`
   flex-direction: column;
 
   ${media.tablet} {
-    height: 310px;
+    height: 298px;
   }
   ${media.laptopL} {
-    height: 210px;
+    height: 198px;
   }
 `
 
@@ -184,13 +184,21 @@ export const BottomListContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${theme.colors.secondary};
+  margin-bottom: -12px;
 
   ${media.tablet} {
     display: flex;
     height: 95px;
   }
+  ${media.laptop} {
+    margin-bottom: -15px;
+  }
   ${media.laptopL} {
     height: 50px;
+    margin-bottom: -22px;
+  }
+  ${media.desktop} {
+    margin-bottom: -30px;
   }
 `
 
