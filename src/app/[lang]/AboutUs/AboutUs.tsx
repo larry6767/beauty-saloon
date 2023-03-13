@@ -7,7 +7,6 @@ import {
   Text,
   ButtonWrapper,
   SectionWrapper,
-  Button,
   VideoBlock,
   HeadingLine,
   Heading,
@@ -16,6 +15,7 @@ import {
   PlayText,
 } from './styles'
 import { fetchData } from 'src/utils'
+import { Button } from 'src/components/generic'
 // types
 import type { AboutTextData, AboutMediaData, AboutUsProps } from './types'
 import { Locale } from 'src/config/i18n'
@@ -51,8 +51,16 @@ export async function AboutUs({ lang }: AboutUsProps) {
           <Title>{textContent.title}</Title>
           <Text>{textContent.text}</Text>
           <ButtonWrapper>
-            <Button>{textContent.firstButtonText}</Button>
-            <Button>{textContent.secondButtonText}</Button>
+            <Button
+              text={textContent.firstButtonText}
+              width="166px"
+              margin="0px 25px 12px 0px"
+            />
+            <Button
+              text={textContent.secondButtonText}
+              width="146px"
+              margin="0px 25px 12px 0px"
+            />
           </ButtonWrapper>
         </TextInfoWrapper>
         <VideoBlock

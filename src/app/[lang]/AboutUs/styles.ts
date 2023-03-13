@@ -111,46 +111,16 @@ export const ButtonWrapper = styled.div`
   }
 `
 
-export const Button = styled.button`
-  width: 166px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: ${theme.fontSize.bigFont};
-  background-color: #464646;
-  border: none;
-  border-radius: 5px;
-  margin-right: 25px;
-  cursor: pointer;
-  transition: background-color 0.4s ease-in-out;
-  &:hover {
-    background-color: black;
-  }
-  ${media.mobileM} {
-    margin-bottom: 12px;
-  }
-  ${media.tablet} {
-    flex-direction: column;
-    margin-bottom: 12px;
-  }
-  ${media.laptopL} {
-    margin-right: 25px;
-  }
-`
-
 export const VideoBlock = styled.div`
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
+  background-position: center;
   height: 308px;
-  margin-right: auto;
-  cursor: pointer;
   transition: all 0.7s ease;
   z-index: 0;
+  cursor: pointer;
+
   &:hover {
     transition: 2s;
     transform: scale(1.07);
@@ -186,7 +156,6 @@ export const Play = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
   margin-top: 100px;
 
   ${media.tablet} {
